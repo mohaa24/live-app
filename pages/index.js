@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
 
 
-      <body className='home'>
+      <div className='home'>
         <header className='header'>
           <div className="header__inner"><a aria-current="page" title="Kollosche" className="header__logo active" href="/">
             <img className='logo-img' src='http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png'>
@@ -72,14 +72,14 @@ export default function Home() {
                 </li>
                 <li><a className="header__search-icon" href="/buy/"><svg width="19px" height="18px" viewBox="0 0 19 18"
                   version="1.1" xmlns="http://www.w3.org/2000/svg">
-                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g transform="translate(-1289.000000, -46.000000)">
                       <g transform="translate(1289.000000, 46.000000)">
                         <g>
                           <g>
                             <path
                               d="M18.6635459,17.284253 L11.6362006,10.9253654 C13.1367102,9.17733337 13.6202361,6.77412093 12.9112432,4.58183552 C12.2032082,2.38959923 10.405318,0.724091073 8.16612176,0.184001938 C5.92591848,-0.355178451 3.56664508,0.308723477 1.93778144,1.93778114 C0.308721319,3.56684127 -0.355178153,5.92594275 0.184002237,8.16612146 C0.724140492,10.4053669 2.38967321,12.2034044 4.58183582,12.9112429 C6.7740721,13.6202358 9.17738279,13.1367025 10.9253657,11.6362003 L17.9477988,18 L18.6635459,17.284253 Z M2.65141627,10.5820072 C1.59032164,9.52857551 0.991655311,8.09720422 0.987813382,6.60145942 C0.984945581,5.1067216 1.57592909,3.67137148 2.63223439,2.61329781 C3.68758182,1.55411892 5.12194951,0.959284049 6.61671189,0.959284049 C8.11147427,0.959284049 9.5458174,1.55411892 10.6011894,2.61329781 C11.6574947,3.67151884 12.2484735,5.10669704 12.2456104,6.60145942 C12.2417623,8.0971551 11.6431021,9.52860007 10.5820075,10.5820072 C9.5362633,11.6440597 8.10776561,12.2417682 6.61668733,12.2417682 C5.12560905,12.2417682 3.69716048,11.6440597 2.65136715,10.5820072 L2.65141627,10.5820072 Z"
-                              fill="#FFFFFF" fill-rule="nonzero"></path>
+                              fill="#FFFFFF" fillRule="nonzero"></path>
                           </g>
                         </g>
                       </g>
@@ -96,7 +96,7 @@ export default function Home() {
         <main>
 
           <section className='hero-banner'>
-            <video src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/WEB3-2.mp4" autoplay="" loop="" playsinline=""></video>
+            <video src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/WEB3-2.mp4" autoPlay="" loop="" playsInline=""></video>
 
             <div className='hero-banner__inner'>
               <div className='hero-banner__content'>
@@ -122,8 +122,8 @@ export default function Home() {
                               <input name="category" type="hidden" value="buy" /></div>
 
                           </div>
-                          <input className="form__input" type="text" name="search" placeholder="Search by suburb" /><button type="submit"><svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g transform="translate(-1289.000000, -46.000000)"><g transform="translate(1289.000000, 46.000000)"><g><g><path d="M18.6635459,17.284253 L11.6362006,10.9253654 C13.1367102,9.17733337 13.6202361,6.77412093 12.9112432,4.58183552 C12.2032082,2.38959923 10.405318,0.724091073 8.16612176,0.184001938 C5.92591848,-0.355178451 3.56664508,0.308723477 1.93778144,1.93778114 C0.308721319,3.56684127 -0.355178153,5.92594275 0.184002237,8.16612146 C0.724140492,10.4053669 2.38967321,12.2034044 4.58183582,12.9112429 C6.7740721,13.6202358 9.17738279,13.1367025 10.9253657,11.6362003 L17.9477988,18 L18.6635459,17.284253 Z M2.65141627,10.5820072 C1.59032164,9.52857551 0.991655311,8.09720422 0.987813382,6.60145942 C0.984945581,5.1067216 1.57592909,3.67137148 2.63223439,2.61329781 C3.68758182,1.55411892 5.12194951,0.959284049 6.61671189,0.959284049 C8.11147427,0.959284049 9.5458174,1.55411892 10.6011894,2.61329781 C11.6574947,3.67151884 12.2484735,5.10669704 12.2456104,6.60145942 C12.2417623,8.0971551 11.6431021,9.52860007 10.5820075,10.5820072 C9.5362633,11.6440597 8.10776561,12.2417682 6.61668733,12.2417682 C5.12560905,12.2417682 3.69716048,11.6440597 2.65136715,10.5820072 L2.65141627,10.5820072 Z" fill="#233356" fill-rule="nonzero"></path></g></g></g></g></g></svg></button></div><div className="form__row form__row--dropdowns"><div className="form__select form__select--min"><div className="react-select-container css-b62m3t-container" id="price_min"><span id="react-select-38-live-region" className="css-7pg0cj-a11yText"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" className="css-7pg0cj-a11yText"></span><div className="react-select__control css-1s2u09g-control"><div className="react-select__value-container css-1d8n9bt"><div className="react-select__placeholder css-14el2xx-placeholder" id="react-select-38-placeholder">Min Price</div><div className="react-select__input-container css-ackcql" data-value="">
+                          <input className="form__input" type="text" name="search" placeholder="Search by suburb" /><button type="submit"><svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                            <g transform="translate(-1289.000000, -46.000000)"><g transform="translate(1289.000000, 46.000000)"><g><g><path d="M18.6635459,17.284253 L11.6362006,10.9253654 C13.1367102,9.17733337 13.6202361,6.77412093 12.9112432,4.58183552 C12.2032082,2.38959923 10.405318,0.724091073 8.16612176,0.184001938 C5.92591848,-0.355178451 3.56664508,0.308723477 1.93778144,1.93778114 C0.308721319,3.56684127 -0.355178153,5.92594275 0.184002237,8.16612146 C0.724140492,10.4053669 2.38967321,12.2034044 4.58183582,12.9112429 C6.7740721,13.6202358 9.17738279,13.1367025 10.9253657,11.6362003 L17.9477988,18 L18.6635459,17.284253 Z M2.65141627,10.5820072 C1.59032164,9.52857551 0.991655311,8.09720422 0.987813382,6.60145942 C0.984945581,5.1067216 1.57592909,3.67137148 2.63223439,2.61329781 C3.68758182,1.55411892 5.12194951,0.959284049 6.61671189,0.959284049 C8.11147427,0.959284049 9.5458174,1.55411892 10.6011894,2.61329781 C11.6574947,3.67151884 12.2484735,5.10669704 12.2456104,6.60145942 C12.2417623,8.0971551 11.6431021,9.52860007 10.5820075,10.5820072 C9.5362633,11.6440597 8.10776561,12.2417682 6.61668733,12.2417682 C5.12560905,12.2417682 3.69716048,11.6440597 2.65136715,10.5820072 L2.65141627,10.5820072 Z" fill="#233356" fillRule="nonzero"></path></g></g></g></g></g></svg></button></div><div className="form__row form__row--dropdowns"><div className="form__select form__select--min"><div className="react-select-container css-b62m3t-container" id="price_min"><span id="react-select-38-live-region" className="css-7pg0cj-a11yText"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" className="css-7pg0cj-a11yText"></span><div className="react-select__control css-1s2u09g-control"><div className="react-select__value-container css-1d8n9bt"><div className="react-select__placeholder css-14el2xx-placeholder" id="react-select-38-placeholder">Min Price</div><div className="react-select__input-container css-ackcql" data-value="">
                               <input className="react-select__input" autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-38-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-describedby="react-select-38-placeholder" value="" /></div></div><div className="react-select__indicators css-1wy0on6">
                                 <span className="react-select__indicator-separator css-1okebmr-indicatorSeparator"></span><div className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer" aria-hidden="true"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" className="css-8mmkcg"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div><input name="price_min" type="hidden" value="" /></div></div><div className="form__select form__select--max"><div className="react-select-container css-b62m3t-container" id="price_max"><span id="react-select-39-live-region" className="css-7pg0cj-a11yText"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" className="css-7pg0cj-a11yText"></span><div className="react-select__control css-1s2u09g-control">
                                   <div className="react-select__value-container css-1d8n9bt"><div className="react-select__placeholder css-14el2xx-placeholder" id="react-select-39-placeholder">Max Price</div><div className="react-select__input-container css-ackcql" data-value="">
@@ -136,7 +136,7 @@ export default function Home() {
                                   <input className="react-select__input" autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-42-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-describedby="react-select-42-placeholder" value="" /></div></div><div className="react-select__indicators css-1wy0on6"><span className="react-select__indicator-separator css-1okebmr-indicatorSeparator"></span>
                                     <div className="react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer" aria-hidden="true">
                                       <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" className="css-8mmkcg"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div><input name="carparks" type="hidden" value="" /></div></div></div></form></div>
-                  </section><button type="button" className="hero-banner__mobile-toggle false">Advanced Search<svg width="8px" height="4px" viewBox="0 0 8 4" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-505.000000, -432.000000)" fill="#FFFFFF">
+                  </section><button type="button" className="hero-banner__mobile-toggle false">Advanced Search<svg width="8px" height="4px" viewBox="0 0 8 4" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd"><g transform="translate(-505.000000, -432.000000)" fill="#FFFFFF">
                     <g transform="translate(300.000000, 346.000000)"><g transform="translate(205.000000, 86.000000)"><polygon transform="translate(4.000000, 2.000000) scale(1, -1) translate(-4.000000, -2.000000) " points="4 0 8 4 0 4"></polygon></g></g></g></g></svg></button>
                 </div> */}
                 <div className='searchBar'>
@@ -217,7 +217,7 @@ export default function Home() {
                   <section className="weather">
                     <div className="weather__inner">
                       <div className="weather__content">
-                        <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-622.000000, -644.000000)" fill="#FFFFFF" fill-rule="nonzero"><g transform="translate(622.000000, 644.000000)">
+                        <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd"><g transform="translate(-622.000000, -644.000000)" fill="#FFFFFF" fillRule="nonzero"><g transform="translate(622.000000, 644.000000)">
                           <path d="M5.57894737,6.31578947 L2.52631579,3.26315789 L3.26315789,2.52631579 L6.31578947,5.57894737 L5.57894737,6.31578947 Z M4.21052632,9.47368421 L0,9.47368421 L0,10.5263158 L4.21052632,10.5263158 L4.21052632,9.47368421 Z M17.4736842,3.26315789 L16.7368421,2.52631579 L13.6842105,5.57894737 L14.4210526,6.31578947 L17.4736842,3.26315789 Z M10.5263158,0 L9.47368421,0 L9.47368421,4.21052632 L10.5263158,4.21052632 L10.5263158,0 Z M14.7368421,10 C14.7368421,12.6315789 12.6315789,14.7368421 10,14.7368421 C7.36842105,14.7368421 5.26315789,12.6315789 5.26315789,10 C5.26315789,7.36842105 7.36842105,5.26315789 10,5.26315789 C12.6315789,5.26315789 14.7368421,7.36842105 14.7368421,10 Z M13.6842105,10 C13.6842105,8 12,6.31578947 10,6.31578947 C8,6.31578947 6.31578947,8 6.31578947,10 C6.31578947,12 8,13.6842105 10,13.6842105 C12,13.6842105 13.6842105,12 13.6842105,10 Z M15.7894737,9.47368421 L15.7894737,10.5263158 L20,10.5263158 L20,9.47368421 L15.7894737,9.47368421 Z M13.6842105,14.4210526 L16.6315789,17.3684211 L17.3684211,16.6315789 L14.4210526,13.6842105 L13.6842105,14.4210526 Z M9.47368421,20 L10.5263158,20 L10.5263158,15.7894737 L9.47368421,15.7894737 L9.47368421,20 Z M2.52631579,16.7368421 L3.26315789,17.4736842 L6.31578947,14.4210526 L5.57894737,13.6842105 L2.52631579,16.7368421 Z">
                           </path></g></g></g></svg>
                         <p>Hawthorn VIC 3122<span> 9° C</span>
@@ -349,7 +349,7 @@ export default function Home() {
           </section>
         </main>
 
-      </body>
+      </div>
 
       <footer>
         'Footer'
