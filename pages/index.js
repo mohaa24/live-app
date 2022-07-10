@@ -10,11 +10,22 @@ export default function Home() {
     indicatorSeparator: (styles) => ({ ...styles,  display: 'none' }),
     IndicatorContainer: (styles) => ({ ...styles,  display: 'none' })
 
-
+  }
+if(typeof window !== "undefined"){
+  window.onscroll = function() {scrollFunction()};
+}
+function scrollFunction() {
+  if ( document.documentElement.scrollTop > 10) {
+  
+    document.getElementById("header").style.background = "#a9c5db";
+    document.getElementById('header').style.borderBottom = '1px solid hsla(0,0%,100%,.2)'
+  } else {
     
 
-
+    document.getElementById("header").style.background = "transparent";
+    document.getElementById('header').style.borderBottom = 'none'
   }
+}
 
   return (
     <>
@@ -24,8 +35,8 @@ export default function Home() {
       </Head>
 
 
-      <div className='home'>
-        <header className='header'>
+      <div className='home body'>
+        <header className='header' id='header'>
           <div className="header__inner"><a aria-current="page" title="Kollosche" className="header__logo active" href="/">
             <img className='logo-img' src='http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png'>
             </img>
@@ -351,9 +362,75 @@ export default function Home() {
 
       </div>
 
-      <footer>
-        Footer
-      </footer>
+      <footer className="footer">
+    <div className="footer__top">
+        <div className="footer__inner">
+            <div className="footer__cols">
+                <div className="footer__col">
+                    <div className="footer__logo"><a aria-current="page" title="Kollosche" className="" href="/">
+                        <img className='logo-img' src='http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png'>
+                    </img>
+        
+                        </a>
+                        <p><a className="phone" href="tel:123456789" target="_blank"
+                                rel="nofollow noopener noreferrer">123 456 7890</a></p>
+                    </div>
+                    <div className="footer__address">
+                        <p>XXXXX
+                           <br/>121 xxx xxxxxe
+                            <br/>P.O. xxxx
+                         <br/>xxxxxxxx xxxx xxxx
+                           
+                        </p>
+                    </div>
+                </div>
+                <div className="footer__col">
+                    <h4 className="">Buy</h4>
+                    <ul className="">
+                        <li><a href="/buy/">Residential</a></li>
+              
+                    </ul>
+                </div>
+                <div className="footer__col">
+                    <h4 className="">Sell</h4>
+                    <ul className="">
+                        <li><a href="/sold/">Residential</a></li>
+                    
+                    </ul>
+                </div>
+                <div className="footer__col">
+                    <h4 className="">Rent</h4>
+                    <ul className="">
+         
+                        <li><a href="/lease-commercial/">Commercial</a></li>
+                        
+                    </ul>
+                </div>
+                <div className="footer__col">
+                    <h4 className="">About</h4>
+                    <ul className="">
+                        <li><a href="/about-us/">About Us</a></li>
+                     
+                        <li><a href="/careers/">Blog</a></li>
+                    </ul>
+                </div>
+                <div className="footer__col">
+                    <h4 className="">Connect</h4>
+                    <ul className="">
+                        <li><a to="https://www.linkedin.com//"
+                                href="https://www.linkedin.com/" target="_blank"
+                                rel="nofollow noopener noreferrer">LinkedIn</a></li>
+                        <li><a to="https://www.facebook.com/" href="https://www.facebook.com/"
+                                target="_blank" rel="nofollow noopener noreferrer">Facebook</a></li>
+                      
+                    </ul>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+  
+</footer>
 
 
       <style jsx global>{`
@@ -409,7 +486,11 @@ export default function Home() {
            filter: invert(1);
          }
 
-         body{
+        .logo-img {
+          width: 120px;
+      }
+
+         .body{
            background:grey
          }
      
