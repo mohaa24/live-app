@@ -37,7 +37,7 @@ function scrollFunction() {
 
       <div className='home body'>
         <header className='header' id='header'>
-          <div className="header__inner"><a aria-current="page" title="Kollosche" className="header__logo active" href="/">
+          <div className="header__inner"><a aria-current="page"  className="header__logo active" href="/">
             <img className='logo-img' src='http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png'>
             </img>
           </a>
@@ -68,10 +68,7 @@ function scrollFunction() {
                 </li>
                 <li><a href="/about-us/">About</a>
                   <ul className="header__sub-nav menu-about">
-                    <li><a href="/our-team/">Our Team</a></li>
-                    <li><a href="/news/">News</a></li>
-                    <li><a href="/kollosche-tv/">Kollosche TV</a></li>
-                    <li><a href="/careers/">Careers</a></li>
+                   
                     <li><a href="/contact-us/">Contact Us</a></li>
                   </ul>
                 </li>
@@ -367,7 +364,7 @@ function scrollFunction() {
         <div className="footer__inner">
             <div className="footer__cols">
                 <div className="footer__col">
-                    <div className="footer__logo"><a aria-current="page" title="Kollosche" className="" href="/">
+                    <div className="footer__logo"><a aria-current="page" title="A__Z" className="" href="/">
                         <img className='logo-img' src='http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png'>
                     </img>
         
@@ -1948,9 +1945,9 @@ function scrollFunction() {
          }
      
          .header {
-           background: #13223c;
-           background: #A9C5DB;
-           border-bottom: 1px solid hsla(0, 0%, 100%, .2);
+           background: transparent;
+           background: transparent;
+           border-bottom: none;
            padding: 20px 0;
            position: fixed;
            top: 0;
@@ -2299,14 +2296,14 @@ function scrollFunction() {
      
          .buying .header,
          .error404 .header,
-         .kollosche-tv .header,
+    .header,
          .privacy-policy .header,
          .terms-conditions .header {
            background: #13203c
          }
      
          .home .header {
-          background:#A9C5DB;
+          background:transparent;
 
          }
      
@@ -18159,7 +18156,7 @@ function scrollFunction() {
            }
      
            .footer__col:first-child:before {
-             background: #13203c;
+             background: #a9c6da69;
              content: "";
              display: block;
              height: 100vh;
