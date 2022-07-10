@@ -96,7 +96,7 @@ export default function Home() {
         <main>
 
           <section className='hero-banner'>
-            <video src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/WEB3-2.mp4" autoPlay="" loop="" playsInline=""></video>
+            <video src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/WEB3-2.mp4" autoPlay loop muted playsInline></video>
 
             <div className='hero-banner__inner'>
               <div className='hero-banner__content'>
