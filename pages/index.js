@@ -352,7 +352,7 @@ export default function Home() {
       </div>
 
       <footer>
-        'Footer'
+        Footer
       </footer>
 
 
@@ -4092,7 +4092,7 @@ export default function Home() {
          }
      
          .property-option:before {
-           background: rgb(169 198 219 / 39%);
+           background:  rgb(96 170 223 / 70%);
            content: "";
            height: 100%;
            left: 0;
