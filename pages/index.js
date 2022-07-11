@@ -1,7 +1,12 @@
 import Head from "next/head";
+import Script from "next/script";
 import Select from "react-select";
 import { TestimonialCard } from "../components/testimonials/testimonials";
-import { CountUp } from '../node_modules/countup.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { BlogCard } from "../components/blog_card/blogCard";
+
+
 
 export default function Home() {
   const blueDropdown = {
@@ -15,7 +20,6 @@ export default function Home() {
     indicatorSeparator: (styles) => ({ ...styles, display: "none" }),
     IndicatorContainer: (styles) => ({ ...styles, display: "none" }),
   };
-
 
 
 
@@ -40,6 +44,11 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <Script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+          crossOrigin="anonymous"
+        />
       </Head>
 
       <div className="home body">
@@ -172,7 +181,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="react-reveal hero-banner__heading">
-                  <h1>Luxury begins here</h1>
+                  <h1>OPENING DOORS TO MELBOURNE'S FINEST HOMES</h1>
                 </div>
                 {/* <div className="react-reveal hero-banner__search false">
                   <section className="search">
@@ -317,19 +326,37 @@ export default function Home() {
           <section className="property-options light-theme">
             <div className="property-options__heading">
               <h2>
-                The A - Z agency was born out of simple, yet radical idea: real
-                estate should be exclusively focussed on the customer, providing
-                a more personal and tailored aproach for every client.
+              
               </h2>
             </div>
             <div className="property-options__content">
               <div className="property-options__menu">
                 <div className="property-options__heading">
-                  {/* <h3>
+                  <div className="statistic-section" >
+                  <h3>
                 The A - Z agency was born out of simple, yet radical idea: real
                 estate should be exclusively focussed on the customer, providing
                 a more personal and tailored aproach for every client.
-              </h3> */}
+              </h3> 
+              <div className="statistic-bar">
+                <div className="statistic-block">
+                  <div className="number-block">93%</div>
+                  <div className="text-block">HIGHEST LIST TO
+SELL RATE IN HAWTHORN</div>
+
+                </div>
+                <div className="statistic-block">
+                  <div className="number-block">$304M</div>
+                  <div className="text-block">TOTAL VALUE
+OF PROPERTY SOLD</div>
+
+                </div>
+
+
+              </div>
+
+                  </div>
+              
                 </div>
               </div>
 
@@ -417,10 +444,7 @@ export default function Home() {
                 </div>
                 <div className="react-reveal business-data__items">
                   <div className="business-data__item">
-                    <p className="value">
-                  
-                      93%
-                    </p>
+                    <p className="value">93%</p>
                     <p className="label">
                       Highest list to
                       <br />
@@ -467,7 +491,7 @@ export default function Home() {
 
           <section className="testimonials-section">
             <div className="testimonials-heading">
-              <h2>We don't like to brag, but we are changing the game.</h2>
+              <h2>What they have said about us</h2>
             </div>
 
             <div className="testimonials">
@@ -475,7 +499,21 @@ export default function Home() {
               <TestimonialCard></TestimonialCard>
               <TestimonialCard></TestimonialCard>
             </div>
+
+            <div className="testimonials-heading">
+              <h2>Blog</h2>
+            </div>
+                <div className="blog-container">
+                <BlogCard></BlogCard>
+                <BlogCard></BlogCard>
+                <BlogCard></BlogCard>
+
+                
+                </div>
           </section>
+
+        
+     
         </main>
       </div>
 
@@ -491,16 +529,6 @@ export default function Home() {
                       src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png"
                     ></img>
                   </a>
-                  <p>
-                    <a
-                      className="phone"
-                      href="tel:03 9815 1124"
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                    >
-                      03 9815 1124
-                    </a>
-                  </p>
                 </div>
                 <div className="footer__address">
                   <p>
@@ -514,6 +542,8 @@ export default function Home() {
                     <a href="mailto:CONTACT@ANTONZHOUK.COM.AU">
                       CONTACT@ANTONZHOUK.COM.AU
                     </a>
+                    <br />
+                    <a href="tel:03 9815 1124">03 9815 1124</a>
                   </p>
                 </div>
               </div>
@@ -570,30 +600,126 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="footer__bottom">
+        <div className="row" id="copyright" data-layout="default"></div>
+        {/* <div className="footer__bottom">
           <div className="footer__inner">
             <div className="footer__cols">
               <div className="footer__col"></div>
               <div className="footer__col">
                 <p>
                   ©2022 Anton Zhouk·Real Estate Agency. <br />
-                  {/* Design by{" "} */}
-                  {/* <a
-                    href="https:"
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                  >
-                    
-                  </a> */}
+                 
                 </p>
               </div>
             </div>
+          </div>
+        </div> */}
+        <div className="footer-bottom">
+          <div className="footer-bottom-text">
+            © 2022 Anton Zhouk - Real Estate Agency.
+          </div>
+          <div className="footer-bottom-icons">
+            <ul className="social">
+              <li>
+                <a target="_blank" rel="noopener" href="#%20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                             </a>
+              </li>
+              <li>
+                <a target="_blank" rel="noopener" href="#%20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>          
+                      </a>
+              </li>
+              <li>
+                <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>                     </a>
+              </li>
+            </ul>
           </div>
         </div>
       </footer>
 
       <style jsx global>{`
         @charset "UTF-8";
+
+
+        .blog-container {
+          display: grid;
+          grid-auto-flow: column;
+          margin: 80px 5vw;
+      }
+    .number-block {
+        font-size: 1.8rem;
+    }
+    
+    .text-block {
+        font-size: 0.8rem;
+    }
+    
+    .statistic-section h3 {
+        font-size: 1.8rem;
+        font-weight: 300;
+        font-family: Montserrat;
+    }
+    
+    
+      .statistic-bar {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+      }
+      
+      
+        //Footer
+   
+      
+      .social a svg {
+          fill: grey;
+          width:16px
+      }
+      
+      .footer-bottom-icons ul {
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .footer-bottom-icons ul li {
+          margin: 0 10px;
+      }
+
+        .footer-bottom {
+          display: flex;
+          flex-direction: row;
+          width: 100vw;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .footer-bottom-icons ul {
+          list-style: none;
+          display: flex;
+        }
+        .footer-bottom-text {
+          margin: 20px;
+          color: grey;
+        }
+
+        .footer-bottom-icons {
+          margin: 0 20px;
+        }
+
+        .footer-bottom {
+          background: #252525;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        //Footer
 
         .container--testimonials {
           background: white;
@@ -2177,7 +2303,7 @@ export default function Home() {
 
         @media (min-width: 900px) {
           .header {
-            padding: 34px 0;
+            padding: 20px 0;
           }
         }
 
@@ -2250,13 +2376,13 @@ export default function Home() {
         @media (min-width: 900px) {
           .header__nav ul li {
             display: block;
-            margin-left: 40px;
+            margin-left: 30px;
           }
         }
 
         @media (min-width: 1240px) {
           .header__nav ul li {
-            margin-left: 95px;
+            margin-left: 60px;
           }
         }
 
@@ -3025,7 +3151,7 @@ export default function Home() {
         }
 
         .hero-banner:before {
-          background: rgba(35, 51, 86, 0.7);
+          background: rgb(35 51 86 / 16%);
           content: "";
           height: 100%;
           left: 0;
@@ -3163,24 +3289,24 @@ export default function Home() {
           text-transform: uppercase;
         }
 
-        .hero-banner__menu ul li a:before,
-        .hero-banner__menu ul li button:before {
-          background: hsla(0, 0%, 100%, 0.4);
-          content: "";
-          display: inline-block;
-          height: 1px;
-          margin-right: 10px;
-          vertical-align: middle;
-          width: 15px;
-        }
+        // .hero-banner__menu ul li a:before,
+        // .hero-banner__menu ul li button:before {
+        //   background: hsla(0, 0%, 100%, 0.4);
+        //   content: "";
+        //   display: inline-block;
+        //   height: 1px;
+        //   margin-right: 10px;
+        //   vertical-align: middle;
+        //   width: 15px;
+        // }
 
-        @media (min-width: 900px) {
-          .hero-banner__menu ul li a:before,
-          .hero-banner__menu ul li button:before {
-            margin-right: 20px;
-            width: 63px;
-          }
-        }
+        // @media (min-width: 900px) {
+        //   .hero-banner__menu ul li a:before,
+        //   .hero-banner__menu ul li button:before {
+        //     margin-right: 20px;
+        //     width: 63px;
+        //   }
+        // }
 
         .hero-banner__menu ul:last-child {
           margin-left: 0;
@@ -3213,6 +3339,7 @@ export default function Home() {
         }
 
         .hero-banner__heading h1 {
+          font-family: Montserrat;
           color: #fff;
           font-size: 22px;
           font-weight: 500;
@@ -4157,7 +4284,7 @@ export default function Home() {
         }
 
         .property-options:before {
-          background: #a9c6da69;
+          background: none;
           bottom: 0;
           content: "";
           height: 200px;
@@ -4204,6 +4331,11 @@ export default function Home() {
         }
 
         @media (min-width: 900px) {
+          .testimonials-heading h2{
+            max-width:none !important;
+            text-align:center;
+
+          }
           .property-options__heading h2,
           .testimonials-heading h2 {
             font-size: 32px;
@@ -4250,7 +4382,10 @@ export default function Home() {
             display: block;
             margin-bottom: 0;
             margin-left: 0;
-            width: 300px;
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         }
 
@@ -4271,7 +4406,7 @@ export default function Home() {
         }
 
         .property-options__menu:after {
-          background: #a9c6da69;
+          background:none;
           bottom: 0;
           content: "";
           display: none;
@@ -4387,7 +4522,7 @@ export default function Home() {
         @media (min-width: 900px) {
           .property-options__slides {
             padding-bottom: 0;
-            width: calc(100% - 300px);
+            width: calc(100% - 40%);
           }
         }
 
@@ -8672,6 +8807,7 @@ export default function Home() {
         .business-data {
           background: #13203c;
           background: #a8c5da;
+          display:none
         }
 
         .business-data__inner {
@@ -18429,7 +18565,7 @@ export default function Home() {
         }
 
         .footer {
-          background: #efefef;
+          background:rgb(37 37 37);
           overflow: hidden;
         }
 
@@ -18451,7 +18587,7 @@ export default function Home() {
 
         @media (min-width: 900px) {
           .footer__top {
-            padding: 80px 0;
+            padding: 30px 0 0 0;
           }
         }
 
@@ -18574,7 +18710,7 @@ export default function Home() {
           }
 
           .footer__col:first-child:before {
-            background: #a9c5db;
+            // background: #a9c5db;
             content: "";
             display: block;
             height: 100vh;
@@ -18661,6 +18797,7 @@ export default function Home() {
 
         .footer__col h4 {
           color: #233356;
+          color:white;
           font-size: 12px;
           font-weight: 700;
           letter-spacing: 1.8px;
@@ -18717,7 +18854,7 @@ export default function Home() {
         }
 
         .footer__col ul li a {
-          color: #233356;
+          color: white;
           cursor: pointer;
           display: inline-block;
           margin-bottom: -2px;
@@ -18728,7 +18865,7 @@ export default function Home() {
         }
 
         .footer__col ul li a:before {
-          background: #233356;
+          background: #ffffff;
           bottom: 0;
           content: "";
           height: 1px;
