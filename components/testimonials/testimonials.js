@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 const Testimonials = styled.div`
 {
-  //background-color: aliceblue;
-  //border-radius: 5px;
+
   padding: 40px 25px 25px;
   flex-grow: 1;
   flex-basis: 280px;
@@ -17,7 +16,6 @@ const TestimonialsText = styled.div`
 p{
   font-weight: normal;
   font-size: 22px;
- // line-height: 21px;
   margin-bottom: 1.5625rem;
   font-family: Montserrat;
 }
