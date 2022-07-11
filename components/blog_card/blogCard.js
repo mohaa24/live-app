@@ -100,13 +100,13 @@ export const BlogCard = () =>{
 
   
 
-    <Container class="container">
-      <Square class="square">
-        <img src="https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e1c8fe0c9197d66232511525bfd1cc82&auto=format&fit=crop&w=1100&q=80" class="mask"/>
-     <div class="h1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus consectetur?</div>
+    <Container className="container">
+      <Square className="square">
+        <img src="https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e1c8fe0c9197d66232511525bfd1cc82&auto=format&fit=crop&w=1100&q=80" className="mask"/>
+     <div className="h1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus consectetur?</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus consectetur mi nec hendrerit. Integer id est massa.</p>
         
-     {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" class="button">Read More</a></Button> */}
+     {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
       </Square>
       
       
