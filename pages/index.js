@@ -18769,7 +18769,7 @@ export default function Home() {
 
         @media (min-width: 900px) {
           .footer__bottom {
-            padding: 30px 0 90px;
+            padding: 30px 0 10px;
           }
         }
 
