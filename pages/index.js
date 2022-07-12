@@ -296,12 +296,12 @@ export default function Home() {
             </div>
           </section>
           <section className="property-options light-theme">
-          <Fade top>
+   
             <div className="property-options__heading">
             
             </div>
-            </Fade>
-            <Fade  >
+  
+       
             <div className="property-options__content">
               <div className="property-options__menu">
                 <div className="property-options__heading">
@@ -401,7 +401,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            </Fade>
+           
           </section>
 
           <section className="business-data">
@@ -462,7 +462,7 @@ export default function Home() {
 
           
           <section className="testimonials-section">
-          <Fade top cascade>
+         
             <div className="testimonials-heading">
               <h2>THE PROOF</h2>
             </div>
@@ -472,25 +472,25 @@ export default function Home() {
               <TestimonialCard></TestimonialCard>
               <TestimonialCard></TestimonialCard>
             </div>
-            </Fade>
+          
         
           </section>
                
 
               
           <section className="blog-section">
-          <Fade cascade>
+    
           <div className="testimonials-heading">
               <h2>LATEST INSIGHTS</h2>
             </div>
             <div className="blog-container">
-              <Fade>
+       
               <BlogCard></BlogCard>
               <BlogCard></BlogCard>
               <BlogCard></BlogCard>
-              </Fade>
+            
             </div>
-            </Fade>
+        
           </section>
          
         </main>
