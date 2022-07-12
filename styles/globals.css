@@ -6,11 +6,16 @@
     margin-right: 60px;
 }
 
+section.blog-section {
+  background: white;
+}
+
+
 
   .blog-container {
     display: grid;
     grid-auto-flow: column;
-    margin: 80px 5vw;
+    padding: 80px 5vw;
 }
 .number-block {
   font-size: 1.8rem;
@@ -83,9 +88,9 @@
   }
 
 
-  .container--testimonials {
-    background: white;
-  }
+  .testimonials-heading { 
+    padding-top: 3rem;
+}
   .testimonials-section h2 {
     font-size: 32px;
     line-height: 48px;
@@ -95,16 +100,19 @@
   }
   .testimonials-section {
     background: white;
+    background: linear-gradient(58deg,#a9c5dc 0%,#ffffff 100%);
+
   }
   .testimonials {
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
     justify-content: center;
-    margin-bottom: 100px;
+    padding-bottom: 50px;
+    padding-top: 30px;
   }
   .testimonial:hover {
-    background: #d3e8f8;
+    background: #a9c6db;
     transition-duration: 0.25s;
     transition-timing-function: ease-in;
   }
@@ -1519,9 +1527,6 @@
     color: #fff;
   }
 
-  .react-reveal {
-    opacity: 1;
-  }
 
   body {
     font-weight: 500;
@@ -1827,7 +1832,7 @@
   }
 
   .header__nav ul ul {
-    background: #13203c;
+    background: #a9c5dc;
     left: -20px;
     opacity: 0;
     padding: 15px 20px;
@@ -2684,6 +2689,7 @@
 
   .hero-banner__heading h1 {
     font-family: Montserrat;
+    font-family: "Big Caslon";
     color: #fff;
     font-size: 22px;
     font-weight: 500;
@@ -3644,7 +3650,7 @@
 
     .property-options,
     .testimonials-section {
-      padding: 100px 0 0;
+      padding: 0 0 0;
     }
   }
 
@@ -3655,16 +3661,20 @@
     padding: 0 20px;
   }
 
+  .testimonials-heading {
+    margin: 0 auto 0;
+  }
+
   @media (min-width: 900px) {
     .property-options__heading,
     .testimonials-heading {
-      margin-bottom: 80px;
       padding: 0 30px;
     }
   }
 
   .property-options__heading h2,
   .testimonials-heading h2 {
+    font-family: 'Big carlson';
     color: #233356;
     font-size: 20px;
     font-weight: 500;
@@ -3682,8 +3692,9 @@
     }
     .property-options__heading h2,
     .testimonials-heading h2 {
-      font-size: 32px;
+      font-size:40px;
       line-height: 48px;
+      padding-top: 50px;
     }
   }
 
@@ -4078,7 +4089,7 @@
   }
 
   .property-option__details {
-    background: rgba(11, 21, 44, 0.7);
+    background: rgb(169 198 219 / 91%);
     bottom: 0;
     padding: 24px 20px;
     position: absolute;
@@ -9009,7 +9020,7 @@
     height: 5px;
   }
 
-  .testimonials__slide:last-child .testimonial {
+  .testimonials__slide:last-child .testimonial:last-child {
     margin: 0;
     padding: 0;
   }
@@ -18042,7 +18053,7 @@
 
     .footer__col:first-child {
       position: relative;
-      width: 270px;
+      width: 30vw;
     }
 
     .footer__col:first-child:before {
@@ -18188,6 +18199,12 @@
     letter-spacing: 0.4px;
   }
 
+  .addHover {
+    overflow: hidden;
+
+    
+  }
+
   .footer__col ul li a {
     color: white;
     cursor: pointer;
@@ -18197,6 +18214,23 @@
     padding-bottom: 2px;
     position: relative;
     text-decoration: none;
+  }
+
+  .addHover:before{
+    background: #ffffff;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    -webkit-transform: translateX(-101%);
+    transform: translateX(-101%);
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out,
+      -webkit-transform 0.3s ease-in-out;
+    width: 100%;
+    z-index: -1;
   }
 
   .footer__col ul li a:before {
@@ -18216,20 +18250,24 @@
     z-index: -1;
   }
 
-  .footer__col ul li a:hover:before {
+  .footer__col ul li a:hover:before,   .addHover:hover:before {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
 
-  .footer__col ul li a:before {
+  .footer__col ul li a:before ,  .addHover:before {
     z-index: 1;
   }
 
-  .footer__col ul li a.active:before {
+  .footer__col ul li a.active:before ,   .addHover.active:before {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     width: calc(100% - 2px);
   }
+
+  .footer__col p {
+    color: grey;
+}
 
   .footer__col ul.active {
     display: block;
@@ -18237,6 +18275,7 @@
 
   .footer__bottom {
     padding: 20px 0 40px;
+    
   }
 
   @media (min-width: 900px) {

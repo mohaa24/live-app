@@ -39,9 +39,8 @@ const Square = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      -webkit-transform: translate(20px, -10px);
-      -ms-transform: translate(10px, -10px);
-      transform: translate(10px, -10px);
+
+      transform: scale(1.05);
       -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     }
@@ -52,7 +51,7 @@ const Square = styled.div`
       margin-top: 240px;
       padding-left: 30px;
 
-      font-family: "Merriweather", serif;
+      font-family: 'Big carlson';
       font-size: 24px;
     }
 
@@ -61,8 +60,8 @@ const Square = styled.div`
       padding-left: 30px;
       padding-right: 30px;
       padding-top: 20px;
-      font-family: "Open Sans", sans-serif;
-      font-size: 12px;
+      font-family: Montserrat;
+            font-size: 12px;
       color: #c8c8c8;
       line-height: 18px;
     }
@@ -83,7 +82,7 @@ export const BlogCard = () => {
       <Container className="container">
         <Square className="square">
           <img
-            src="https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e1c8fe0c9197d66232511525bfd1cc82&auto=format&fit=crop&w=1100&q=80"
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
             className="mask"
           />
           <div className="h1">
