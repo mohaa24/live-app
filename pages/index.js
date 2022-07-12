@@ -4,6 +4,8 @@ import Select from "react-select";
 import { TestimonialCard } from "../components/testimonials/testimonials";
 import { BlogCard } from "../components/blog_card/blogCard";
 import Fade from 'react-reveal/Fade';
+import Countup from 'react-countup';
+
 
 
 export default function Home() {
@@ -314,17 +316,68 @@ export default function Home() {
                     </h3>
                     <div className="statistic-bar">
                       <div className="statistic-block">
-                        <div className="number-block">93%</div>
+                        <div className="number-block">
+                           
+                          <Countup className="number-block"
+                                    duration={2}
+                                    end={102}
+                                    delay={1}
+                                    enableScrollSpy={true}
+                                />
+                          </div>
                         <div className="text-block">
-                          HIGHEST LIST TO SELL RATE IN HAWTHORN
+                        transactions in the past 3 years
                         </div>
                       </div>
                       <div className="statistic-block">
-                        <div className="number-block">$304M</div>
+                        <div className="number-block">$  <Countup className="number-block"
+                                    duration={2}
+                                    end={6.7}
+                                    delay={1}
+                                    decimals={1}
+  decimal="."
+                                    enableScrollSpy={true}
+                                />M</div>
+                        <div className="text-block">
+                        highest sale price
+                        </div>
+                      </div>
+                      <div className="statistic-block">
+                        <div className="number-block">$<Countup className="number-block"
+                                    duration={2}
+                                    end={243}
+                                    delay={1}
+                                    
+                                    enableScrollSpy={true}
+                                />M</div>
+                        <div className="text-block">
+                        average sale price
+                        </div>
+                      </div> <div className="statistic-block">
+                        <div className="number-block">$<Countup className="number-block"
+                                    duration={2}
+                                    end={238}
+                                    delay={1}
+                             
+                                    enableScrollSpy={true}
+                                />M</div>
                         <div className="text-block">
                           TOTAL VALUE OF PROPERTY SOLD
                         </div>
+                      </div> <div className="statistic-block">
+                        <div className="number-block">$<Countup className="number-block"
+                                    duration={2}
+                                    end={10.2}
+                                    delay={1}
+                                    decimals={1}
+  decimal="."
+                                    enableScrollSpy={true}
+                                />M</div>
+                        <div className="text-block">
+                        sum total achieved above client's expectations
+                        </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
