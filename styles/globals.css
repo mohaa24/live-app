@@ -2,8 +2,8 @@
   @charset "UTF-8";
 
   .statistic-block {
-    width: 7vw;
-    margin-right: 3vw;
+    width: 27%;
+    margin-right: 2vw;
     margin-bottom: 25px;
 }
 
@@ -34,15 +34,17 @@ section.blog-section {
   line-height:3rem;
   font-weight: 300;
   font-family: Montserrat;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 
 .statistic-bar {
   display: grid;
-  grid-template-columns: repeat(3, 25%);
+  grid-template-columns: repeat(3, 32%);
   grid-column-gap: 10px;
   justify-content: center;
+  flex-wrap: wrap;
+    display: flex;
 }
 
 
@@ -104,7 +106,7 @@ section.blog-section {
   }
   .testimonials-section {
     background: white;
-    background: linear-gradient(58deg,#a9c5dc 0%,#ffffff 100%);
+    background: linear-gradient(180deg,#a9c5dc 0%,#ffffff 100%);
 
   }
   .testimonials {
@@ -3743,7 +3745,7 @@ section.blog-section {
       display: block;
       margin-bottom: 0;
       margin-left: 0;
-      width: 35vw;
+      width: 50vw;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -3873,7 +3875,7 @@ section.blog-section {
   @media (min-width: 900px) {
     .property-options__slides {
       padding-bottom: 0;
-      width: calc(100% - 40%);
+      width: calc(100% - 50vw);
     }
   }
 
