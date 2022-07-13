@@ -121,7 +121,7 @@ section.blog-section {
     padding-top: 30px;
   }
   .testimonial:hover {
-    background: #a9c6db;
+    background: #6bbfc4;
     transition-duration: 0.25s;
     transition-timing-function: ease-in;
   }

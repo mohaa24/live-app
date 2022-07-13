@@ -12,7 +12,7 @@ const REACT_APP_API_KEY = 'c701862b73174ad084e133031221307'
 
 export const Weather = () => {
 
-  const [result , setResult] = useState({})
+  const [tem , setTemp] = useState(0)
 
   useEffect(()=>{
     getTemp();
@@ -22,13 +22,13 @@ const  getTemp  = async () =>{
   await fetch(`${REACT_APP_API_URL}?key=${REACT_APP_API_KEY}&q=-37.8216,145.0367`)
       .then(res => res.json())
       .then(result => {      
-        setResult(result.current.temp_c);
+        setTemp(result.current.temp_c);
       });
 }
 
 
   return (
-   
+   <>
       <div className=" hero-banner__weather hero-banner__weather--desktop">
                   <section className="weather">
                     <div className="weather__inner">
@@ -59,12 +59,13 @@ const  getTemp  = async () =>{
                         </svg>
                         <p>
                         
-                          Hawthorn VIC 3122<span> {result && result}° C</span>
+                        Hawthorn VIC 3122 {tem &&  <span> {tem}° C</span>}
                         </p>
                       </div>
                     </div>
                   </section>
                 </div>
-    
+
+                </>
   )
 };
