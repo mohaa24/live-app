@@ -16,7 +16,7 @@ export const Weather = () => {
 
   useEffect(()=>{
     getTemp();
-  },[])
+  })
 
 const  getTemp  = async () =>{
   await fetch(`${REACT_APP_API_URL}?key=${REACT_APP_API_KEY}&q=-37.8216,145.0367`)
