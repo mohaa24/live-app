@@ -28,7 +28,7 @@ export default function Home() {
     };
   }
   function scrollFunction() {
-    if (document.documentElement.scrollTop > 10) {
+    if (document.documentElement.scrollTop > 50) {
       document.getElementById("header").style.background = "#a9c5db";
       document.getElementById("header").style.borderBottom =
         "1px solid hsla(0,0%,100%,.2)";
