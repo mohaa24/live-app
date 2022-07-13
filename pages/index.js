@@ -4,7 +4,8 @@ import Select from "react-select";
 import { TestimonialCard } from "../components/testimonials/testimonials";
 import { BlogCard } from "../components/blog_card/blogCard";
 import Fade from 'react-reveal/Fade';
-import Countup from 'react-countup';
+import { Header } from "../components/header/header";
+import { StatisticBar } from "../components/statisticBlock/statisticBar";
 
 
 
@@ -12,7 +13,7 @@ export default function Home() {
   const blueDropdown = {
     control: (styles) => ({
       ...styles,
-      backgroundColor: "#a9c5db",
+      backgroundColor: "#60c2c9",
       borderRadius: 0,
       color: "#ffffff",
     }),
@@ -22,146 +23,20 @@ export default function Home() {
     dropdownIndicator:   (styles) => ({ ...styles, color: "white" }),
   };
 
-  if (typeof window !== "undefined") {
-    window.onscroll = function () {
-      scrollFunction();
-    };
-  }
-  function scrollFunction() {
-    if (document.documentElement.scrollTop > 50) {
-      document.getElementById("header").style.background = "#a9c5db";
-      document.getElementById("header").style.borderBottom =
-        "1px solid hsla(0,0%,100%,.2)";
-    } else {
-      document.getElementById("header").style.background = "transparent";
-      document.getElementById("header").style.borderBottom = "none";
-      console.log('transparent')
-    }
-  }
+
 
   return (
     <>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-        <Script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-          crossOrigin="anonymous"
-        />
+   
       </Head>
 
       <div className="home body">
-        <header className="header" id="header">
-          <div className="header__inner">
-            <a aria-current="page" className="header__logo active" href="/">
-              <img
-                className="logo-img"
-                src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png"
-              ></img>
-            </a>
-            <nav className="header__nav">
-              <ul>
-                <li>
-                  <a href="/buy/">Buy</a>
-                  <ul className="header__sub-nav">
-                    <li>
-                      <a href="/buy/">Residential</a>
-                    </li>
-                    <li>
-                      <a href="/buy-commercial/">Commercial</a>
-                    </li>
-                    <li>
-                      <a href="/projects/">New Projects</a>
-                    </li>
-                    <li>
-                      <a href="/off-market/">Off Market</a>
-                    </li>
-                    <li>
-                      <a href="/suburb-guides/">Suburb Profiles</a>
-                    </li>
-                    <li>
-                      <a href="/appraisal/">Appraisal</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li>
-                  <a href="/sold/">Sell</a>
-                  <ul className="header__sub-nav menu-sold">
-                    <li>
-                      <a href="/sold/">Residential</a>
-                    </li>
-                    <li>
-                      <a href="/sold-commercial/">Commercial</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="/lease/">Rent</a>
-                  <ul className="header__sub-nav menu-lease">
-                    <li>
-                      <a href="/lease/">Residential</a>
-                    </li>
-                    <li>
-                      <a href="/lease-commercial/">Commercial</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="/about-us/">About</a>
-                  <ul className="header__sub-nav menu-about">
-                    <li>
-                      <a href="/contact-us/">Contact Us</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="/blog/">Blog</a>
-                </li>
-                <li>
-                  <a href="/contactt-us/">Contact</a>
-                </li>
-                <li>
-                  <a className="header__search-icon" href="/buy/">
-                    <svg
-                      width="19px"
-                      height="18px"
-                      viewBox="0 0 19 18"
-                      version="1.1"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g
-                        stroke="none"
-                        strokeWidth="1"
-                        fill="none"
-                        fillRule="evenodd"
-                      >
-                        <g transform="translate(-1289.000000, -46.000000)">
-                          <g transform="translate(1289.000000, 46.000000)">
-                            <g>
-                              <g>
-                                <path
-                                  d="M18.6635459,17.284253 L11.6362006,10.9253654 C13.1367102,9.17733337 13.6202361,6.77412093 12.9112432,4.58183552 C12.2032082,2.38959923 10.405318,0.724091073 8.16612176,0.184001938 C5.92591848,-0.355178451 3.56664508,0.308723477 1.93778144,1.93778114 C0.308721319,3.56684127 -0.355178153,5.92594275 0.184002237,8.16612146 C0.724140492,10.4053669 2.38967321,12.2034044 4.58183582,12.9112429 C6.7740721,13.6202358 9.17738279,13.1367025 10.9253657,11.6362003 L17.9477988,18 L18.6635459,17.284253 Z M2.65141627,10.5820072 C1.59032164,9.52857551 0.991655311,8.09720422 0.987813382,6.60145942 C0.984945581,5.1067216 1.57592909,3.67137148 2.63223439,2.61329781 C3.68758182,1.55411892 5.12194951,0.959284049 6.61671189,0.959284049 C8.11147427,0.959284049 9.5458174,1.55411892 10.6011894,2.61329781 C11.6574947,3.67151884 12.2484735,5.10669704 12.2456104,6.60145942 C12.2417623,8.0971551 11.6431021,9.52860007 10.5820075,10.5820072 C9.5362633,11.6440597 8.10776561,12.2417682 6.61668733,12.2417682 C5.12560905,12.2417682 3.69716048,11.6440597 2.65136715,10.5820072 L2.65141627,10.5820072 Z"
-                                  fill="#FFFFFF"
-                                  fillRule="nonzero"
-                                ></path>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </a>
-                </li>
-
-                {/* <li><button className="header__hamburger" type="button"><span className="lines"></span></button></li> */}
-              </ul>
-            </nav>
-          </div>
-        </header>
-
+<Header></Header>
         <main>
+
           <section className="hero-banner">
             <video
               src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/WEB3-2.mp4"
@@ -176,7 +51,7 @@ export default function Home() {
               <Fade top delay={2500}>
                 <div className="hero-banner__menu">
                   <ul className="">
-                    <li className="active">
+                    <li className="">
                       <button type="button">Request Appraisal</button>
                     </li>
                   </ul>
@@ -315,82 +190,7 @@ export default function Home() {
                       customer, providing a more personal and tailored aproach
                       for every client.
                     </h3>
-                    <div className="statistic-bar">
-                      <div className="statistic-block">
-                        <div className="number-block">
-                           
-                          {/* <Countup className="number-block"
-                                    duration={2}
-                                    end={102}
-                                    delay={1}
-                                    enableScrollSpy={true}
-                                />
-                          </div> */}
-                        102
-                      </div>
-                      <div className="text-block">
-                        transactions in the past 3 years
-                        </div>
-                        </div>
-                      <div className="statistic-block">
-                        <div className="number-block">$ 
-                         {/* <Countup className="number-block"
-                                    duration={2}
-                                    end={6.7}
-                                    delay={1}
-                                    decimals={1}
-  decimal="."
-                                    enableScrollSpy={true}
-                                /> */}
-                                6.7M</div>
-                        <div className="text-block">
-                        highest sale price
-                        </div>
-                      </div>
-                      <div className="statistic-block">
-                        <div className="number-block">$
-                        {/* <Countup className="number-block"
-                                    duration={2}
-                                    end={243}
-                                    delay={1}
-                                    
-                                    enableScrollSpy={true}
-                                /> */}
-                                243M
-                                </div>
-                        <div className="text-block">
-                        average sale price
-                        </div>
-                      </div> <div className="statistic-block">
-                        <div className="number-block">$
-                        {/* <Countup className="number-block"
-                                    duration={2}
-                                    end={238}
-                                    delay={1}
-                             
-                                    enableScrollSpy={true}
-                                /> */}
-                                238M</div>
-                        <div className="text-block">
-                          TOTAL VALUE OF PROPERTY SOLD
-                        </div>
-                      </div> <div className="statistic-block">
-                        <div className="number-block">$
-                        {/* <Countup className="number-block"
-                                    duration={2}
-                                    end={10.2}
-                                    delay={1}
-                                    decimals={1}
-  decimal="."
-                                    enableScrollSpy={true}
-                                /> */}
-                              10.2M</div>
-                        <div className="text-block">
-                        sum total achieved above client's expectations
-                        </div>
-                      </div>
-
-                    </div>
+                 <StatisticBar></StatisticBar>
                   </div>
                 </div>
               </div>

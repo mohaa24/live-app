@@ -3,8 +3,7 @@
 
   .statistic-block {
     width: 27%;
-    margin-right: 2vw;
-    margin-bottom: 25px;
+ 
 }
 
 section.blog-section {
@@ -19,7 +18,7 @@ section.blog-section {
     padding: 80px 5vw;
 }
 .number-block {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
   display: inline-block;
 }
@@ -37,11 +36,15 @@ section.blog-section {
   margin-bottom: 2rem;
 }
 
+.header.active{
+  background:#60c2c9 !important;
+}
 
 .statistic-bar {
   display: grid;
   grid-template-columns: repeat(3, 32%);
-  grid-column-gap: 10px;
+  gap: 3vw;
+
   justify-content: flex-start;
   flex-wrap: wrap;
     display: flex;
@@ -106,7 +109,7 @@ section.blog-section {
   }
   .testimonials-section {
     background: white;
-    background: linear-gradient(180deg,#a9c5dc 0%,#ffffff 100%);
+    background: #60c2c9;
 
   }
   .testimonials {
@@ -2628,6 +2631,7 @@ section.blog-section {
     padding: 0;
     text-transform: uppercase;
     transition: opacity 0.3s ease;
+    opacity: 1;
   }
 
   .hero-banner__menu ul li:last-of-type {
@@ -4095,7 +4099,7 @@ section.blog-section {
   }
 
   .property-option__details {
-    background: rgb(169 198 219 / 91%);
+    background: #60c2c9ad;
     bottom: 0;
     padding: 24px 20px;
     position: absolute;
