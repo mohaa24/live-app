@@ -113,7 +113,7 @@ section.blog-section {
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
-    justify-content: center;
+    justify-content: initial;
     padding-bottom: 50px;
     padding-top: 30px;
   }
