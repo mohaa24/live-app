@@ -7,7 +7,7 @@ const Container = styled.div`
   }
 `;
 
-const REACT_APP_API_URL = 'http://api.weatherapi.com/v1/current.json'
+const REACT_APP_API_URL = 'https://api.weatherapi.com/v1/current.json'
 const REACT_APP_API_KEY = 'c701862b73174ad084e133031221307'
 
 export const Weather = () => {
@@ -16,9 +16,11 @@ export const Weather = () => {
 
   useEffect(()=>{
     getTemp();
-  })
+  },[])
 
 const  getTemp  = async () =>{
+
+  console.log('calling API')
   await fetch(`${REACT_APP_API_URL}?key=${REACT_APP_API_KEY}&q=-37.8216,145.0367`)
       .then(res => res.json())
       .then(result => {      
