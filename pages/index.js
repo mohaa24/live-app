@@ -35,6 +35,7 @@ export default function Home() {
     } else {
       document.getElementById("header").style.background = "transparent";
       document.getElementById("header").style.borderBottom = "none";
+      console.log('transparent')
     }
   }
 
