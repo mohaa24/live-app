@@ -42,7 +42,7 @@ section.blog-section {
   display: grid;
   grid-template-columns: repeat(3, 32%);
   grid-column-gap: 10px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
     display: flex;
 }
@@ -113,7 +113,7 @@ section.blog-section {
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
-    justify-content: initial;
+    justify-content: center;
     padding-bottom: 50px;
     padding-top: 30px;
   }
