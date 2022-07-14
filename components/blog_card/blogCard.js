@@ -30,7 +30,7 @@ const Container = styled.div`
 const Square = styled.div`
    {
     width: 27vw;
-    height: 430px;
+   
     background: white;
     border-radius: 4px;
     box-shadow: 0px 20px 50px #d9dbdf;

@@ -7,6 +7,11 @@ import Fade from 'react-reveal/Fade';
 import { Header } from "../components/header/header";
 import { StatisticBar } from "../components/statisticBlock/statisticBar";
 import { Weather } from "../components/weather/weather";
+import Countup from 'react-countup';
+
+
+import "swiper/css/bundle";
+
 
 
 
@@ -46,7 +51,7 @@ export default function Home() {
               muted
               playsInline
             ></video>
-    
+
             <div className="hero-banner__inner">
               <div className="hero-banner__content">
               <Fade top delay={2500}>
@@ -89,7 +94,7 @@ export default function Home() {
                       { value: "vanilla", label: "Vanilla" },
                     ]}
                     styles={blueDropdown}
-                    placeholder="Min Price"
+                    placeholder="MIN PRICE"
                   ></Select>
                   <Select
                     className="dropDown"
@@ -99,7 +104,7 @@ export default function Home() {
                       { value: "vanilla", label: "Vanilla" },
                     ]}
                     styles={blueDropdown}
-                    placeholder="Max Price"
+                    placeholder="MAX PRICE"
                   ></Select>
                   <Select
                     className="dropDown"
@@ -109,7 +114,7 @@ export default function Home() {
                       { value: "vanilla", label: "Vanilla" },
                     ]}
                     styles={blueDropdown}
-                    placeholder="Bed"
+                    placeholder="BED"
                   ></Select>
                   <Select
                     className="dropDown"
@@ -119,7 +124,7 @@ export default function Home() {
                       { value: "vanilla", label: "Vanilla" },
                     ]}
                     styles={blueDropdown}
-                    placeholder="Bath"
+                    placeholder="BATH"
                   ></Select>
                   <Select
                     className="dropDown"
@@ -129,7 +134,7 @@ export default function Home() {
                       { value: "vanilla", label: "Vanilla" },
                     ]}
                     styles={blueDropdown}
-                    placeholder="Car"
+                    placeholder="CAR"
                   ></Select>
                 </div>
                 </Fade>
@@ -141,168 +146,194 @@ export default function Home() {
             </div>
           </section>
           <section className="property-options light-theme">
-   
-            <div className="property-options__heading">
-            
-            </div>
-  
-       
-            <div className="property-options__content">
-              <div className="property-options__menu">
-                <div className="property-options__heading">
-                  <div className="statistic-section">
-                    <h3>
-                      The A - Z agency was born out of simple, yet radical idea:
+  <div className="property-options__heading">
+    <h2>
+    The A - Z agency was born out of simple, yet radical idea:
                       real estate should be exclusively focussed on the
                       customer, providing a more personal and tailored aproach
                       for every client.
-                    </h3>
-                 <StatisticBar></StatisticBar>
-                  </div>
-                </div>
-              </div>
-
-              <div className="property-options__slides">
-                <div className="property-options__slider">
-                  <div className="property-option">
-                    <img
-                      className="property-option__image"
-                      loading="lazy"
-                      src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/MicrosoftTeams-image-4.jpg"
-                      alt=""
-                    />
-                    <span className="property-option__view">View</span>
-                    <div className="property-option__details">
-                      <p className="title">Properties for sale</p>
-                      <div className="copy">
-                        Discover the most luxurious residential real estate from
-                        Sovereign Islands to Byron Bay.
-                      </div>
-                    </div>
-                    <a className="property-option__link" href="/buy/"></a>
-                  </div>
-                  {/* 
-
-                <div className="property-option"><img className="property-option__image" loading="lazy"
-                    src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Untitled-design-2.png"
-                    alt=""/><span className="property-option__view">View</span>
-                  <div className="property-option__details">
-                    <p className="title">New Projects</p>
-                    <div className="copy">Choose from a top shelf range of off-the-plan apartments to call home, holiday
-                      haven or investment. </div>
-                  </div><a className="property-option__link" href="/projects/"></a>
-                </div> */}
-
-                  {/* <div className="property-option"><img className="property-option__image" loading="lazy"
-                    src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Untitled-design-9.png"
-                    alt=""/><span className="property-option__view">View</span>
-                  <div className="property-option__details">
-                    <p className="title">Commercial</p>
-                    <div className="copy">Our Commercial team can open up a range of opportunities across retail, industrial
-                      and development.</div>
-                  </div><a className="property-option__link" href="/commercial/"></a>
-                </div> */}
-
-                  <div className="property-option">
-                    <img
-                      className="property-option__image"
-                      loading="lazy"
-                      src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2021/12/home-lease.jpg"
-                      alt=""
-                    />
-                    <span className="property-option__view">View</span>
-                    <div className="property-option__details">
-                      <p className="title">Properties for lease</p>
-                      <div className="copy">
-                        Explore our exciting range of prestige properties for
-                        lease across the Gold Coast.
-                      </div>
-                    </div>
-                    <a className="property-option__link" href="/lease/"></a>
-                  </div>
-                  {/* 
-                <div className="property-option"><img className="property-option__image" loading="lazy"
-                    src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Website-Home-Page-Banners-.png"
-                    alt=""/><span className="property-option__view">View</span>
-                  <div className="property-option__details">
-                    <p className="title">Recently sold</p>
-                    <div className="copy">See the latest residential real estate sales results in your Gold Coast suburb.
-                    </div>
-                  </div><a className="property-option__link" href="/sold/"></a>
-                </div> */}
-                </div>
-              </div>
+    </h2>
+  </div>
+  <div className="property-options__content">
+    <div className="property-options__menu">
+      <ul>
+        <li className="active"><a href="/property/">Property</a></li>
+      </ul>
+    </div>
+    <div className="property-options__slides">
+      <div className="property-options__slider">
+        <div className="property-option">
+          <img
+            className="property-option__image"
+            loading="lazy"
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/MicrosoftTeams-image-4.jpg"
+            alt=""
+          /><span className="property-option__view">View</span>
+          <div className="property-option__details">
+            <p className="title">Properties for sale</p>
+            <div className="copy">
+              Discover the most luxurious residential real estate from Sovereign
+              Islands to Byron Bay.
             </div>
-           
-          </section>
-
-          <section className="business-data">
-            <div className="business-data__inner">
-              <div className="business-data__content">
-                <div className="business-data__heading">
-                  <h5 className="">
-                    By the <br />
-                    numbers
-                  </h5>
-                </div>
-                <div className=" business-data__items">
-                  <div className="business-data__item">
-                    <p className="value">93%</p>
-                    <p className="label">
-                      Highest list to
-                      <br />
-                      sell rate in Hawthorn
-                    </p>
-                  </div>
-                  <div className="business-data__item">
-                    <p className="value">$304M</p>
-                    <p className="label">
-                      Total value
-                      <br />
-                      of property sold
-                    </p>
-                  </div>
-                  <div className="business-data__item">
-                    <p className="value">$3.16M</p>
-                    <p className="label">
-                      Average
-                      <br />
-                      Sale Price
-                    </p>
-                  </div>
-                  {/* <div className="business-data__item">
-                  <p className="value">$42M</p>
-                  <p className="label">Highest<br/>
-                    Record Sale</p>
-                </div>
-                <div className="business-data__item">
-                  <p className="value">5.0</p>
-                  <p className="label">Average<br/>
-                    Client Rating</p>
-                </div> */}
-                  <div className="business-data__disclaimer">
-                    <div>
-                      <h6>
-                        <em>Statistics based on 2021 calendar year</em>
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <a className="property-option__link" href="/buy/"></a>
+        </div>
+        <div className="property-option">
+          <img
+            className="property-option__image"
+            loading="lazy"
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Untitled-design-2.png"
+            alt=""
+          /><span className="property-option__view">View</span>
+          <div className="property-option__details">
+            <p className="title">Properties for lease</p>
+            <div className="copy">
+              Choose from a top shelf range of off-the-plan apartments to call
+              home, holiday haven or investment.
             </div>
-          </section>
+          </div>
+          <a className="property-option__link" href="/projects/"></a>
+        </div>
+        {/* <div className="property-option">
+          <img
+            className="property-option__image"
+            loading="lazy"
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Untitled-design-9.png"
+            alt=""
+          /><span className="property-option__view">View</span>
+          <div className="property-option__details">
+            <p className="title">Commercial</p>
+            <div className="copy">
+              Our Commercial team can open up a range of opportunities across
+              retail, industrial and development.
+            </div>
+          </div>
+          <a className="property-option__link" href="/commercial/"></a>
+        </div> */}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section className="business-data">
+  <div className="business-data__inner">
+    <div className="business-data__content">
+      <div className="business-data__heading">
+        <h5
+          className=""
+         
+        >
+          By the <br />
+          numbers
+        </h5>
+      </div>
+      <div className=" business-data__items">
+        <div
+          className="business-data__item"
+        
+        >
+          <p className="value">
+          <Countup className="number-block"
+                                    duration={2}
+                                    end={102}
+                                    delay={1}
+                             
+                                    enableScrollSpy={true}
+                                />
+            
+            </p>
+          <p className="label">
+          TRANSACTIONS <br/> IN THE PAST 3 YEARS
+          </p>
+        </div>
+        <div
+          className="business-data__item"
+         
+        >
+          <p className="value">$<Countup className="number-block"
+                                    duration={2}
+                                    end={6.7}
+                                    delay={1}
+                                    decimals={1}
+  decimal="."
+                                    enableScrollSpy={true}
+                                />M</p>
+          <p className="label">
+          HIGHEST SALE PRICE
+          </p>
+        </div>
+        <div
+          className="business-data__item"
+         
+        >
+          <p className="value">$ <Countup className="number-block"
+                                    duration={2}
+                                    end={243}
+                                    delay={1}
+                                    
+                                    enableScrollSpy={true}
+                                />M</p>
+          <p className="label">
+          AVERAGE SALE PRICE
+          </p>
+        </div>
+        <div
+          className="business-data__item"
+        
+        >
+          <p className="value">$ <Countup className="number-block"
+                                    duration={2}
+                                    end={238}
+                                    delay={1}
+                             
+                                    enableScrollSpy={true}
+                                />M</p>
+          <p className="label">
+          TOTAL VALUE OF PROPERTY SOLD
+          </p>
+        </div>
+        <div
+          className="business-data__item"
+         
+        >
+          <p className="value">$ <Countup className="number-block"
+                                    duration={2}
+                                    end={10.2}
+                                    delay={1}
+                                    decimals={1}
+  decimal="."
+                                    enableScrollSpy={true}
+                                />M</p>
+          <p className="label">
+          SUM TOTAL ACHIEVED ABOVE CLIENT'S EXPECTATIONS
+          </p>
+        </div>
+        <div
+          className="business-data__disclaimer"
+        
+        >
+          <div>
+            <h6><em>Statistics based on 2021 calendar year</em></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
           
           <section className="testimonials-section">
          
             <div className="testimonials-heading">
-              <h2>THE PROOF</h2>
+              <h4>THE PROOF</h4>
             </div>
 
             <div className="testimonials">
               <TestimonialCard></TestimonialCard>
-              <TestimonialCard></TestimonialCard>
-              <TestimonialCard></TestimonialCard>
+            
             </div>
           
         
@@ -313,7 +344,7 @@ export default function Home() {
           <section className="blog-section">
     
           <div className="testimonials-heading">
-              <h2>LATEST INSIGHTS</h2>
+              <h4>LATEST INSIGHTS</h4>
             </div>
             <div className="blog-container">
        
@@ -343,24 +374,35 @@ export default function Home() {
                 </div>
                 <div className="footer__address">
                   <p>
-                    Address: 130 AUBURN ROAD, HAWTHORN, 3122
-                    <br />
+                    130 AUBURN ROAD, HAWTHORN, 3122
+                    <br/>
                     <a href="mailto:CONTACT@ANTONZHOUK.COM.AU">
-                      E-mail: CONTACT@ANTONZHOUK.COM.AU
+                      CONTACT@ANTONZHOUK.COM.AU
                     </a>
                     <br />
-                    Phone: <a href="tel:03 9815 1124">03 9815 1124</a>
+                    <a href="tel:03 9815 1124">03 9815 1124</a>
                     <br />
-                    <a>Terms and Conditions’</a>
-                    <a>‘Privacy Policy</a>
+              
                   </p>
                 </div>
               </div>
 
               <div className="footer__col">
-                <h4 className="addHover">Buy</h4>
-                <h4 className="addHover">Sell</h4>
-                <h4 className="addHover">Rent</h4>
+                <h4>{'‎'}</h4>
+                <ul className="">
+                  <li>
+                    <a href="/about-us/">Buy</a>
+                  </li>
+
+                  <li>
+                    <a href="/careers/">Sell</a>
+                  </li>
+                  <li>
+                    <a href="/careers/">Rent</a>
+                  </li>
+                </ul>
+                
+              
               </div>
               <div className="footer__col">
                 <h4 className="">About</h4>
@@ -369,9 +411,6 @@ export default function Home() {
                     <a href="/about-us/">About Us</a>
                   </li>
 
-                  <li>
-                    <a href="/careers/">Team</a>
-                  </li>
                   <li>
                     <a href="/careers/">News</a>
                   </li>
@@ -383,17 +422,17 @@ export default function Home() {
               <div className="footer__col">
                 <h4 className="">Connect</h4>
                 <ul className="">
+                 
                   <li>
                     <a
-                      to="https://www.linkedin.com//"
-                      href="https://www.linkedin.com/"
+                      to="https://www.facebook.com/"
+                      href="https://www.facebook.com/"
                       target="_blank"
                       rel="nofollow noopener noreferrer"
                     >
-                      LinkedIn
+                      Facebook
                     </a>
                   </li>
-
                   <li>
                     <a
                       to="https://www.instagram.com/"
@@ -406,14 +445,15 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      to="https://www.facebook.com/"
-                      href="https://www.facebook.com/"
+                      to="https://www.linkedin.com//"
+                      href="https://www.linkedin.com/"
                       target="_blank"
                       rel="nofollow noopener noreferrer"
                     >
-                      Facebook
+                      LinkedIn
                     </a>
                   </li>
+                
                 </ul>
               </div>
             </div>
@@ -434,7 +474,7 @@ export default function Home() {
             © 2022 Anton Zhouk - Real Estate Agency.
           </div>
           <div className="footer-bottom-icons">
-            <ul className="social">
+            {/* <ul className="social">
               <li>
                 <a target="_blank" rel="noopener" href="#%20">
                   <svg
@@ -495,7 +535,7 @@ export default function Home() {
                   </svg>
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </footer>

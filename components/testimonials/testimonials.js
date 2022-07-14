@@ -1,96 +1,117 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const Testimonials = styled.div`
-   {
-    padding: 40px 25px 25px;
-    flex-grow: 1;
-    flex-basis: 280px;
-    max-width: 27vw ;
-    position: relative;
-  }
-`;
-const TestimonialsText = styled.div`
-  p {
-    font-weight: normal;
-    font-size: 22px;
-    margin-bottom: 1.5625rem;
-    font-family: Montserrat;
-  }
-`;
 
-const TestimonialDetails = styled.div`
-   {
-    .testimonial_-details {
-      display: flex;
-      justify-content: start;
-      align-items: center;
-    }
+ 
 
-    .testimonial__img {
-      display: inline-block;
-      width: 55px;
-      margin-right: 20px;
-    }
-    img {
-      vertical-align: bottom;
-      border-radius: 50%;
-      box-shadow: 0 15px 37px rgb(0 0 0 / 15%);
-    }
-  }
-`;
-const Info = styled.div`
-   {
-    display: inline-block;
-
-    .testimonial__job {
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 10px;
-      letter-spacing: 0.5px;
-      color: grey;
-    }
-    .testimonial__name {
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 22px;
-      letter-spacing: 0.5px;
-      margin-bottom: 5px;
-    }
-  }
-`;
-const Container = styled.div`
-   {
-  }
-`;
 
 export const TestimonialCard = () => {
+  const[activeReview , setActiveReview] = useState({
+    name: "N. WILSON",
+    review: `Anton communicated with both ourselves and potential buyers with
+    clarity and diligence, leaving no stone unturned. His dedication,
+    knowledge and willingness to do things a little differently were
+    much appreciated.`,
+  })
+  const [num , setNum] = useState(0)
+
+  const reviews = [
+    {
+      name: "R. Lewis",
+      review: `Anton, thanks for a great job selling our Kew property. We never felt pressured but could see the work you and your team were putting in. The results you achieved were at the top of end of our expectations and the experience was great.`,
+    },
+ 
+    {
+      name: "N. WILSON",
+      review: `Anton communicated with both ourselves and potential buyers with
+      clarity and diligence, leaving no stone unturned. His dedication,
+      knowledge and willingness to do things a little differently were
+      much appreciated.`,
+    },
+  
+
+  ]
+
+  const animate = () =>{
+    document.getElementById('testimonialText').style.opacity = 1
+    
+  }
+
+  const toggleReview = () =>{
+
+    if(num < reviews.length-1){
+      setNum(num+1)
+    }
+    if(num == reviews.length-1){
+      setNum(0)
+    }
+
+  
+
+    setActiveReview(reviews[num]);
+    document.getElementById('testimonialText').style.opacity = 0
+
+    setTimeout(()=>{
+      animate()
+    },100)
+    console.log(num)
+  }
+
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+     toggleReview
+    }, 1000);
+  
+    return () => clearInterval(interval);
+  }, []);
+  
+
   return (
     <>
-      <Container className="container container--testimonials">
-        <Testimonials className="testimonial">
-          <TestimonialsText>
-            <p className="mb-25">
-              “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              tempus consectetur mi nec hendrerit. Integer id est massa.”
-            </p>
-          </TestimonialsText>
+      <div className=" testimonials__inner">
+        <div className="testimonials__content">
+          <p id='testimonialText'>
+            {activeReview.review} 
+           
+          </p>
+        </div>
+        <ul className="testimonials__stars">
+          <li>
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTAwcHgiIGhlaWdodD0iNDg2cHgiIHZpZXdCb3g9IjAgMCA1MDAgNDg2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA2MiAoOTEzOTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPm5vdW5fU3Rhcl8xMDc2MzYxPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Im5vdW5fU3Rhcl8xMDc2MzYxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS4wMDAwMDAsIC0xLjAwMDAwMCkiIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC43ODU1MjUsIDAuODQ0NDIwKSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMjUwLjM5NjczLDAuNjU1NTYxOTg3IEMyNDcuNTI2MTY3LDAuNTg0Mzk2MzU4IDI0NC44ODExMzcsMi4yMzU1MDA2MiAyNDMuNjQyODMsNC44NzM5IEwxNzEuNzk1MTksMTU4LjA1NDI2IEw2LjU0MTIyLDE4MC4zMDczNiBDMy43NjAwMzc1MywxODAuNjgyNDE3IDEuNDM3NjcxNSwxODIuNjUxMDE2IDAuNTcwODI4MzU0LDE4NS4zNjgyOCBDLTAuMjk2MDE0Nzk1LDE4OC4wODU1NDQgMC40NDY4MDc5MzUsMTkxLjA2ODI4NSAyLjQ4MDQ5NCwxOTMuMDM2MzggTDEyMy4zMjk2NCwzMDkuOTU5MjEgTDkzLjA0NDg4LDQ3Ni44OTMxNyBDOTIuNTM1OTM3Niw0NzkuNzAyNTE1IDkzLjY1NjU5NjgsNDgyLjU1OTgxOCA5NS45MjU5ODYyLDQ4NC4yMzkwMTggQzk4LjE5NTM3NTUsNDg1LjkxODIxOCAxMDEuMjEwMDQyLDQ4Ni4xMjA3ODUgMTAzLjY3NjQsNDg0Ljc1OTggTDI1MC4yMTM2Myw0MDMuODQxNzEgTDM5Ni43NTA4Niw0ODQuNzU5OCBDMzk5LjIxNzIxOCw0ODYuMTIwNzg1IDQwMi4yMzE4ODUsNDg1LjkxODIxOCA0MDQuNTAxMjc0LDQ4NC4yMzkwMTggQzQwNi43NzA2NjMsNDgyLjU1OTgxOCA0MDcuODkxMzIyLDQ3OS43MDI1MTUgNDA3LjM4MjM4LDQ3Ni44OTMxNyBMMzc3LjA5NzYxLDMwOS45NTkyMSBMNDk3Ljk0ODY3LDE5My4wMzYzOCBDNDk5Ljk4MjQ1LDE5MS4wNjgwMiA1MDAuNzI1MDc5LDE4OC4wODQ5MTEgNDk5Ljg1Nzc5LDE4NS4zNjc1MjkgQzQ5OC45OTA1MDEsMTgyLjY1MDE0OCA0OTYuNjY3NTQ0LDE4MC42ODE3OTEgNDkzLjg4NjAzLDE4MC4zMDczNiBMMzI4LjYzMjA2LDE1OC4wNTQyNiBMMjU2Ljc4NDQyLDQuODczOSBDMjU1LjYwMzE1NSwyLjM1NzAzNzg4IDI1My4xMzUwNjEsMC43MjgwNTU0NiAyNTAuMzk2NzMsMC42NTU1NjE5ODcgWiIgaWQ9IlBhdGgiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"></img>
+          </li>
+          <li>
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTAwcHgiIGhlaWdodD0iNDg2cHgiIHZpZXdCb3g9IjAgMCA1MDAgNDg2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA2MiAoOTEzOTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPm5vdW5fU3Rhcl8xMDc2MzYxPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Im5vdW5fU3Rhcl8xMDc2MzYxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS4wMDAwMDAsIC0xLjAwMDAwMCkiIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC43ODU1MjUsIDAuODQ0NDIwKSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMjUwLjM5NjczLDAuNjU1NTYxOTg3IEMyNDcuNTI2MTY3LDAuNTg0Mzk2MzU4IDI0NC44ODExMzcsMi4yMzU1MDA2MiAyNDMuNjQyODMsNC44NzM5IEwxNzEuNzk1MTksMTU4LjA1NDI2IEw2LjU0MTIyLDE4MC4zMDczNiBDMy43NjAwMzc1MywxODAuNjgyNDE3IDEuNDM3NjcxNSwxODIuNjUxMDE2IDAuNTcwODI4MzU0LDE4NS4zNjgyOCBDLTAuMjk2MDE0Nzk1LDE4OC4wODU1NDQgMC40NDY4MDc5MzUsMTkxLjA2ODI4NSAyLjQ4MDQ5NCwxOTMuMDM2MzggTDEyMy4zMjk2NCwzMDkuOTU5MjEgTDkzLjA0NDg4LDQ3Ni44OTMxNyBDOTIuNTM1OTM3Niw0NzkuNzAyNTE1IDkzLjY1NjU5NjgsNDgyLjU1OTgxOCA5NS45MjU5ODYyLDQ4NC4yMzkwMTggQzk4LjE5NTM3NTUsNDg1LjkxODIxOCAxMDEuMjEwMDQyLDQ4Ni4xMjA3ODUgMTAzLjY3NjQsNDg0Ljc1OTggTDI1MC4yMTM2Myw0MDMuODQxNzEgTDM5Ni43NTA4Niw0ODQuNzU5OCBDMzk5LjIxNzIxOCw0ODYuMTIwNzg1IDQwMi4yMzE4ODUsNDg1LjkxODIxOCA0MDQuNTAxMjc0LDQ4NC4yMzkwMTggQzQwNi43NzA2NjMsNDgyLjU1OTgxOCA0MDcuODkxMzIyLDQ3OS43MDI1MTUgNDA3LjM4MjM4LDQ3Ni44OTMxNyBMMzc3LjA5NzYxLDMwOS45NTkyMSBMNDk3Ljk0ODY3LDE5My4wMzYzOCBDNDk5Ljk4MjQ1LDE5MS4wNjgwMiA1MDAuNzI1MDc5LDE4OC4wODQ5MTEgNDk5Ljg1Nzc5LDE4NS4zNjc1MjkgQzQ5OC45OTA1MDEsMTgyLjY1MDE0OCA0OTYuNjY3NTQ0LDE4MC42ODE3OTEgNDkzLjg4NjAzLDE4MC4zMDczNiBMMzI4LjYzMjA2LDE1OC4wNTQyNiBMMjU2Ljc4NDQyLDQuODczOSBDMjU1LjYwMzE1NSwyLjM1NzAzNzg4IDI1My4xMzUwNjEsMC43MjgwNTU0NiAyNTAuMzk2NzMsMC42NTU1NjE5ODcgWiIgaWQ9IlBhdGgiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"></img>
+          </li>
+          <li>
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTAwcHgiIGhlaWdodD0iNDg2cHgiIHZpZXdCb3g9IjAgMCA1MDAgNDg2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA2MiAoOTEzOTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPm5vdW5fU3Rhcl8xMDc2MzYxPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Im5vdW5fU3Rhcl8xMDc2MzYxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS4wMDAwMDAsIC0xLjAwMDAwMCkiIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC43ODU1MjUsIDAuODQ0NDIwKSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMjUwLjM5NjczLDAuNjU1NTYxOTg3IEMyNDcuNTI2MTY3LDAuNTg0Mzk2MzU4IDI0NC44ODExMzcsMi4yMzU1MDA2MiAyNDMuNjQyODMsNC44NzM5IEwxNzEuNzk1MTksMTU4LjA1NDI2IEw2LjU0MTIyLDE4MC4zMDczNiBDMy43NjAwMzc1MywxODAuNjgyNDE3IDEuNDM3NjcxNSwxODIuNjUxMDE2IDAuNTcwODI4MzU0LDE4NS4zNjgyOCBDLTAuMjk2MDE0Nzk1LDE4OC4wODU1NDQgMC40NDY4MDc5MzUsMTkxLjA2ODI4NSAyLjQ4MDQ5NCwxOTMuMDM2MzggTDEyMy4zMjk2NCwzMDkuOTU5MjEgTDkzLjA0NDg4LDQ3Ni44OTMxNyBDOTIuNTM1OTM3Niw0NzkuNzAyNTE1IDkzLjY1NjU5NjgsNDgyLjU1OTgxOCA5NS45MjU5ODYyLDQ4NC4yMzkwMTggQzk4LjE5NTM3NTUsNDg1LjkxODIxOCAxMDEuMjEwMDQyLDQ4Ni4xMjA3ODUgMTAzLjY3NjQsNDg0Ljc1OTggTDI1MC4yMTM2Myw0MDMuODQxNzEgTDM5Ni43NTA4Niw0ODQuNzU5OCBDMzk5LjIxNzIxOCw0ODYuMTIwNzg1IDQwMi4yMzE4ODUsNDg1LjkxODIxOCA0MDQuNTAxMjc0LDQ4NC4yMzkwMTggQzQwNi43NzA2NjMsNDgyLjU1OTgxOCA0MDcuODkxMzIyLDQ3OS43MDI1MTUgNDA3LjM4MjM4LDQ3Ni44OTMxNyBMMzc3LjA5NzYxLDMwOS45NTkyMSBMNDk3Ljk0ODY3LDE5My4wMzYzOCBDNDk5Ljk4MjQ1LDE5MS4wNjgwMiA1MDAuNzI1MDc5LDE4OC4wODQ5MTEgNDk5Ljg1Nzc5LDE4NS4zNjc1MjkgQzQ5OC45OTA1MDEsMTgyLjY1MDE0OCA0OTYuNjY3NTQ0LDE4MC42ODE3OTEgNDkzLjg4NjAzLDE4MC4zMDczNiBMMzI4LjYzMjA2LDE1OC4wNTQyNiBMMjU2Ljc4NDQyLDQuODczOSBDMjU1LjYwMzE1NSwyLjM1NzAzNzg4IDI1My4xMzUwNjEsMC43MjgwNTU0NiAyNTAuMzk2NzMsMC42NTU1NjE5ODcgWiIgaWQ9IlBhdGgiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"></img>
+          </li>
+          <li>
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTAwcHgiIGhlaWdodD0iNDg2cHgiIHZpZXdCb3g9IjAgMCA1MDAgNDg2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA2MiAoOTEzOTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPm5vdW5fU3Rhcl8xMDc2MzYxPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Im5vdW5fU3Rhcl8xMDc2MzYxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS4wMDAwMDAsIC0xLjAwMDAwMCkiIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC43ODU1MjUsIDAuODQ0NDIwKSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMjUwLjM5NjczLDAuNjU1NTYxOTg3IEMyNDcuNTI2MTY3LDAuNTg0Mzk2MzU4IDI0NC44ODExMzcsMi4yMzU1MDA2MiAyNDMuNjQyODMsNC44NzM5IEwxNzEuNzk1MTksMTU4LjA1NDI2IEw2LjU0MTIyLDE4MC4zMDczNiBDMy43NjAwMzc1MywxODAuNjgyNDE3IDEuNDM3NjcxNSwxODIuNjUxMDE2IDAuNTcwODI4MzU0LDE4NS4zNjgyOCBDLTAuMjk2MDE0Nzk1LDE4OC4wODU1NDQgMC40NDY4MDc5MzUsMTkxLjA2ODI4NSAyLjQ4MDQ5NCwxOTMuMDM2MzggTDEyMy4zMjk2NCwzMDkuOTU5MjEgTDkzLjA0NDg4LDQ3Ni44OTMxNyBDOTIuNTM1OTM3Niw0NzkuNzAyNTE1IDkzLjY1NjU5NjgsNDgyLjU1OTgxOCA5NS45MjU5ODYyLDQ4NC4yMzkwMTggQzk4LjE5NTM3NTUsNDg1LjkxODIxOCAxMDEuMjEwMDQyLDQ4Ni4xMjA3ODUgMTAzLjY3NjQsNDg0Ljc1OTggTDI1MC4yMTM2Myw0MDMuODQxNzEgTDM5Ni43NTA4Niw0ODQuNzU5OCBDMzk5LjIxNzIxOCw0ODYuMTIwNzg1IDQwMi4yMzE4ODUsNDg1LjkxODIxOCA0MDQuNTAxMjc0LDQ4NC4yMzkwMTggQzQwNi43NzA2NjMsNDgyLjU1OTgxOCA0MDcuODkxMzIyLDQ3OS43MDI1MTUgNDA3LjM4MjM4LDQ3Ni44OTMxNyBMMzc3LjA5NzYxLDMwOS45NTkyMSBMNDk3Ljk0ODY3LDE5My4wMzYzOCBDNDk5Ljk4MjQ1LDE5MS4wNjgwMiA1MDAuNzI1MDc5LDE4OC4wODQ5MTEgNDk5Ljg1Nzc5LDE4NS4zNjc1MjkgQzQ5OC45OTA1MDEsMTgyLjY1MDE0OCA0OTYuNjY3NTQ0LDE4MC42ODE3OTEgNDkzLjg4NjAzLDE4MC4zMDczNiBMMzI4LjYzMjA2LDE1OC4wNTQyNiBMMjU2Ljc4NDQyLDQuODczOSBDMjU1LjYwMzE1NSwyLjM1NzAzNzg4IDI1My4xMzUwNjEsMC43MjgwNTU0NiAyNTAuMzk2NzMsMC42NTU1NjE5ODcgWiIgaWQ9IlBhdGgiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"></img>
+          </li>
+          <li>
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTAwcHgiIGhlaWdodD0iNDg2cHgiIHZpZXdCb3g9IjAgMCA1MDAgNDg2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA2MiAoOTEzOTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPm5vdW5fU3Rhcl8xMDc2MzYxPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Im5vdW5fU3Rhcl8xMDc2MzYxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS4wMDAwMDAsIC0xLjAwMDAwMCkiIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC43ODU1MjUsIDAuODQ0NDIwKSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMjUwLjM5NjczLDAuNjU1NTYxOTg3IEMyNDcuNTI2MTY3LDAuNTg0Mzk2MzU4IDI0NC44ODExMzcsMi4yMzU1MDA2MiAyNDMuNjQyODMsNC44NzM5IEwxNzEuNzk1MTksMTU4LjA1NDI2IEw2LjU0MTIyLDE4MC4zMDczNiBDMy43NjAwMzc1MywxODAuNjgyNDE3IDEuNDM3NjcxNSwxODIuNjUxMDE2IDAuNTcwODI4MzU0LDE4NS4zNjgyOCBDLTAuMjk2MDE0Nzk1LDE4OC4wODU1NDQgMC40NDY4MDc5MzUsMTkxLjA2ODI4NSAyLjQ4MDQ5NCwxOTMuMDM2MzggTDEyMy4zMjk2NCwzMDkuOTU5MjEgTDkzLjA0NDg4LDQ3Ni44OTMxNyBDOTIuNTM1OTM3Niw0NzkuNzAyNTE1IDkzLjY1NjU5NjgsNDgyLjU1OTgxOCA5NS45MjU5ODYyLDQ4NC4yMzkwMTggQzk4LjE5NTM3NTUsNDg1LjkxODIxOCAxMDEuMjEwMDQyLDQ4Ni4xMjA3ODUgMTAzLjY3NjQsNDg0Ljc1OTggTDI1MC4yMTM2Myw0MDMuODQxNzEgTDM5Ni43NTA4Niw0ODQuNzU5OCBDMzk5LjIxNzIxOCw0ODYuMTIwNzg1IDQwMi4yMzE4ODUsNDg1LjkxODIxOCA0MDQuNTAxMjc0LDQ4NC4yMzkwMTggQzQwNi43NzA2NjMsNDgyLjU1OTgxOCA0MDcuODkxMzIyLDQ3OS43MDI1MTUgNDA3LjM4MjM4LDQ3Ni44OTMxNyBMMzc3LjA5NzYxLDMwOS45NTkyMSBMNDk3Ljk0ODY3LDE5My4wMzYzOCBDNDk5Ljk4MjQ1LDE5MS4wNjgwMiA1MDAuNzI1MDc5LDE4OC4wODQ5MTEgNDk5Ljg1Nzc5LDE4NS4zNjc1MjkgQzQ5OC45OTA1MDEsMTgyLjY1MDE0OCA0OTYuNjY3NTQ0LDE4MC42ODE3OTEgNDkzLjg4NjAzLDE4MC4zMDczNiBMMzI4LjYzMjA2LDE1OC4wNTQyNiBMMjU2Ljc4NDQyLDQuODczOSBDMjU1LjYwMzE1NSwyLjM1NzAzNzg4IDI1My4xMzUwNjEsMC43MjgwNTU0NiAyNTAuMzk2NzMsMC42NTU1NjE5ODcgWiIgaWQ9IlBhdGgiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"></img>
+          </li>
+        </ul>
+        <span> {activeReview.name}</span>
+        <div className="controlContainer" >
+          <div className="prevPointer">
+            <img onClick={()=>{toggleReview()}}
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSI5cHgiIHZpZXdCb3g9IjAgMCAzNCA5IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA2MiAoOTEzOTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPkZpbGwgMSBDb3B5PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkRlc2t0b3AiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBSzAwNS0tLVdlYnNpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02NzcuMDAwMDAwLCAtMTU2NC4wMDAwMDApIiBmaWxsPSIjMDAwMDAwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IkZpbGwtMS1Db3B5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OTQuMDAwMDAwLCAxNTY4LjUwMDAwMCkgcm90YXRlKC0yNzAuMDAwMDAwKSB0cmFuc2xhdGUoLTY5NC4wMDAwMDAsIC0xNTY4LjUwMDAwMCkgIiBwb2ludHM9IjY5OC41IDE1NzkuOTYyMjggNjk0LjM5MTY2NiAxNTg1LjUgNjg5LjUgMTU3OS45NjIyOCA2OTMuNDg2NDg0IDE1NzkuOTYyMjggNjkzLjQ4NjQ4NCAxNTUxLjUgNjk0LjkzNTE4NCAxNTUxLjUgNjk0LjkzNTE4NCAxNTc5Ljk2MjI4Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="
+              alt="last gallery item"
+            ></img>
+          </div>
 
-          <TestimonialDetails>
-            <div className="testimonial_-details">
-              <div className="testimonial__img">
-                <img
-                  src="https://themenectar.com/salient/business-3/wp-content/uploads/sites/27/2019/09/testimonial.jpg"
-                  alt="Timmy Dicki"
-                />
-              </div>
-              <Info className="testimonial__info">
-                <h4 className="testimonial__name">Timmy Dicki</h4>
-                <h5 className="testimonial__job">Railroad Engineer</h5>
-              </Info>
-            </div>
-          </TestimonialDetails>
-        </Testimonials>
-      </Container>
+          <div className="nextPointer" onClick={()=>{toggleReview()}}>
+            <img
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSI5cHgiIHZpZXdCb3g9IjAgMCAzNCA5IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA2MiAoOTEzOTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPkZpbGwgMTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxnIGlkPSJEZXNrdG9wIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iQUswMDUtLS1XZWJzaXRlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNzI3LjAwMDAwMCwgLTE1NjQuMDAwMDAwKSIgZmlsbD0iIzAwMDAwMCI+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJGaWxsLTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDc0NC4wMDAwMDAsIDE1NjguNTAwMDAwKSByb3RhdGUoLTkwLjAwMDAwMCkgdHJhbnNsYXRlKC03NDQuMDAwMDAwLCAtMTU2OC41MDAwMDApICIgcG9pbnRzPSI3NDguNSAxNTc5Ljk2MjI4IDc0NC4zOTE2NjYgMTU4NS41IDczOS41IDE1NzkuOTYyMjggNzQzLjQ4NjQ4NCAxNTc5Ljk2MjI4IDc0My40ODY0ODQgMTU1MS41IDc0NC45MzUxODQgMTU1MS41IDc0NC45MzUxODQgMTU3OS45NjIyOCI+PC9wb2x5Z29uPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
+              alt="next gallery item"
+            ></img>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
+

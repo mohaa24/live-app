@@ -40,57 +40,20 @@ if (typeof window !== "undefined"){
             <ul>
               <li>
                 <a href="/buy/">Buy</a>
-                <ul className="header__sub-nav">
-                  <li>
-                    <a href="/buy/">Residential</a>
-                  </li>
-                  <li>
-                    <a href="/buy-commercial/">Commercial</a>
-                  </li>
-                  <li>
-                    <a href="/projects/">New Projects</a>
-                  </li>
-                  <li>
-                    <a href="/off-market/">Off Market</a>
-                  </li>
-                  <li>
-                    <a href="/suburb-guides/">Suburb Profiles</a>
-                  </li>
-                  <li>
-                    <a href="/appraisal/">Appraisal</a>
-                  </li>
-                </ul>
+               
               </li>
 
               <li>
                 <a href="/sold/">Sell</a>
-                <ul className="header__sub-nav menu-sold">
-                  <li>
-                    <a href="/sold/">Residential</a>
-                  </li>
-                  <li>
-                    <a href="/sold-commercial/">Commercial</a>
-                  </li>
-                </ul>
+              
               </li>
               <li>
                 <a href="/lease/">Rent</a>
-                <ul className="header__sub-nav menu-lease">
-                  <li>
-                    <a href="/lease/">Residential</a>
-                  </li>
-                  <li>
-                    <a href="/lease-commercial/">Commercial</a>
-                  </li>
-                </ul>
+             
               </li>
               <li>
                 <a href="/about-us/">About</a>
-                <ul className="header__sub-nav menu-about">
-                  <li>
-                    <a href="/contact-us/">Contact Us</a>
-                  </li>
-                </ul>
+              
               </li>
               <li>
                 <a href="/blog/">Blog</a>
