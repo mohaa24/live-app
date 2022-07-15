@@ -18,6 +18,9 @@ export default function Home() {
       backgroundColor: "#60c2c9",
       borderRadius: 0,
       color: "#ffffff",
+      fontSize:'20px',
+      borderColor: '#60c2c9',
+      minHeight:'45px'
     }),
     placeholder: (styles) => ({
       ...styles,
@@ -151,9 +154,7 @@ export default function Home() {
             </div>
             <div className="property-options__content">
               <div className="property-options__menu">
-                <div className="testimonials-heading">
-                <h4>Property</h4>
-                </div>
+              <div class="testimonials-heading"><h4>Property</h4></div>
               
               </div>
               <div className="property-options__slides">
