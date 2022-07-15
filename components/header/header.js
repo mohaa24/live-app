@@ -1,15 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
-
-const Testimonials = styled.div`
-   {
-    padding: 40px 25px 25px;
-    flex-grow: 1;
-    flex-basis: 280px;
-    max-width: 27vw;
-    position: relative;
-  }
-`;
 
 
 export const Header = () => {

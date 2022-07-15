@@ -3,17 +3,13 @@ import Script from "next/script";
 import Select from "react-select";
 import { TestimonialCard } from "../components/testimonials/testimonials";
 import { BlogCard } from "../components/blog_card/blogCard";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
 import { Header } from "../components/header/header";
 import { StatisticBar } from "../components/statisticBlock/statisticBar";
 import { Weather } from "../components/weather/weather";
-import Countup from 'react-countup';
-
+import Countup from "react-countup";
 
 import "swiper/css/bundle";
-
-
-
 
 export default function Home() {
   const blueDropdown = {
@@ -23,26 +19,26 @@ export default function Home() {
       borderRadius: 0,
       color: "#ffffff",
     }),
-    placeholder: (styles) => ({ ...styles, color: "#ffffff", fontFamily: "Montserrat", fontWeight:'bold' }),
+    placeholder: (styles) => ({
+      ...styles,
+      color: "#ffffff",
+    
+      fontWeight: "bold",
+    }),
     indicatorSeparator: (styles) => ({ ...styles, display: "none" }),
     IndicatorContainer: (styles) => ({ ...styles, display: "none" }),
-    dropdownIndicator:   (styles) => ({ ...styles, color: "white" }),
+    dropdownIndicator: (styles) => ({ ...styles, color: "white" }),
   };
-
-
 
   return (
     <>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-   
       </Head>
 
       <div className="home body">
-<Header></Header>
         <main>
-
           <section className="hero-banner">
             <video
               src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/WEB3-2.mp4"
@@ -54,147 +50,149 @@ export default function Home() {
 
             <div className="hero-banner__inner">
               <div className="hero-banner__content">
-              <Fade top delay={2500}>
-                <div className="hero-banner__menu">
-                  <ul className="">
-                    <li className="">
-                      <button type="button">Request Appraisal</button>
-                    </li>
-                  </ul>
-                </div>
+                <Fade top delay={2500}>
+                  <div className="hero-banner__menu">
+                    <ul className="">
+                      <li className="">
+                        <button type="button" className="appraisal-button">Request Appraisal</button>
+                      </li>
+                    </ul>
+                  </div>
                 </Fade>
                 <Fade bottom delay={2000}>
-                <div className=" hero-banner__heading">
-                  <h1>OPENING DOORS TO MELBOURNE'S FINEST HOMES</h1>
-                </div>
+                  <div className=" hero-banner__heading">
+                    <h1>OPENING DOORS TO MELBOURNE'S FINEST HOMES</h1>
+                  </div>
                 </Fade>
                 <Fade bottom delay={2700}>
-                <div className="searchBar">
-                  <div className="optionMenu">
-                    {" "}
+                  <div className="searchBar">
+                    <div className="optionMenu">
+                      {" "}
+                      <Select
+                        className="dropDown"
+                        options={[
+                          { value: "chocolate", label: "BUY" },
+                          { value: "strawberry", label: "SALE" },
+                          { value: "vanilla", label: "RENT" },
+                        ]}
+                        styles={blueDropdown}
+                        placeholder="BUY"
+                      ></Select>{" "}
+                    </div>
+                    <div className="searchArea"></div>
+                  </div>
+                  <div className="dropDownArea">
                     <Select
                       className="dropDown"
                       options={[
-                        { value: "chocolate", label: "BUY" },
-                        { value: "strawberry", label: "SALE" },
-                        { value: "vanilla", label: "RENT" },
+                        { value: "chocolate", label: "Chocolate" },
+                        { value: "strawberry", label: "Strawberry" },
+                        { value: "vanilla", label: "Vanilla" },
                       ]}
                       styles={blueDropdown}
-                      placeholder="BUY"
-                    ></Select>{" "}
+                      placeholder="MIN PRICE"
+                    ></Select>
+                    <Select
+                      className="dropDown"
+                      options={[
+                        { value: "chocolate", label: "Chocolate" },
+                        { value: "strawberry", label: "Strawberry" },
+                        { value: "vanilla", label: "Vanilla" },
+                      ]}
+                      styles={blueDropdown}
+                      placeholder="MAX PRICE"
+                    ></Select>
+                    <Select
+                      className="dropDown"
+                      options={[
+                        { value: "chocolate", label: "Chocolate" },
+                        { value: "strawberry", label: "Strawberry" },
+                        { value: "vanilla", label: "Vanilla" },
+                      ]}
+                      styles={blueDropdown}
+                      placeholder="BED"
+                    ></Select>
+                    <Select
+                      className="dropDown"
+                      options={[
+                        { value: "chocolate", label: "Chocolate" },
+                        { value: "strawberry", label: "Strawberry" },
+                        { value: "vanilla", label: "Vanilla" },
+                      ]}
+                      styles={blueDropdown}
+                      placeholder="BATH"
+                    ></Select>
+                    <Select
+                      className="dropDown"
+                      options={[
+                        { value: "chocolate", label: "Chocolate" },
+                        { value: "strawberry", label: "Strawberry" },
+                        { value: "vanilla", label: "Vanilla" },
+                      ]}
+                      styles={blueDropdown}
+                      placeholder="CAR"
+                    ></Select>
                   </div>
-                  <div className="searchArea"></div>
-                </div>
-                <div className="dropDownArea">
-                  <Select
-                    className="dropDown"
-                    options={[
-                      { value: "chocolate", label: "Chocolate" },
-                      { value: "strawberry", label: "Strawberry" },
-                      { value: "vanilla", label: "Vanilla" },
-                    ]}
-                    styles={blueDropdown}
-                    placeholder="MIN PRICE"
-                  ></Select>
-                  <Select
-                    className="dropDown"
-                    options={[
-                      { value: "chocolate", label: "Chocolate" },
-                      { value: "strawberry", label: "Strawberry" },
-                      { value: "vanilla", label: "Vanilla" },
-                    ]}
-                    styles={blueDropdown}
-                    placeholder="MAX PRICE"
-                  ></Select>
-                  <Select
-                    className="dropDown"
-                    options={[
-                      { value: "chocolate", label: "Chocolate" },
-                      { value: "strawberry", label: "Strawberry" },
-                      { value: "vanilla", label: "Vanilla" },
-                    ]}
-                    styles={blueDropdown}
-                    placeholder="BED"
-                  ></Select>
-                  <Select
-                    className="dropDown"
-                    options={[
-                      { value: "chocolate", label: "Chocolate" },
-                      { value: "strawberry", label: "Strawberry" },
-                      { value: "vanilla", label: "Vanilla" },
-                    ]}
-                    styles={blueDropdown}
-                    placeholder="BATH"
-                  ></Select>
-                  <Select
-                    className="dropDown"
-                    options={[
-                      { value: "chocolate", label: "Chocolate" },
-                      { value: "strawberry", label: "Strawberry" },
-                      { value: "vanilla", label: "Vanilla" },
-                    ]}
-                    styles={blueDropdown}
-                    placeholder="CAR"
-                  ></Select>
-                </div>
                 </Fade>
 
                 <Fade delay={2800}>
-               <Weather></Weather>
+                  <Weather></Weather>
                 </Fade>
               </div>
             </div>
           </section>
           <section className="property-options light-theme">
-  <div className="property-options__heading">
-    <h2>
-    The A - Z agency was born out of simple, yet radical idea:
-                      real estate should be exclusively focussed on the
-                      customer, providing a more personal and tailored aproach
-                      for every client.
-    </h2>
-  </div>
-  <div className="property-options__content">
-    <div className="property-options__menu">
-      <ul>
-        <li className="active"><a href="/property/">Property</a></li>
-      </ul>
-    </div>
-    <div className="property-options__slides">
-      <div className="property-options__slider">
-        <div className="property-option">
-          <img
-            className="property-option__image"
-            loading="lazy"
-            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/MicrosoftTeams-image-4.jpg"
-            alt=""
-          /><span className="property-option__view">View</span>
-          <div className="property-option__details">
-            <p className="title">Properties for sale</p>
-            <div className="copy">
-              Discover the most luxurious residential real estate from Sovereign
-              Islands to Byron Bay.
+            <div className="property-options__heading">
+              <h2>
+                The A — Z Agency was born out of simple, yet radical idea: real
+                estate should be exclusively focussed on the customer, providing
+                a more personal and tailored aproach for every client.
+              </h2>
             </div>
-          </div>
-          <a className="property-option__link" href="/buy/"></a>
-        </div>
-        <div className="property-option">
-          <img
-            className="property-option__image"
-            loading="lazy"
-            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Untitled-design-2.png"
-            alt=""
-          /><span className="property-option__view">View</span>
-          <div className="property-option__details">
-            <p className="title">Properties for lease</p>
-            <div className="copy">
-              Choose from a top shelf range of off-the-plan apartments to call
-              home, holiday haven or investment.
-            </div>
-          </div>
-          <a className="property-option__link" href="/projects/"></a>
-        </div>
-        {/* <div className="property-option">
+            <div className="property-options__content">
+              <div className="property-options__menu">
+                <div className="testimonials-heading">
+                <h4>Property</h4>
+                </div>
+              
+              </div>
+              <div className="property-options__slides">
+                <div className="property-options__slider">
+                  <div className="property-option">
+                    <img
+                      className="property-option__image"
+                      loading="lazy"
+                      src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/MicrosoftTeams-image-4.jpg"
+                      alt=""
+                    />
+                    <span className="property-option__view">View</span>
+                    <div className="property-option__details">
+                      <p className="title">Properties for sale</p>
+                      <div className="copy">
+                        Discover the most luxurious residential real estate from
+                        Sovereign Islands to Byron Bay.
+                      </div>
+                    </div>
+                    <a className="property-option__link" href="/buy/"></a>
+                  </div>
+                  <div className="property-option">
+                    <img
+                      className="property-option__image"
+                      loading="lazy"
+                      src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Untitled-design-2.png"
+                      alt=""
+                    />
+                    <span className="property-option__view">View</span>
+                    <div className="property-option__details">
+                      <p className="title">Properties for lease</p>
+                      <div className="copy">
+                        Choose from a top shelf range of off-the-plan apartments
+                        to call home, holiday haven or investment.
+                      </div>
+                    </div>
+                    <a className="property-option__link" href="/projects/"></a>
+                  </div>
+                  {/* <div className="property-option">
           <img
             className="property-option__image"
             loading="lazy"
@@ -210,335 +208,153 @@ export default function Home() {
           </div>
           <a className="property-option__link" href="/commercial/"></a>
         </div> */}
+                </div>
+              </div>
+            </div>
+            <div className="property-options__heading">
+              <h2>
+              Relationships, Excellence and Authenticity prevail to ensure a customer experience of the highest standard
+              </h2>
+            </div>
+          </section>
 
-      </div>
-    </div>
-  </div>
-</section>
+          <section className="business-data">
+            <div className="business-data__inner">
+              <div className="business-data__content">
+                <div className="business-data__heading">
+                  <h5 className="">
+                    By the <br />
+                    numbers
+                  </h5>
+                </div>
+                <div className=" business-data__items">
+                
 
+                  <div className="business-data__item">
+                  <div className="icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M4.82 19.407c-2.966-1.857-4.94-5.153-4.94-8.907 0-5.795 4.705-10.5 10.5-10.5 3.605 0 6.789 1.821 8.68 4.593 2.966 1.857 4.94 5.153 4.94 8.907 0 5.795-4.705 10.5-10.5 10.5-3.599 0-6.778-1.815-8.67-4.579l-.01-.014zm8.68-15.407c5.243 0 9.5 4.257 9.5 9.5s-4.257 9.5-9.5 9.5-9.5-4.257-9.5-9.5 4.257-9.5 9.5-9.5zm.5 15h-1.021v-.871c-2.343-.302-2.599-2.179-2.599-2.744h1.091c.025.405.157 1.774 2.182 1.774.599 0 1.088-.141 1.453-.419.361-.276.536-.612.536-1.029 0-.793-.513-1.367-2.07-1.718-2.368-.536-2.923-1.398-2.923-2.533 0-1.509 1.223-2.216 2.33-2.406v-1.054h1.021v1.015c2.491.195 2.695 2.215 2.695 2.771h-1.098c0-1.161-.918-1.766-1.996-1.766-1.077 0-1.854.532-1.854 1.408 0 .781.439 1.165 1.994 1.554 1.879.473 2.999 1.101 2.999 2.681 0 1.744-1.509 2.393-2.74 2.493v.844zm2.85-15.453c-1.696-1.58-3.971-2.547-6.47-2.547-5.243 0-9.5 4.257-9.5 9.5 0 2.633 1.073 5.017 2.806 6.739l-.004-.01c-.44-1.159-.682-2.416-.682-3.729 0-5.795 4.705-10.5 10.5-10.5 1.171 0 2.298.192 3.35.547z"/></svg>
+                    </div>
+                    <p className="value">
+                      $
+                      <Countup
+                        className="number-block"
+                        duration={2}
+                        end={6.7}
+                        delay={1}
+                        decimals={1}
+                        decimal="."
+                        enableScrollSpy={true}
+                      />
+                      M
+                    </p>
+                    <p className="label">HIGHEST SALE PRICE</p>
+                  </div>
+                  <div className="business-data__item">
+                  <div className="icon">
+                  <svg width="24" height="24"  viewBox="0 0 24 24"xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2 9.453v-9.453h9.352l10.648 10.625-3.794 3.794 1.849 4.733-12.34 4.848-5.715-14.547zm1.761 1.748l4.519 11.503 10.48-4.118-1.326-3.395-4.809 4.809-8.864-8.799zm-.761-10.201v8.036l9.622 9.552 7.963-7.962-9.647-9.626h-7.938zm12.25 8.293c-.415-.415-.865-.617-1.378-.617-.578 0-1.227.241-2.171.803-.682.411-1.118.585-1.456.585-.361 0-1.083-.409-.961-1.219.052-.345.25-.696.572-1.019.652-.652 1.544-.848 2.276-.107l.744-.744c-.476-.475-1.096-.792-1.761-.792-.566 0-1.125.228-1.663.677l-.626-.626-.698.699.653.652c-.569.826-.842 2.021.076 2.937 1.011 1.011 2.188.541 3.413-.232.6-.379 1.083-.563 1.475-.563.589.001 1.18.498 1.078 1.258-.052.386-.26.764-.621 1.122-.451.451-.904.679-1.347.679-.418 0-.747-.192-1.049-.462l-.739.739c.463.458 1.082.753 1.735.753.544 0 1.087-.201 1.612-.597l.54.538.697-.697-.52-.521c.743-.896 1.157-2.209.119-3.247zm-9.25-7.292c1.104 0 2 .896 2 2s-.896 2-2 2-2-.896-2-2 .896-2 2-2zm0 1c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1z"/></svg>
+                    </div>
+                    <p className="value">
+                      $
+                      <Countup
+                        className="number-block"
+                        duration={2}
+                        end={243}
+                        delay={1}
+                        enableScrollSpy={true}
+                      />
+                      M
+                    </p>
+                    <p className="label">AVERAGE SALE PRICE</p>
+                  </div>
+                  <div className="business-data__item">
+                  <div className="icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.001 9.977c.011-1.215.13-1.443 1.079-1.651 1.166-.256 1.847-.479 1.321-1.422-1.6-2.869-.089-4.404 1.601-4.404 1.723 0 3.207 1.593 1.603 4.404-.299.522-.215.825.111 1.033.207-.171.507-.302.942-.397 1.509-.331 2.391-.621 1.709-1.841-2.068-3.709-.552-5.694 1.63-5.699h.008c2.182.005 3.698 1.99 1.63 5.699-.681 1.22.2 1.51 1.71 1.841.435.095.734.226.941.397.327-.208.41-.511.112-1.033-1.604-2.811-.12-4.404 1.603-4.404 1.689 0 3.2 1.535 1.601 4.404-.527.943.154 1.166 1.32 1.422.949.208 1.069.436 1.079 1.651l-.002 1.023-7.999 8v5l-4-1.325v-3.675l-7.996-8-.003-1.023zm18.584 1.023h-17.167l7.582 7.586v3.367l2 .662v-4.029l7.585-7.586zm-8.362 5.914h-.444v-.443c-.459-.008-.934-.117-1.33-.322l.202-.729c.424.164.988.339 1.43.239.51-.115.614-.64.051-.891-.413-.193-1.676-.358-1.676-1.439 0-.604.461-1.145 1.323-1.264v-.473h.444v.451c.321.009.681.065 1.083.187l-.16.731c-.341-.12-.717-.229-1.084-.207-.66.039-.718.611-.257.85.759.357 1.748.622 1.748 1.573.001.762-.595 1.167-1.33 1.27v.467zm3.461-6.914c.005-1.353.055-1.347-.576-1.485-.065-.015-3.958-.501-2.404-3.284.867-1.554 1.093-2.873.622-3.617-.26-.41-.791-.617-1.325-.617-.533 0-1.065.207-1.324.617-.472.744-.246 2.063.621 3.617 1.555 2.783-2.339 3.269-2.403 3.284-.632.138-.582.132-.576 1.485h7.365zm-8.397-1.14c-.321-.172-.61-.415-.78-.774-.234-.492-.176-1.051.172-1.659.574-1.007.714-1.887.383-2.414-.434-.693-1.69-.676-2.111-.012-.331.521-.192 1.409.381 2.436.341.61.395 1.167.16 1.657-.415.863-1.539 1.061-2.13 1.197-.231.053-.296.068-.304.341l-.002.368h4.209c0-.442-.011-.819.022-1.14zm13.66 1.14l-.003-.368c-.007-.273-.072-.288-.304-.341-.591-.136-1.714-.334-2.13-1.197-.234-.49-.181-1.047.16-1.657.573-1.027.712-1.915.382-2.436-.422-.664-1.678-.681-2.112.012-.331.527-.191 1.407.383 2.414.348.608.406 1.167.172 1.659-.17.359-.458.602-.78.774.034.321.022.698.022 1.14h4.21z"/></svg>
+                    </div>
+                    <p className="value">
+                      $
+                      <Countup
+                        className="number-block"
+                        duration={2}
+                        end={238}
+                        delay={1}
+                        enableScrollSpy={true}
+                      />
+                      M
+                    </p>
+                    <p className="label">TOTAL VALUE OF PROPERTY SOLD</p>
+                  </div>
+                  <div className="business-data__item">
+                    <div className="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 10c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6zm.5 8.474v.526h-.5v-.499c-.518-.009-1.053-.132-1.5-.363l.228-.822c.478.186 1.114.383 1.612.27.574-.13.692-.721.057-1.005-.465-.217-1.889-.402-1.889-1.622 0-.681.52-1.292 1.492-1.425v-.534h.5v.509c.362.01.768.073 1.221.21l-.181.824c-.384-.135-.808-.257-1.222-.232-.744.043-.81.688-.29.958.856.402 1.972.7 1.972 1.773.001.858-.672 1.315-1.5 1.432zm-7.911-5.474h-2.589v-2h3.765c-.484.602-.881 1.274-1.176 2zm-.589 3h-2v-2h2.264c-.166.641-.264 1.309-.264 2zm2.727-6h-4.727v-2h7v.589c-.839.341-1.604.822-2.273 1.411zm2.273-6h-7v-2h7v2zm0 3h-7v-2h7v2zm-4.411 12h-2.589v-2h2.069c.088.698.264 1.369.52 2zm-10.589-11h7v2h-7v-2zm0 3h7v2h-7v-2zm12.727 11h-4.727v-2h3.082c.438.753.994 1.428 1.645 2zm-12.727-5h7v2h-7v-2zm0 3h7v2h-7v-2zm0-6h7v2h-7v-2z"/></svg>
+                    </div>
+                    <p className="value">
+                      <Countup
+                        className="number-block"
+                        duration={2}
+                        end={102}
+                        delay={1}
+                        enableScrollSpy={true}
+                      />
+                    </p>
+                    <p className="label">
+                      TRANSACTIONS <br /> IN THE PAST 3 YEARS
+                    </p>
+                  </div>
+                  <div className="business-data__item">
+                  <div className="icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M6.994 15.026v-1.833c-.004-1.295-.168-2.66 2.502-3.268 1.01-.229 2.395-.544 2.622-1.046.024-.051.095-.209-.106-.582-1.431-2.638-1.698-4.965-.754-6.552.65-1.092 1.834-1.719 3.248-1.719 1.403 0 2.579.618 3.228 1.694.943 1.568.684 3.902-.731 6.573-.198.376-.125.535-.101.587.231.502 1.571.808 2.647 1.053 2.77.631 2.416 2.236 2.451 3.279v3.958c0 .49-.201.977-.609 1.356-1.378 1.28-4.453 4.026-4.935 4.467-.749.687-1.518 1.006-2.421 1.006-.405 0-.832-.065-1.308-.2-2.773-.783-4.484-1.036-5.727-1.105v1.332h-5v-9h4.994zm-.994 1h-3v7h3v-7zm1 5.664c2.092.118 4.405.696 5.999 1.147.817.231 1.761.354 2.782-.581 1.279-1.172 2.722-2.413 4.929-4.463.824-.765-.178-1.783-1.022-1.113 0 0-2.961 2.299-3.689 2.843-.379.285-.695.519-1.148.519-.36 0-2.232-.467-3.104-.743-.575-.183-.371-.993.268-.858.447.093 1.594.35 2.201.52 1.017.281 1.276-.867.422-1.152-.562-.19-.537-.198-1.889-.665-1.301-.451-2.214-.753-3.585-.156-.639.278-1.432.616-2.164.814v3.888zm14.006-6.066v-2.422c.008-1.858-.269-1.972-1.679-2.294-1.49-.34-2.898-.66-3.334-1.611-.201-.438-.158-.933.126-1.472 1.244-2.349 1.513-4.334.757-5.59-.469-.779-1.31-1.209-2.37-1.209-1.068 0-1.916.437-2.389 1.23-.757 1.272-.482 3.248.774 5.565.291.537.338 1.032.138 1.471-.432.955-1.897 1.287-3.312 1.608-1.402.321-1.724.415-1.717 2.297v3.2l.765-.325c.642-.28 1.259-.417 1.887-.417 1.214 0 2.205.499 4.303 1.205.64.214 1.076.716 1.175 1.306 1.124-.863 2.92-2.257 2.937-2.27.357-.284.773-.434 1.2-.434.262 0 .513.058.739.162z"/></svg>
+                    </div>
+                    <p className="value">
+                      $
+                      <Countup
+                        className="number-block"
+                        duration={2}
+                        end={10.2}
+                        delay={1}
+                        decimals={1}
+                        decimal="."
+                        enableScrollSpy={true}
+                      />
+                      M
+                    </p>
+                    <p className="label">
+                      SUM TOTAL ACHIEVED ABOVE CLIENT'S EXPECTATIONS
+                    </p>
+                  </div>
+                  <div className="business-data__disclaimer">
+                    <div>
+                      <h6>
+                        <em>Statistics based on 2021 calendar year</em>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-<section className="business-data">
-  <div className="business-data__inner">
-    <div className="business-data__content">
-      <div className="business-data__heading">
-        <h5
-          className=""
-         
-        >
-          By the <br />
-          numbers
-        </h5>
-      </div>
-      <div className=" business-data__items">
-        <div
-          className="business-data__item"
-        
-        >
-          <p className="value">
-          <Countup className="number-block"
-                                    duration={2}
-                                    end={102}
-                                    delay={1}
-                             
-                                    enableScrollSpy={true}
-                                />
-            
-            </p>
-          <p className="label">
-          TRANSACTIONS <br/> IN THE PAST 3 YEARS
-          </p>
-        </div>
-        <div
-          className="business-data__item"
-         
-        >
-          <p className="value">$<Countup className="number-block"
-                                    duration={2}
-                                    end={6.7}
-                                    delay={1}
-                                    decimals={1}
-  decimal="."
-                                    enableScrollSpy={true}
-                                />M</p>
-          <p className="label">
-          HIGHEST SALE PRICE
-          </p>
-        </div>
-        <div
-          className="business-data__item"
-         
-        >
-          <p className="value">$ <Countup className="number-block"
-                                    duration={2}
-                                    end={243}
-                                    delay={1}
-                                    
-                                    enableScrollSpy={true}
-                                />M</p>
-          <p className="label">
-          AVERAGE SALE PRICE
-          </p>
-        </div>
-        <div
-          className="business-data__item"
-        
-        >
-          <p className="value">$ <Countup className="number-block"
-                                    duration={2}
-                                    end={238}
-                                    delay={1}
-                             
-                                    enableScrollSpy={true}
-                                />M</p>
-          <p className="label">
-          TOTAL VALUE OF PROPERTY SOLD
-          </p>
-        </div>
-        <div
-          className="business-data__item"
-         
-        >
-          <p className="value">$ <Countup className="number-block"
-                                    duration={2}
-                                    end={10.2}
-                                    delay={1}
-                                    decimals={1}
-  decimal="."
-                                    enableScrollSpy={true}
-                                />M</p>
-          <p className="label">
-          SUM TOTAL ACHIEVED ABOVE CLIENT'S EXPECTATIONS
-          </p>
-        </div>
-        <div
-          className="business-data__disclaimer"
-        
-        >
-          <div>
-            <h6><em>Statistics based on 2021 calendar year</em></h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-          
           <section className="testimonials-section">
-         
             <div className="testimonials-heading">
               <h4>THE PROOF</h4>
             </div>
 
             <div className="testimonials">
               <TestimonialCard></TestimonialCard>
-            
             </div>
-          
-        
           </section>
-               
 
-              
           <section className="blog-section">
-    
-          <div className="testimonials-heading">
+            <div className="testimonials-heading">
               <h4>LATEST INSIGHTS</h4>
             </div>
             <div className="blog-container">
-       
               <BlogCard></BlogCard>
               <BlogCard></BlogCard>
               <BlogCard></BlogCard>
-            
             </div>
-        
           </section>
-         
         </main>
       </div>
-
-      <footer className="footer">
-        <div className="footer__top">
-          <div className="footer__inner">
-            <div className="footer__cols">
-              <div className="footer__col">
-                <div className="footer__logo">
-                  <a aria-current="page" title="A__Z" className="" href="/">
-                    <img
-                      className="logo-img"
-                      src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png"
-                    ></img>
-                  </a>
-                </div>
-                <div className="footer__address">
-                  <p>
-                    130 AUBURN ROAD, HAWTHORN, 3122
-                    <br/>
-                    <a href="mailto:CONTACT@ANTONZHOUK.COM.AU">
-                      CONTACT@ANTONZHOUK.COM.AU
-                    </a>
-                    <br />
-                    <a href="tel:03 9815 1124">03 9815 1124</a>
-                    <br />
-              
-                  </p>
-                </div>
-              </div>
-
-              <div className="footer__col">
-                <h4>{'‎'}</h4>
-                <ul className="">
-                  <li>
-                    <a href="/about-us/">Buy</a>
-                  </li>
-
-                  <li>
-                    <a href="/careers/">Sell</a>
-                  </li>
-                  <li>
-                    <a href="/careers/">Rent</a>
-                  </li>
-                </ul>
-                
-              
-              </div>
-              <div className="footer__col">
-                <h4 className="">About</h4>
-                <ul className="">
-                  <li>
-                    <a href="/about-us/">About Us</a>
-                  </li>
-
-                  <li>
-                    <a href="/careers/">News</a>
-                  </li>
-                  <li>
-                    <a href="/careers/">Contact Us</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="footer__col">
-                <h4 className="">Connect</h4>
-                <ul className="">
-                 
-                  <li>
-                    <a
-                      to="https://www.facebook.com/"
-                      href="https://www.facebook.com/"
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                    >
-                      Facebook
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      to="https://www.instagram.com/"
-                      href="https://www.instagram.com/"
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                    >
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      to="https://www.linkedin.com//"
-                      href="https://www.linkedin.com/"
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                    >
-                      LinkedIn
-                    </a>
-                  </li>
-                
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row" id="copyright" data-layout="default"></div>
-        <div className="footer__bottom">
-          <div className="footer__inner">
-            <div className="footer__cols">
-            <div className="footer__col"><ul><li><a href="/terms-conditions/">Terms &amp; Conditions</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li></ul></div>
-            
-            </div>
-        
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <div className="footer-bottom-text">
-            © 2022 Anton Zhouk - Real Estate Agency.
-          </div>
-          <div className="footer-bottom-icons">
-            {/* <ul className="social">
-              <li>
-                <a target="_blank" rel="noopener" href="#%20">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" rel="noopener" href="#%20">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
-                  </svg>{" "}
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                </a>
-              </li>
-            </ul> */}
-          </div>
-        </div>
-      </footer>
     </>
   );
 }

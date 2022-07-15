@@ -1,7 +1,44 @@
 
   @charset "UTF-8";
 
+  img.footer {
+    filter: none;
+}
 
+.button.appraisal-button{
+  font-family:'Montserrat', sans-serif;
+}
+
+  .property-options__menu{
+    font-size: 20px;
+    letter-spacing: 3.75px;
+    line-height: 42px;
+  }
+
+  .property-options__menu:before{
+
+    background: hsl(184deg 49% 58%) !important;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 20px;
+    width: 50vw;
+
+  }
+
+
+  
+
+  .icon svg {
+    fill: white;
+    width: 40px;
+    height: 40px;
+}
+
+  .business-data__item .icon {
+    margin: 15px 0;
+}
 
   /*Testimonial*/
 
@@ -86,9 +123,11 @@ section.blog-section {
   font-size: 1.5rem;
   line-height:3rem;
   font-weight: 300;
-  font-family: Montserrat;
+  font-family:'Montserrat', sans-serif;
+
   margin-bottom: 2rem;
 }
+
 
 .header.active{
   background:#60c2c9 !important;
@@ -106,7 +145,8 @@ section.blog-section {
 
 
 .testimonials__content p {
-  font-family: Montserrat;
+  font-family:'Montserrat', sans-serif;
+
 }
 
 
@@ -140,7 +180,7 @@ section.blog-section {
   }
   .footer-bottom-text {
     margin: 20px;
-    color: grey;
+    color: black;
   }
 
   .footer-bottom-icons {
@@ -195,7 +235,8 @@ section.blog-section {
 
   .dropDown {
     background: #13213c;
-    font-family: Montserrat, sans-serif;
+    font-family:'Montserrat', sans-serif;
+
     font-size: 13px !important;
     font-weight: 600;
     line-height: 1.2;
@@ -207,7 +248,8 @@ section.blog-section {
     font-size: 13px;
     font-weight: 600;
     background: #91a1c1;
-    font-family: Montserrat, sans-serif;
+    font-family:'Montserrat', sans-serif;
+
   }
 
   .searchArea {
@@ -1722,8 +1764,8 @@ section.blog-section {
 
   .header {
     background: transparent;
-    background: transparent;
-    border-bottom: none;
+    background: transparent !important;
+    border-bottom:1px solid hsla(0,0%,100%,.2);
     padding: 20px 0;
     position: fixed;
     top: 0;
@@ -1826,7 +1868,7 @@ section.blog-section {
     padding-bottom: 2px;
     position: relative;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .header__nav ul li a:before {
@@ -2661,7 +2703,7 @@ section.blog-section {
       top: 55%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      width: 842px;
+      width: 750px;
     }
     
   }
@@ -2768,8 +2810,8 @@ section.blog-section {
   }
 
   .hero-banner__heading h1 {
-    font-family: Montserrat;
-    font-family: "Big Caslon";
+    font-family:'Montserrat', sans-serif;
+
     color: #fff;
     font-size: 22px;
     font-weight: 500;
@@ -2783,7 +2825,7 @@ section.blog-section {
       font-size: 30px;
       letter-spacing: 5px;
       line-height: 52px;
-      padding: 0 96px;
+     
     }
   }
 
@@ -3755,7 +3797,7 @@ section.blog-section {
 
   .property-options__heading h2,
   .testimonials-heading h2 {
-    font-family: 'Big carlson';
+
     color: #233356;
     font-size: 20px;
     font-weight: 500;
@@ -3773,7 +3815,7 @@ section.blog-section {
     }
     .property-options__heading h2,
     .testimonials-heading h2 {
-      font-size:40px;
+      font-size:30px;
       line-height: 48px;
       padding-top: 50px;
     }
@@ -3973,7 +4015,7 @@ section.blog-section {
 
   @media (min-width: 900px) {
     .property-options__slides .property-options__slider {
-      padding-bottom: 60px;
+      padding-bottom: 0px;
     }
   }
 
@@ -4658,6 +4700,7 @@ section.blog-section {
     padding: 0;
     position: relative;
     text-transform: uppercase;
+    margin-left: 50px;
   }
 
   @media (min-width: 900px) {
@@ -4683,7 +4726,7 @@ section.blog-section {
     }
 
     .featured-news__heading h4 , .testimonials-heading h4 {
-      font-size: 30px;
+      font-size: 20px;
       letter-spacing: 3.75px;
       line-height: 42px;
     }
@@ -5557,6 +5600,7 @@ section.blog-section {
   }
 
   .weather__content p {
+    font-family:'Montserrat', sans-serif;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 2.36px;
@@ -8272,7 +8316,7 @@ section.blog-section {
 
   @media (min-width: 900px) {
     .business-data__content {
-      padding: 100px 0;
+      padding: 70px 0;
     }
   }
 
@@ -8360,7 +8404,7 @@ section.blog-section {
     color: #fff;
     display: flex;
     margin-bottom: 24px;
-    padding: 0 20px;
+    padding-right:20px;
   }
 
   .business-data__item:last-of-type {
@@ -8401,7 +8445,7 @@ section.blog-section {
   }
 
   .business-data__item .label {
-    color: white;
+    color: #454343;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2.8px;
@@ -9933,8 +9977,9 @@ section.blog-section {
   }
 
   .hero-banner-about {
-    background: #13203c;
+    background: #5fc2c9;
     height: 586px;
+    overflow: hidden;
   }
 
   .hero-banner-about--extra-padding {
@@ -10115,7 +10160,7 @@ section.blog-section {
   }
 
   .hero-banner-about__image {
-    background: #13203c;
+    
     display: flex;
     height: 554px;
     justify-content: flex-end;
@@ -18160,7 +18205,7 @@ section.blog-section {
     }
 
     .footer__col:first-child p {
-      color: grey;
+      color: black;
       font-size: 13px;
       letter-spacing: 0.4px;
       line-height: 26px;
@@ -18169,7 +18214,7 @@ section.blog-section {
     }
 
     .footer__col:first-child p a {
-      color: grey;
+      color: black;
       text-decoration: none;
     }
 
@@ -18235,7 +18280,7 @@ section.blog-section {
   }
 
   .footer__col h4 {
-    color: grey;
+    color: black;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1.8px;
@@ -18298,7 +18343,7 @@ section.blog-section {
   }
 
   .footer__col ul li a {
-    color: grey;
+    color: black;
     cursor: pointer;
     display: inline-block;
     margin-bottom: -2px;
@@ -18421,7 +18466,7 @@ section.blog-section {
     }
 
     .footer__bottom .footer__col:first-of-type ul li a {
-      color: grey;
+      color: black;
     }
 
     .footer__bottom .footer__col:first-of-type ul li a:before {

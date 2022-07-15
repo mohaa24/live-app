@@ -47,13 +47,15 @@ export const TestimonialCard = () => {
     }
 
   
+    document.getElementById('testimonialText').style.opacity = 0;
 
-    setActiveReview(reviews[num]);
-    document.getElementById('testimonialText').style.opacity = 0
+    
+   
 
     setTimeout(()=>{
+      setActiveReview(reviews[num]);
       animate()
-    },100)
+    },500)
     console.log(num)
   }
 
@@ -61,8 +63,8 @@ export const TestimonialCard = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-     toggleReview
-    }, 1000);
+     toggleReview();
+    }, 5000);
   
     return () => clearInterval(interval);
   }, []);
