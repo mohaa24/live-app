@@ -23,7 +23,9 @@
     line-height: 42px;
   }
 
-
+  section.aboutSection.light-theme {
+    padding: 50px;
+}
 
   
 
