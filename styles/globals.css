@@ -5,6 +5,14 @@
     filter: none;
 }
 
+.align-icon {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 30px;
+  align-items: center;
+  margin: 20px 0;
+}
+
 .button.appraisal-button{
   font-family:'Montserrat', sans-serif;
 }
