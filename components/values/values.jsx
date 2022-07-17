@@ -1,23 +1,5 @@
 import styled from "styled-components";
 
-const Button = styled.div`
-  a {
-    background-color: #3edd84;
-    color: white;
-    width: 90px;
-    padding: 10px 18px;   
-    border-radius: 3px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 70px;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: "merriweather";
-  }
-`;
 
 const Container = styled.div`
    {
