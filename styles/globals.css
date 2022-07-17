@@ -1472,10 +1472,10 @@ section.blog-section {
   .form__input {
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #233356;
+    border-bottom: 1px solid #5fc2c9;
     border-radius: 0;
     box-shadow: none;
-    color: #233356;
+    color: #5fc2c9;
     font-size: 14px;
     font-weight: 500;
     height: 33px;
@@ -1531,8 +1531,8 @@ section.blog-section {
   }
 
   .form__textarea {
-    border: 1px solid #233356;
-    color: #233356;
+    border: 1px solid #5fc2c9;
+    color: #5fc2c9;
     font-size: 16px;
     height: 121px;
     line-height: 1.3;
@@ -1565,7 +1565,7 @@ section.blog-section {
   }
 
   .form label {
-    color: #233356;
+    color: #5fc2c9;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -1586,8 +1586,8 @@ section.blog-section {
   .form__row--submit .btn {
     align-items: center;
     align-self: flex-start;
-    background: #233356;
-    border: 1px solid #233356;
+    background: #5fc2c9;
+    border: 1px solid #5fc2c9;
     cursor: pointer;
     display: flex;
     font-weight: 600;
@@ -7174,7 +7174,7 @@ section.blog-section {
   }
 
   .contact__form h2 {
-    color: #233356;
+    color: #5fc2c9;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 2.25px;
