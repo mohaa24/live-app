@@ -15,11 +15,11 @@ export default function Home() {
   const blueDropdown = {
     control: (styles) => ({
       ...styles,
-      backgroundColor: "#60c2c9",
+      backgroundColor: "#A9C5DB",
       borderRadius: 0,
       color: "#ffffff",
       fontSize:'20px',
-      borderColor: '#60c2c9',
+      borderColor: '#A9C5DB',
       minHeight:'45px'
     }),
     placeholder: (styles) => ({

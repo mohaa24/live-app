@@ -129,7 +129,7 @@ section.blog-section {
 
 
 .header.active{
-  background:#60c2c9 !important;
+  background:#A9C5DB !important;
 }
 
 .statistic-bar {
@@ -4212,7 +4212,7 @@ section.blog-section {
   }
 
   .property-option__details {
-    background: #60c2c9ad;
+    background: #A9C5DBad;
     bottom: 0;
     padding: 24px 20px;
     position: absolute;
@@ -8288,7 +8288,7 @@ section.blog-section {
   .business-data {
     background: #13203c;
     background: #a8c5da;
-    background: #60c2c9 !important;
+    background: #A9C5DB !important;
   }
 
   .business-data__inner {
