@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import { Properties } from "../components/Properties/properties";
 import { Search } from "../components/search/search";
+const axios = require("axios").default;
 
 export default function Buy() {
   const blueDropdown = {
@@ -36,20 +37,38 @@ export default function Buy() {
   }, []);
 
   const requestPropertyData = async () => {
-    await fetch(apiURL, {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `Bearer ${token}`, // notice the Bearer before your token
-        "X-Auth-Token": `${key}`,
-      },
-      // body:JSON.stringify(yourNewData)
-    })
+    // await fetch(apiURL, {
+    //   method: "GET",
+    //   headers: {
+    //      "Content-type": "application/json",
+    //     Authorization: `Bearer ${token}`, // notice the Bearer before your token
+    //     "X-Auth-Token": `${key}`,
+    //     mode: "no-cors",
+    //   },
+    //   // body:JSON.stringify(yourNewData)
+    // })
+    //   .then((res) => {
+    //     console.log(res, "res");
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+
+    axios
+      .get(
+        apiURL,
+        {},
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${token}`, // notice the Bearer before your token
+            "X-Auth-Token": `${key}`,
+            withCredentials: false,
+          },
+        }
+      )
       .then((res) => {
-        console.log(res, "res");
-      })
-      .catch(function (error) {
-        console.log(error);
+        console.log(res);
       });
   };
 
