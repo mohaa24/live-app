@@ -37,39 +37,38 @@ export default function Buy() {
   }, []);
 
   const requestPropertyData = async () => {
-    // await fetch(apiURL, {
-    //   method: "GET",
-    //   headers: {
-    //      "Content-type": "application/json",
-    //     Authorization: `Bearer ${token}`, // notice the Bearer before your token
-    //     "X-Auth-Token": `${key}`,
-    //     mode: "no-cors",
-    //   },
-    //   // body:JSON.stringify(yourNewData)
-    // })
-    //   .then((res) => {
-    //     console.log(res, "res");
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-
-    axios
-      .get(
-        apiURL,
-        {},
-        {
-          headers: {
-            "Content-type": "application/json",
-            Authorization: `Bearer ${token}`, // notice the Bearer before your token
-            "X-Auth-Token": `${key}`,
-            withCredentials: false,
-          },
-        }
-      )
+    await fetch(apiURL, {
+      method: "GET",
+      headers: {
+         "Content-type": "application/json",
+        Authorization: `Bearer ${token}`, // notice the Bearer before your token
+        "X-Auth-Token": `${key}`,
+        mode: "no-cors",
+      },
+      // body:JSON.stringify(yourNewData)
+    })
       .then((res) => {
-        console.log(res);
+        console.log(res, "res");
+      })
+      .catch(function (error) {
+        console.log(error);
       });
+
+    // axios
+    //   .get(
+    //     apiURL,
+        
+    //     {
+    //       headers: {
+    //         "Content-type": "application/json",
+    //         Authorization: `Bearer ${token}`, // notice the Bearer before your token
+    //         "X-Auth-Token": `${key}`,
+    //       },
+    //     }
+    //   )
+    //   .then((res) => {
+    //     console.log(res);
+    //   });
   };
 
   return (
