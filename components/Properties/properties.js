@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { items, test } from "./test";
+import { useEffect, useState } from "react";
+import { bItems } from "./buy";
+import { sItems } from "./sold";
+
 
 // export type TProperty = {
 
@@ -135,17 +137,37 @@ import { items, test } from "./test";
 //   data: any
 // };
 
-export const Properties = () => {
-  const [propertyList, setPropertyList] = useState(items);
+export const Properties = (props) => {
+  const [propertyList, setPropertyList] = useState(null);
+
+
+  useEffect(()=>{
+
+    if(props.type == 'buy'){
+        setPropertyList(bItems);
+
+    }if(props.type =='sold'){
+        setPropertyList(sItems);
+                console.log("sItems");
+
+
+    }
+  },[])
+
 
   return (
     <>
-      {items.map((item) => {
+    
+      {propertyList && propertyList.map((item) => {
         return (
           <div className="property ">
             <div className="property__image">
               <img
-                src="https://agentboxcdn.com.au/clients-data/4244/public_html/media/lt/1/1P5512/165785828834854777-rsd.jpg"
+                src={
+                  item.photos.length != 0
+                    ? item.photos[0].thumbnails.thumb_1024
+                    : "https://agentboxcdn.com.au/clients-data/4244/public_html/media/lt/1/1P5512/165785828834854777-rsd.jpg"
+                }
                 alt="1403/14 George Avenue Broadbeach"
               />
               <div className="property__rollover">

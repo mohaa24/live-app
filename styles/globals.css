@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+section.properties.properties--buy h1 {
+    text-align: center;
+}
+
+section.hero-banner.sub {
+    height: 50vh;
+    background: #e5e5e5;
+}
+
 button.searchButton {
   /* display: inline-block; */
   position: absolute;

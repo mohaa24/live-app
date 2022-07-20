@@ -4,7 +4,7 @@ import { Properties } from "../components/Properties/properties";
 import { Search } from "../components/search/search";
 const axios = require("axios").default;
 
-export default function Buy() {
+export default function Sold() {
   const blueDropdown = {
     control: (styles) => ({
       ...styles,
@@ -33,14 +33,14 @@ export default function Buy() {
   const apiURL =
     "https://ap-southeast-2.api.vaultre.com.au/api/v1.3/properties/residential/sale";
   useEffect(() => {
-    //requestPropertyData();
+   // requestPropertyData();
   }, []);
 
   const requestPropertyData = async () => {
     await fetch(apiURL, {
       method: "GET",
       headers: {
-         "Content-type": "application/json",
+        "Content-type": "application/json",
         Authorization: `Bearer ${token}`, // notice the Bearer before your token
         "X-Auth-Token": `${key}`,
         mode: "no-cors",
@@ -57,7 +57,7 @@ export default function Buy() {
     // axios
     //   .get(
     //     apiURL,
-        
+
     //     {
     //       headers: {
     //         "Content-type": "application/json",
@@ -81,9 +81,9 @@ export default function Buy() {
         </div>
       </section>
       <section className="properties properties--buy">
-        <h1>Buy Properties</h1>
+        <h1>Sell Properties</h1>
         <div className="properties__inner">
-          <Properties type={"buy"}></Properties>
+          <Properties type = {'sold'}></Properties>
         </div>
       </section>
     </>
