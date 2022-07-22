@@ -30,45 +30,26 @@ export default function Sold() {
 
   const token = "ozyttvptsnkpbvjfhogsvrtojytbptqeljwbyhyp";
   const key = "wljszq3Wsj8omYXJk6Aek9BdMQCE8ecF7aGmK9hI";
-  const apiURL =
-    "https://ap-southeast-2.api.vaultre.com.au/api/v1.3/properties/residential/sale";
+  const apiURL = "http://localhost:3100/sold";
   useEffect(() => {
-   // requestPropertyData();
+    requestPropertyData();
   }, []);
 
   const requestPropertyData = async () => {
-    await fetch(apiURL, {
-      method: "GET",
+    axios({
+      method: "get",
+      url: apiURL,
       headers: {
-        "Content-type": "application/json",
-        Authorization: `Bearer ${token}`, // notice the Bearer before your token
-        "X-Auth-Token": `${key}`,
-        mode: "no-cors",
+        //  Authorization: `Bearer ${token}`,
+        //  "X-Api-Key": key
       },
-      // body:JSON.stringify(yourNewData)
     })
-      .then((res) => {
-        console.log(res, "res");
+      .then((response) => {
+        console.log(response.data.data.items);
+        setResponse(response.data);
+
       })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-    // axios
-    //   .get(
-    //     apiURL,
-
-    //     {
-    //       headers: {
-    //         "Content-type": "application/json",
-    //         Authorization: `Bearer ${token}`, // notice the Bearer before your token
-    //         "X-Auth-Token": `${key}`,
-    //       },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     console.log(res);
-    //   });
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -81,9 +62,9 @@ export default function Sold() {
         </div>
       </section>
       <section className="properties properties--buy">
-        <h1>Sell Properties</h1>
+        <h1>Sold Properties</h1>
         <div className="properties__inner">
-          <Properties type = {'sold'}></Properties>
+          <Properties type={"sold"} data = {response}></Properties>
         </div>
       </section>
     </>

@@ -3,7 +3,7 @@ import Select from "react-select";
 import Router from "next/router";
 
 export const Search = (props) => {
-  const [filterValue, SetFilter] = useState({
+  const [filterValueLocal, SetFilterLocal] = useState({
     query: null,
     main: null,
     min: null,
@@ -52,15 +52,24 @@ export const Search = (props) => {
   };
 
   const handleChange = (e, type) => {
-    SetFilter((prev) => ({ ...prev, [type]: e.value }));
+    if (e.value) {
+      SetFilterLocal((prev) => ({ ...prev, [type]: e.value }));
+    } else {
+        SetFilterLocal((prev) => ({ ...prev, [type]: e.target.value }));
+    }
   };
 
   const onsubmit = () => {
     if (props.activePage == "index") {
       Router.push("/buy");
     }
-    props.setResponse(filterValue);
+    props.setFilter(filterValueLocal);
+    console.log(filterValueLocal)
   };
+
+  setInterval(() => {
+    // console.log(filterValueLocal);
+  }, 1000);
 
   return (
     <>
@@ -83,7 +92,7 @@ export const Search = (props) => {
           <input
             placeholder="Enter Query"
             className="search_input"
-            onChange={(e) => handleChange(e, "query")}
+            onChange={(e) => handleChange(e, 'query')}
           />
           <button
             className="searchButton"

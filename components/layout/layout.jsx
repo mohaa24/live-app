@@ -29,20 +29,17 @@ if (typeof window !== "undefined"){
             <ul>
               <li>
                 <a href="/buy/">Buy</a>
-               
               </li>
 
               <li>
                 <a href="/sold/">Sell</a>
-              
               </li>
               <li>
                 <a href="/lease/">Rent</a>
-             
               </li>
+              
               <li>
                 <a href="/about/">About</a>
-              
               </li>
               <li>
                 <a href="/blog/">Blog</a>
@@ -89,7 +86,7 @@ if (typeof window !== "undefined"){
         </div>
       </header>
       <div className="container"> {children}</div>
-     
+
       <footer className="footer">
         <div className="footer__top">
           <div className="footer__inner">
@@ -108,21 +105,23 @@ if (typeof window !== "undefined"){
                     130 AUBURN ROAD,
                     <br></br>
                     HAWTHORN, VIC 3122
-                    <br/>
-                    <br/>
-                    <a className="contact-mail" href="mailto:CONTACT@ANTONZHOUK.COM.AU">
+                    <br />
+                    <br />
+                    <a
+                      className="contact-mail"
+                      href="mailto:CONTACT@ANTONZHOUK.COM.AU"
+                    >
                       CONTACT@ANTONZHOUK.COM.AU
                     </a>
                     <br />
                     <a href="tel:03 9815 1124">03 9815 1124</a>
                     <br />
-              
                   </p>
                 </div>
               </div>
 
               <div className="footer__col">
-                <h4>{'‎'}</h4>
+                <h4>Services</h4>
                 <ul className="">
                   <li>
                     <a href="/about-us/">Buy</a>
@@ -135,8 +134,6 @@ if (typeof window !== "undefined"){
                     <a href="/careers/">Rent</a>
                   </li>
                 </ul>
-                
-              
               </div>
               <div className="footer__col">
                 <h4 className="">About</h4>
@@ -156,7 +153,6 @@ if (typeof window !== "undefined"){
               <div className="footer__col">
                 <h4 className="">Connect</h4>
                 <ul className="">
-                 
                   <li>
                     <a
                       to="https://www.facebook.com/"
@@ -187,7 +183,6 @@ if (typeof window !== "undefined"){
                       LinkedIn
                     </a>
                   </li>
-                
                 </ul>
               </div>
             </div>
@@ -197,10 +192,17 @@ if (typeof window !== "undefined"){
         <div className="footer__bottom">
           <div className="footer__inner">
             <div className="footer__cols">
-            <div className="footer__col"><ul><li><a href="/terms-conditions/">Terms &amp; Conditions</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li></ul></div>
-            
+              <div className="footer__col">
+                <ul>
+                  <li>
+                    <a href="/terms-conditions/">Terms &amp; Conditions</a>
+                  </li>
+                  <li>
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-        
           </div>
         </div>
         <div className="footer-bottom">

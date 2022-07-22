@@ -29,24 +29,15 @@ if (typeof window !== "undefined"){
             <ul>
               <li>
                 <a href="/buy/">Buy</a>
-               
               </li>
 
               <li>
                 <a href="/sold/">Sell</a>
-              
               </li>
               <li>
                 <a href="/lease/">Rent</a>
-             
               </li>
-              <li>
-                <a href="/about-us/">About</a>
-              
-              </li>
-              <li>
-                <a href="/blog/">Blog</a>
-              </li>
+            
               <li>
                 <a href="/contactt-us/">Contact</a>
               </li>

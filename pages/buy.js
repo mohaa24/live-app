@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import { Properties } from "../components/Properties/properties";
 import { Search } from "../components/search/search";
+import { useRouter } from "next/router";
+
 const axios = require("axios").default;
 
 export default function Buy() {
@@ -27,48 +29,39 @@ export default function Buy() {
   };
 
   const [response, setResponse] = useState(null);
+  const  [filterValue , setFilter] = useState(null);
+   const router = useRouter();
 
-  const token = "ozyttvptsnkpbvjfhogsvrtojytbptqeljwbyhyp";
-  const key = "wljszq3Wsj8omYXJk6Aek9BdMQCE8ecF7aGmK9hI";
+     const { pid } = router.query;
+
+     console.log(router, 'query')
+
   const apiURL =
-    "https://ap-southeast-2.api.vaultre.com.au/api/v1.3/properties/residential/sale";
+ "http://localhost:3100/sale";
+
+
   useEffect(() => {
-    //requestPropertyData();
+    requestPropertyData();
   }, []);
 
-  const requestPropertyData = async () => {
-    await fetch(apiURL, {
-      method: "GET",
-      headers: {
-         "Content-type": "application/json",
-        Authorization: `Bearer ${token}`, // notice the Bearer before your token
-        "X-Auth-Token": `${key}`,
-        mode: "no-cors",
-      },
-      // body:JSON.stringify(yourNewData)
-    })
-      .then((res) => {
-        console.log(res, "res");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  setInterval(()=>{
+  // console.log(filterValue);
+  },1000)
 
-    // axios
-    //   .get(
-    //     apiURL,
-        
-    //     {
-    //       headers: {
-    //         "Content-type": "application/json",
-    //         Authorization: `Bearer ${token}`, // notice the Bearer before your token
-    //         "X-Auth-Token": `${key}`,
-    //       },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     console.log(res);
-    //   });
+  const requestPropertyData = async () => {
+    axios({
+      method: "get",
+      url: apiURL,
+      headers: {
+        //  Authorization: `Bearer ${token}`,
+        //  "X-Api-Key": key
+      },
+    })
+      .then((response) => {
+        console.log(response.data.data.items);
+        setResponse(response.data);
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -76,14 +69,18 @@ export default function Buy() {
       <section className="hero-banner sub">
         <div className="hero-banner__inner">
           <div className="hero-banner__content">
-            <Search activePage={"index"} setResponse={setResponse}></Search>
+            <Search activePage={"index"} setFilter={setFilter}></Search>
           </div>
         </div>
       </section>
       <section className="properties properties--buy">
         <h1>Buy Properties</h1>
         <div className="properties__inner">
-          <Properties type={"buy"}></Properties>
+          <Properties
+            type={"buy"}
+            data={response}
+            filterValue={filterValue}
+          ></Properties>
         </div>
       </section>
     </>

@@ -1,12 +1,37 @@
 @charset "UTF-8";
 
+
+.ReactModalPortal {
+    z-index: 5;
+}
+section.hero-banner {
+    z-index: 0;
+}
+.hero-banner__menu ul li button:after {
+    background: hsla(0, 0%, 100%, 0.4);
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 60px;
+}
+
+a.contact-mail {
+    text-transform: lowercase;
+}
+
 section.properties.properties--buy h1 {
     text-align: center;
 }
 
+section.hero-banner.sub:before {
+    background: #efefef;
+}
+
 section.hero-banner.sub {
-    height: 50vh;
-    background: #e5e5e5;
+    height: 40vh;
+    background: none;
 }
 
 button.searchButton {
@@ -1678,7 +1703,7 @@ p,
 span,
 table,
 ul {
-  color: #233356;
+  color: black;
   font-family: Montserrat, sans-serif;
 }
 
@@ -1866,7 +1891,7 @@ a {
 
 @media (min-width: 1240px) {
   .header__nav ul li {
-    margin-left: 60px;
+    margin-left: 45px;
   }
 }
 
@@ -1895,7 +1920,7 @@ a {
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   width: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 
 .header__nav ul li a.active:before,
@@ -2649,7 +2674,7 @@ a {
   max-width: 1375px;
   padding: 0 20px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 @media (min-width: 900px) {
@@ -3708,7 +3733,7 @@ a {
 
 .property-options__heading h2,
 .testimonials-heading h2 {
-  color: #233356;
+  
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 1.6px;
