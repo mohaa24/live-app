@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import { Properties } from "../components/Properties/properties";
 import { Search } from "../components/search/search";
-import { useRouter } from "next/router";
 
 const axios = require("axios").default;
 
@@ -30,11 +29,7 @@ export default function Buy() {
 
   const [response, setResponse] = useState(null);
   const  [filterValue , setFilter] = useState(null);
-   const router = useRouter();
 
-     const { pid } = router.query;
-
-     console.log(router, 'query')
 
   const apiURL =
  "http://localhost:3100/sale";
@@ -44,9 +39,6 @@ export default function Buy() {
     requestPropertyData();
   }, []);
 
-  setInterval(()=>{
-  // console.log(filterValue);
-  },1000)
 
   const requestPropertyData = async () => {
     axios({
@@ -69,7 +61,7 @@ export default function Buy() {
       <section className="hero-banner sub">
         <div className="hero-banner__inner">
           <div className="hero-banner__content">
-            <Search activePage={"index"} setFilter={setFilter}></Search>
+            <Search activePage={"buy"} setFilter={setFilter}></Search>
           </div>
         </div>
       </section>

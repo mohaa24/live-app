@@ -1,20 +1,31 @@
 import { Children, useState } from "react";
+import { useRouter } from "next/router";
+import Router from "next/router";
 
-
-export const Layout = ({children}) => {
-  const [nav, setNav] = useState(false);
+export const Layout = ({ children }) => {
+  const router = useRouter();
+  const [nav, setNav] = useState(
+    router.pathname.toLocaleLowerCase().includes("buy") ||
+      router.pathname.toLocaleLowerCase().includes("sold")
+  );
 
   const changeNavState = () => {
-    console.log("scroll");
     if (window.scrollY > 10) {
       setNav(true);
     } else {
-      setNav(false);
+      if (
+        !router.pathname.toLocaleLowerCase().includes("buy") &&
+        !router.pathname.toLocaleLowerCase().includes("sold")
+      ) {
+        setNav(false);
+      }
     }
   };
-if (typeof window !== "undefined"){
-  window.addEventListener("scroll", changeNavState);
-}
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", changeNavState);
+    console.log(router.pathname.toLocaleLowerCase().includes("buy"));
+  }
   return (
     <>
       <header className={nav ? "header active" : "header"} id="header">
@@ -37,7 +48,7 @@ if (typeof window !== "undefined"){
               <li>
                 <a href="/lease/">Rent</a>
               </li>
-              
+
               <li>
                 <a href="/about/">About</a>
               </li>

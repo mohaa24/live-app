@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Carousel } from "react-responsive-carousel";
 
 
  
@@ -32,51 +33,121 @@ export const TestimonialCard = () => {
 
   ]
 
-  const animate = () =>{
-    document.getElementById('testimonialText').style.opacity = 1
+  // const animate = () =>{
+  //   document.getElementById('testimonialText').style.opacity = 1
     
-  }
+  // }
 
-  const toggleReview = () =>{
+  // const toggleReview = () =>{
 
-    if(num < reviews.length-1){
-      setNum(num+1)
-    }
-    if(num == reviews.length-1){
-      setNum(0)
-    }
+  //   if(num < reviews.length-1){
+  //     setNum(num+1)
+  //   }
+  //   if(num == reviews.length-1){
+  //     setNum(0)
+  //   }
 
   
-    document.getElementById('testimonialText').style.opacity = 0;
+  //   document.getElementById('testimonialText').style.opacity = 0;
 
     
    
 
-    setTimeout(()=>{
-      setActiveReview(reviews[num]);
-      animate()
-    },500)
-    console.log(num)
-  }
+  //   setTimeout(()=>{
+  //     setActiveReview(reviews[num]);
+  //     animate()
+  //   },500)
+  //   console.log(num)
+  // }
 
 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-     toggleReview();
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //    toggleReview();
+  //   }, 5000);
   
-    return () => clearInterval(interval);
-  }, []);
-  
+  //   return () => clearInterval(interval);
+  // }, []);
+
+
+  let carousal =  reviews.map((i)=>{
+             (
+
+             <>
+             { reviews &&
+               <div>
+                 {/* <p className="legend">Legend 14</p> */}
+                 <h1>{i.review}</h1>
+                 <h3>{i.name}</h3>
+               </div>}
+             </>
+             )
+           })
 
   return (
     <>
-      <div className=" testimonials__inner">
+      <div className="TestimonielSection">
+        <div className="leftBlock testimonialContent">
+          <h1>The Proof</h1>
+        </div>
+        <div className="rightBlock">
+          <Carousel
+            autoPlay={true}
+            showArrows={false}
+            showIndicators={false}
+            showThumbs={false}
+            transitionTime={500}
+            infiniteLoop={true}
+          >
+            <div className="testimonialContent">
+              {/* <p className="legend">Legend 14</p> */}
+              <h1>
+                van has guided me through opening my own agency. He provides
+                outstanding advice and is always there to answer any questions I
+                may have. I will continue to use Bresic Coaching for many years
+                to come.
+              </h1>
+              <h3>Alison Birdsall</h3>
+            </div>
+            <div className="testimonialContent">
+              <p className="">Legend 14</p>
+              <h1>
+                "van has guided me through opening my own agency. He provides
+                outstanding advice and is always there to answer any questions I
+                may have. I will continue to use Bresic Coaching for many years
+                to come."
+              </h1>
+              <h3 className="">Alison Birdsall</h3>
+            </div>
+            <div className="testimonialContent">
+              <p className="legend">Legend 15</p>
+              <h1>
+                "van has guided me through opening my own agency. He provides
+                outstanding advice and is always there to answer any questions I
+                may have. I will continue to use Bresic Coaching for many years
+                to come."
+              </h1>
+              <h3 className="">Alison Birdsall</h3>
+            </div>
+            <div className="testimonialContent">
+              {/* <p className="legend">Legend 14</p> */}
+              <h1>
+                " van has guided me through opening my own agency. He provides
+                outstanding advice and is always there to answer any questions I
+                may have. I will continue to use Bresic Coaching for many years
+                to come."
+              </h1>
+              <h3>Alison Birdsall</h3>
+            </div>
+          </Carousel>
+        </div>
+      </div>
+
+      {/* <div className=" testimonials__inner">
         <div className="testimonials__content">
           <p id='testimonialText'>
-            {activeReview.review} 
-           
+            {activeReview.review}            
           </p>
         </div>
         <ul className="testimonials__stars">
@@ -112,7 +183,7 @@ export const TestimonialCard = () => {
             ></img>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

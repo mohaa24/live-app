@@ -13,6 +13,8 @@ import "swiper/css/bundle";
 import { Search } from "../components/search/search";
 import Modal from "react-modal";
 import { useState } from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 
 
@@ -50,7 +52,7 @@ export default function Home() {
       minWidth:'20vw'
     },
   };
-  const [modalIsOpen, setIsOpen] = useState(true);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
@@ -122,9 +124,21 @@ export default function Home() {
               contentLabel="Example Modal"
               style={customStyles}
             >
-              <h2>Hello</h2>
-              <button onClick={closeModal}>close</button>
-              <div>I am a modal</div>
+              <h2>Appraisal Form</h2>
+    
+                <svg
+                  className="closeBtn"
+                  onClick={closeModal}
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                >
+                  <path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z" />
+                </svg>
+ 
+
               <form name="contact" className="form">
                 <div className="column_left">
                   <div className="form__row form__row--double">
@@ -511,7 +525,7 @@ export default function Home() {
 
           <section className="testimonials-section">
             <div className="testimonials-heading">
-              <h4>THE PROOF</h4>
+              {/* <h4>THE PROOF</h4> */}
             </div>
 
             <div className="testimonials">
@@ -525,8 +539,7 @@ export default function Home() {
             </div>
             <div className="blog-container">
               <BlogCard></BlogCard>
-              <BlogCard></BlogCard>
-              <BlogCard></BlogCard>
+             
             </div>
           </section>
         </main>

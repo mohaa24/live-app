@@ -30,29 +30,29 @@ const Container = styled.div`
 const Square = styled.div`
    {
     width: 27vw;
-   
+    margin-right: 15px;
     background: white;
     border-radius: 4px;
-    box-shadow: 0px 20px 50px #d9dbdf;
+    // box-shadow: 0px 20px 50px #d9dbdf;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 
     &:hover {
-
-      transform: scale(1.05);
-      -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      // transform: scale(1.05);
+      // -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     }
 
     .h1 {
       margin: auto;
       text-align: left;
-      margin-top: 240px;
-      padding-left: 30px;
-
-      font-family: 'Big carlson';
+      padding-top: 235px;
+      padding-bottom: 23px;
+      padding-left: 15px;
       font-size: 24px;
+      background: #a9c5dbcc;
+      color:white;
     }
 
     p {
@@ -61,7 +61,7 @@ const Square = styled.div`
       padding-right: 30px;
       padding-top: 20px;
       font-family: Montserrat;
-            font-size: 12px;
+      font-size: 12px;
       color: #c8c8c8;
       line-height: 18px;
     }
@@ -85,14 +85,27 @@ export const BlogCard = () => {
             src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
             className="mask"
           />
-          <div className="h1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            tempus consectetur?
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            tempus consectetur mi nec hendrerit. Integer id est massa.
-          </p>
+          <div className="h1">August 2022</div>
+
+          {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
+        </Square>
+
+        <Square className="square">
+          <img
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
+            className="mask"
+          />
+          <div className="h1">August 2022</div>
+
+          {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
+        </Square>
+
+        <Square className="square">
+          <img
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
+            className="mask"
+          />
+          <div className="h1">August 2022</div>
 
           {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
         </Square>

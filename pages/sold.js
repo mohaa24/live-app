@@ -27,9 +27,8 @@ export default function Sold() {
   };
 
   const [response, setResponse] = useState(null);
+  const [filterValue, setFilter] = useState(null);
 
-  const token = "ozyttvptsnkpbvjfhogsvrtojytbptqeljwbyhyp";
-  const key = "wljszq3Wsj8omYXJk6Aek9BdMQCE8ecF7aGmK9hI";
   const apiURL = "http://localhost:3100/sold";
   useEffect(() => {
     requestPropertyData();
@@ -47,7 +46,6 @@ export default function Sold() {
       .then((response) => {
         console.log(response.data.data.items);
         setResponse(response.data);
-
       })
       .catch((error) => console.log(error));
   };
@@ -57,14 +55,18 @@ export default function Sold() {
       <section className="hero-banner sub">
         <div className="hero-banner__inner">
           <div className="hero-banner__content">
-            <Search activePage={"index"} setResponse={setResponse}></Search>
+            <Search activePage={"sell"} setFilter={setFilter}></Search>
           </div>
         </div>
       </section>
       <section className="properties properties--buy">
         <h1>Sold Properties</h1>
         <div className="properties__inner">
-          <Properties type={"sold"} data = {response}></Properties>
+          <Properties
+            type={"sold"}
+            data={response}
+            filterValue={filterValue}
+          ></Properties>
         </div>
       </section>
     </>
