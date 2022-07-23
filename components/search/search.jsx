@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 import Router from "next/router";
+import { useRouter } from "next/router";
 
 export const Search = (props) => {
   const [filterValueLocal, SetFilterLocal] = useState({
-    query: null,
-    main: null,
-    min: null,
-    max: null,
-    bed: null,
-    bath: null,
-    car: null,
+    query: "",
+    main: 0,
+    min: 0,
+    max: 0,
+    bed: 0,
+    bath: 0,
+    car: 0,
   });
 
   const blueDropdown = {
@@ -50,26 +51,30 @@ export const Search = (props) => {
       textTransform: "uppercase",
     }),
   };
+  const router = useRouter();
+
+  useEffect(() => {
+    SetFilterLocal((prev) => ({ ...prev, query: router.query.query }));
+  }, []);
 
   const handleChange = (e, type) => {
     if (e.value) {
       SetFilterLocal((prev) => ({ ...prev, [type]: e.value }));
     } else {
-        SetFilterLocal((prev) => ({ ...prev, [type]: e.target.value }));
+      SetFilterLocal((prev) => ({ ...prev, [type]: e.target.value }));
     }
   };
 
   const onsubmit = () => {
     if (props.activePage == "index") {
-      Router.push("/buy");
+      Router.push(`/buy?query=${filterValueLocal.query}`);
     }
-    props.setFilter(filterValueLocal);
+    if (props.setFilter) {
+      props.setFilter(filterValueLocal);
+    }
+
     console.log(filterValueLocal)
   };
-
-  setInterval(() => {
-    // console.log(filterValueLocal);
-  }, 1000);
 
   return (
     <>
@@ -79,9 +84,9 @@ export const Search = (props) => {
           <Select
             className="dropDown"
             options={[
-              { value: "chocolate", label: "BUY" },
-              { value: "strawberry", label: "SALE" },
-              { value: "vanilla", label: "RENT" },
+              { value: "buy", label: "BUY" },
+              { value: "sale", label: "SALE" },
+              { value: "rent", label: "RENT" },
             ]}
             styles={blueDropdown}
             placeholder="BUY"
@@ -92,7 +97,8 @@ export const Search = (props) => {
           <input
             placeholder="Enter Query"
             className="search_input"
-            onChange={(e) => handleChange(e, 'query')}
+            onChange={(e) => handleChange(e, "query")}
+            value={filterValueLocal.query}
           />
           <button
             className="searchButton"
@@ -131,9 +137,11 @@ export const Search = (props) => {
         <Select
           className="dropDown"
           options={[
-            { value: "chocolate", label: "Chocolate" },
-            { value: "strawberry", label: "Strawberry" },
-            { value: "vanilla", label: "Vanilla" },
+            { value: "750,000", label: "$750,000" },
+            { value: "1,000,000", label: "$1,000,000" },
+            { value: "1,250,000", label: "$1,250,000" },
+            { value: "1,500,000", label: "$1,500,000" },
+            { value: "1,750,000", label: "$1,750,000" },
           ]}
           styles={blueDropdown}
           placeholder="MIN PRICE"
@@ -142,9 +150,11 @@ export const Search = (props) => {
         <Select
           className="dropDown"
           options={[
-            { value: "chocolate", label: "Chocolate" },
-            { value: "strawberry", label: "Strawberry" },
-            { value: "vanilla", label: "Vanilla" },
+            { value: "750,000", label: "$750,000" },
+            { value: "1,000,000", label: "$1,000,000" },
+            { value: "1,250,000", label: "$1,250,000" },
+            { value: "1,500,000", label: "$1,500,000" },
+            { value: "1,750,000", label: "$1,750,000" },
           ]}
           styles={blueDropdown}
           placeholder="MAX PRICE"
@@ -153,9 +163,12 @@ export const Search = (props) => {
         <Select
           className="dropDown"
           options={[
-            { value: "chocolate", label: "Chocolate" },
-            { value: "strawberry", label: "Strawberry" },
-            { value: "vanilla", label: "Vanilla" },
+            { value: "1", label: "1+" },
+            { value: "2", label: "2+" },
+            { value: "3", label: "3+" },
+            { value: "4", label: "4+" },
+            { value: "5", label: "5+" },
+            { value: "6", label: "6+" },
           ]}
           styles={blueDropdown}
           placeholder="BED"
@@ -164,9 +177,12 @@ export const Search = (props) => {
         <Select
           className="dropDown"
           options={[
-            { value: "chocolate", label: "Chocolate" },
-            { value: "strawberry", label: "Strawberry" },
-            { value: "vanilla", label: "Vanilla" },
+            { value: "1", label: "1+" },
+            { value: "2", label: "2+" },
+            { value: "3", label: "3+" },
+            { value: "4", label: "4+" },
+            { value: "5", label: "5+" },
+            { value: "6", label: "6+" },
           ]}
           styles={blueDropdown}
           placeholder="BATH"
@@ -175,9 +191,12 @@ export const Search = (props) => {
         <Select
           className="dropDown"
           options={[
-            { value: "chocolate", label: "Chocolate" },
-            { value: "strawberry", label: "Strawberry" },
-            { value: "vanilla", label: "Vanilla" },
+            { value: "1", label: "1+" },
+            { value: "2", label: "2+" },
+            { value: "3", label: "3+" },
+            { value: "4", label: "4+" },
+            { value: "5", label: "5+" },
+            { value: "6", label: "6+" },
           ]}
           styles={blueDropdown}
           placeholder="CAR"
