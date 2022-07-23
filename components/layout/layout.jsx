@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { Children, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Router from "next/router";
 
@@ -21,6 +21,14 @@ export const Layout = ({ children }) => {
       }
     }
   };
+
+  useEffect(()=>{
+    console.log('rerenered');
+    if(router.pathname.toLocaleLowerCase().includes("buy") ||
+      router.pathname.toLocaleLowerCase().includes("sold")){
+        setNav(true)
+      }
+  })
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", changeNavState);
