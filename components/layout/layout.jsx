@@ -1,6 +1,8 @@
 import { Children, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Router from "next/router";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 export const Layout = ({ children }) => {
   const router = useRouter();

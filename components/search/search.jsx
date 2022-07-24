@@ -41,7 +41,7 @@ export const Search = (props) => {
       color: "Black",
       fontFamily: "Montserrat",
       textTransform: "uppercase",
-      zIndex: 100,
+      zIndex:-5,
       textAlign: "left",
     }),
     singleValue: (styles) => ({

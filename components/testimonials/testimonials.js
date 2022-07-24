@@ -89,7 +89,7 @@ export const TestimonialCard = () => {
     <>
       <div className="TestimonielSection">
         <div className="leftBlock testimonialContent">
-          <h1>The Proof</h1>
+          {/* <h1>The Proof</h1> */}
         </div>
         <div className="rightBlock">
           <Carousel
@@ -111,7 +111,6 @@ export const TestimonialCard = () => {
               <h3>Alison Birdsall</h3>
             </div>
             <div className="testimonialContent">
-              <p className="">Legend 14</p>
               <h1>
                 "van has guided me through opening my own agency. He provides
                 outstanding advice and is always there to answer any questions I
@@ -121,7 +120,6 @@ export const TestimonialCard = () => {
               <h3 className="">Alison Birdsall</h3>
             </div>
             <div className="testimonialContent">
-              <p className="legend">Legend 15</p>
               <h1>
                 "van has guided me through opening my own agency. He provides
                 outstanding advice and is always there to answer any questions I

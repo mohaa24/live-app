@@ -50,11 +50,16 @@ export default function Buy() {
       },
     })
       .then((response) => {
-        console.log(response.data.data.items);
+        //console.log(response.data.data.items);
         setResponse(response.data);
+        
       })
       .catch((error) => console.log(error));
   };
+
+  setTimeout(()=>{
+    console.log(response)
+  },1000)
 
   return (
     <>

@@ -13,7 +13,6 @@ import "swiper/css/bundle";
 import { Search } from "../components/search/search";
 import Modal from "react-modal";
 import { useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 
@@ -132,7 +131,7 @@ export default function Home() {
                   width="24"
                   height="24"
                   xmlns="http://www.w3.org/2000/svg"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   clip-rule="evenodd"
                 >
                   <path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z" />
@@ -525,7 +524,7 @@ export default function Home() {
 
           <section className="testimonials-section">
             <div className="testimonials-heading">
-              {/* <h4>THE PROOF</h4> */}
+              <h4>THE PROOF</h4>
             </div>
 
             <div className="testimonials">
