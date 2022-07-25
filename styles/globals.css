@@ -320,6 +320,7 @@ section.hero-banner.sub:before {
 section.hero-banner.sub {
     height: 40vh;
     background: none;
+    padding: 30vh 0 20vh;
 }
 
 button.searchButton {
