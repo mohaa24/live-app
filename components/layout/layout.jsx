@@ -1,6 +1,7 @@
-import { Children, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Router from "next/router";
+import Link from 'next/link'
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
@@ -40,36 +41,37 @@ export const Layout = ({ children }) => {
     <>
       <header className={nav ? "header active" : "header"} id="header">
         <div className="header__inner">
-          <a aria-current="page" className="header__logo" href="/">
+          <Link aria-current="page" className="header__logo" href="/">
             <img
               className="logo-img"
               src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png"
             ></img>
-          </a>
+          </Link>
           <nav className="header__nav">
             <ul>
               <li>
-                <a href="/buy/">Buy</a>
+                <Link href="/buy/">Buy</Link>
+              </li>
+              
+
+              <li>
+                <Link href="/sold/">Sell</Link>
+              </li>
+              <li>
+                <Link href="/lease/">Rent</Link>
               </li>
 
               <li>
-                <a href="/sold/">Sell</a>
+                <Link href="/about/">About</Link>
               </li>
               <li>
-                <a href="/lease/">Rent</a>
-              </li>
-
-              <li>
-                <a href="/about/">About</a>
+                <Link href="/blog/">Blog</Link>
               </li>
               <li>
-                <a href="/blog/">Blog</a>
+                <Link href="/contact/">Contact</Link>
               </li>
               <li>
-                <a href="/contact/">Contact</a>
-              </li>
-              <li>
-                <a className="header__search-icon" href="/buy/">
+                <Link className="header__search-icon" href="/buy/">
                   <svg
                     width="19px"
                     height="18px"
@@ -98,7 +100,7 @@ export const Layout = ({ children }) => {
                       </g>
                     </g>
                   </svg>
-                </a>
+                </Link>
               </li>
 
               {/* <li><button className="header__hamburger" type="button"><span className="lines"></span></button></li> */}
@@ -114,18 +116,18 @@ export const Layout = ({ children }) => {
             <div className="footer__cols">
               <div className="footer__col">
                 <div className="footer__logo">
-                  <a aria-current="page" title="A__Z" className="" href="/">
+                  <Link aria-current="page" title="A__Z" className="" href="/">
                     <img
                       className="logo-img footer"
                       src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png"
                     ></img>
-                  </a>
+                  </Link>
                 </div>
                 <div className="footer__address">
                   <p>
-                    130 AUBURN ROAD,
+                    130 Auburn Road,
                     <br></br>
-                    HAWTHORN, VIC 3122
+                    Hawthorn, VIC 3122
                     <br />
                     <br />
                     <a

@@ -1,27 +1,54 @@
 import { Map, MapComp } from "../components/map/map";
+import { Carousel } from "react-responsive-carousel";
+import styled from "styled-components";
+
+const AboutSlide = styled.div`
+  height: 100vh;
+`;
 
 export default function Contact() {
+   const pics = [
+     {
+       url: "https://www.antonzhouk.com.au/static/Office-Web-4-30793118ba1684757205e1ec23f2aaf6.jpg",
+     }
+   
+   ];
+
+   const imageSlides = pics.map((i) => {
+     return (
+       <AboutSlide className="propertySlides">
+         <img
+           className="propertImage"
+           src={i.url}
+           alt="1403/14 George Avenue Broadbeach"
+         />
+       </AboutSlide>
+     );
+   });
   return (
     <>
-      <section className="hero-banner-about  ">
-        <div className="hero-banner-about__inner">
-          <div className="hero-banner-about__content">
-            <div className="hero-banner-about__details">
-              <div className=" hero-banner-about__heading">
-                <h2 className="heading">Contact Us</h2>
-                <div className="copy">
-                  <p>Feel free to get in touch or come in and visit us.</p>
-                </div>
-              </div>
-            </div>
-            <div className="hero-banner-about__image">
-              <img
-                src="https://www.antonzhouk.com.au/static/Office-Web-6-672fb3c62bce0a7755ce3242ee58bde7.jpg"
-                alt="The leaders in prestige"
-              />
-            </div>
-          </div>
+      <section className="aboutSection">
+        <div className="aboutIntro">
+          <h1>ABOUT US</h1>
+
+          <h3>
+            A CORE BUSINESS MODEL BASED ON RELATIONSHIPS, EXCELLENCE AND
+            AUTHENTICITY PREVAIL TO ENSURE A CUSTOMER EXPERIENCE OF THE HIGHEST
+            STANDARD.
+          </h3>
         </div>
+        {
+          <Carousel
+            autoPlay={true}
+            showArrows={true}
+            showIndicators={false}
+            showThumbs={false}
+            transitionTime={500}
+            infiniteLoop={true}
+          >
+            {imageSlides && imageSlides}
+          </Carousel>
+        }
       </section>
       <section className="contact contact--contact">
         <div className="contact__inner">

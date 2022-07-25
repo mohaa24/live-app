@@ -86,7 +86,7 @@ export const Search = (props) => {
             className="dropDown"
             options={[
               { value: "buy", label: "BUY" },
-              { value: "sale", label: "SALE" },
+              { value: "sale", label: "SELL" },
               { value: "rent", label: "RENT" },
             ]}
             styles={blueDropdown}
@@ -96,7 +96,7 @@ export const Search = (props) => {
         </div>
         <div className="searchArea">
           <input
-            placeholder="Enter Query"
+            placeholder="Search property address, postcodes or suburbs"
             className="search_input"
             onChange={(e) => handleChange(e, "query")}
             value={filterValueLocal.query}

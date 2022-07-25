@@ -1,7 +1,79 @@
 @charset "UTF-8";
 
+section.testimonials-section.ourTeam {
+    min-height: 40vh;
+    padding: 0;
+}
+
+section.testimonials-section.vallues {
+    padding: 60px 0;
+}
+
+.aboutSection .dot {
+    background: #a9c5db !important;
+}
+
+.teamDetails ul {
+    color: black;
+}
+
+ul.single-property__team a {
+    text-decoration: none;
+    color:black;
+}
+
+.rightBlock .dot {
+    background: #a9c5db !important;
+}
+
+.propertySection .dot {
+    background: #a9c5db !important;
+}
+
+span.infoSpan {
+    color: white;
+    padding: 0 8px;
+
+}
+
+section.properties.properties--buy {
+    min-height: 40vh;
+}
+
+.properties__inner {
+    display: flex;
+    justify-content: center;
+    min-height: 30vh;
+}
+.single-property__documents li {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.single-property__documents a {
+    text-decoration: none;
+}
 .property-options__heading h2 , .property-options__heading h3{
     padding-left: 40px;
+}
+
+section.aboutSection.light-theme h2 {
+    font-size: 20px;
+    /* width: 59%; */
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.leftBlock.testimonialContent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+        justify-content: flex-start;
 }
 
 section.aboutSection:before {
@@ -19,11 +91,12 @@ section.aboutSection:before {
     position: absolute;
     padding: 0 60px;
     width: 45vw;
+    display: none;
 }
 
 section.aboutSection {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -53,8 +126,9 @@ section.aboutSection {
     margin-left: 50px;
 }
 
-.propertyText h1 {
+.propertyText h1 ,  .propertyText h3 {
     font-size: 24px;
+    font-weight: 500;
 }
 
 .propertyDetails {
@@ -76,6 +150,7 @@ section.aboutSection {
 }
 
 .propertyText {
+  white-space:pre-line;
     font-size: 16px;
     line-height: 28px;
     letter-spacing: 1px;
@@ -179,13 +254,16 @@ p.bbc {
 }
 
 .single-property__details p.bbc svg {
-    width: 20px;
-    height: 20px;
-    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
     margin-bottom: -4px;
     position: relative;
     z-index: 10;
-    cursor: pointer;}
+    cursor: pointer;
+  position: relative;
+    top: 7px;
+  }
 
 .single-property__inner.container {
     height: 100%;
@@ -262,7 +340,7 @@ p.carousel-status {
     /* font-family: Helvetica,sans-serif; */
     line-height: 1.6;
     text-align: left;
-        font-size: 25px;
+        font-size: 20px;
     font-weight: 300;
 
 }
@@ -311,6 +389,8 @@ a.contact-mail {
 
 section.properties.properties--buy h1 {
     text-align: center;
+    font-weight: 500;
+    font-size: 30px;
 }
 
 section.hero-banner.sub:before {
@@ -334,6 +414,7 @@ button.searchButton {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .search_input {
@@ -1903,7 +1984,7 @@ form .error {
 .form label {
   color: black;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -4214,7 +4295,7 @@ a {
     width: calc(100% - 160px);
   }
   section.testimonials-section {
-    padding: 50px 0 0;
+    padding: 20px 0 0;
   }
 }
 
@@ -7349,11 +7430,12 @@ body.thank-you .footer {
 .contact__content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact__menu {
-  width: 100%;
+  width: 0px !important;
 }
 
 @media (min-width: 900px) {
@@ -7410,8 +7492,8 @@ body.thank-you .footer {
 
 .contact__form h2 {
   color: black;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 23px;
+  font-weight: 500;
   letter-spacing: 2.25px;
   line-height: 24px;
   text-transform: uppercase;
@@ -12035,6 +12117,7 @@ body.thank-you .footer {
   position: relative;
   transition: 0.6s ease;
   width: 100%;
+  cursor: pointer;
 }
 
 @media (min-width: 900px) {
@@ -12843,11 +12926,14 @@ section.properties.properties--buy {
   margin: 0 auto;
   max-width: 1375px;
   padding: 0 20px;
+
+    align-items: center;
+    min-height: 40vh;
 }
 
 @media (min-width: 900px) {
   .properties__inner {
-    padding: 0 30px;
+    padding: 30px 30px;
   }
 }
 
@@ -18322,7 +18408,7 @@ section.properties.properties--buy {
 @media (min-width: 900px) {
   .footer__col:first-child {
     display: block;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     margin-top: 0;
     order: unset;
   }

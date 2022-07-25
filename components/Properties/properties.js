@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Link from "next/link";
+
+
 
 
 export const Properties = (props) => {
@@ -66,9 +69,14 @@ export const Properties = (props) => {
                   alt="1403/14 George Avenue Broadbeach"
                 />
                 <div className="property__rollover">
-                  <div className="property__title">
-                    <h4>{item.displayAddress}</h4>
-                  </div>
+                  <Link
+                    className="property__link"
+                    href={`/property?id=${item.id}&type=${props.type}`}
+                  >
+                    <div className="property__title">
+                      <h4>{item.displayAddress}</h4>
+                    </div>
+                  </Link>
                   <div className="property__meta">
                     <span>{item.heading}</span>
                     <ul className="property__specs property__specs--desktop">
@@ -295,7 +303,6 @@ export const Properties = (props) => {
                   </li>
                 </ul>
               </div>
-              <a className="property__link" href={`/property?id=${item.id}&type=${props.type}`}></a>
             </div>
           );
         })}

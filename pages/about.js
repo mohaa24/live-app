@@ -274,25 +274,30 @@ export default function About() {
                 </p>
               </div>
               <div className="business-data__disclaimer">
-                <div>
-                  <h6>
-                    <em>Statistics based on 2021 calendar year</em>
-                  </h6>
-                </div>
+                <div></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="valesSection">
-        <div className="blog-container">
-          <Values />
-
-          <Values />
-
-          <Values />
+      <section className="testimonials-section vallues">
+        <div className="testimonials-heading">
+          <h4>OUR VALUES</h4>
         </div>
+
+        <div className="testimonials">
+          <Values />
+
+        </div>
+      </section>
+
+      <section className="testimonials-section ourTeam">
+        <div className="testimonials-heading">
+          <h4>YOUR TEAM</h4>
+        </div>
+
+       
       </section>
     </>
   );

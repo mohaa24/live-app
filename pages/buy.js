@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import Select from "react-select";
+import OverlayLoader from "../components/loading/loading";
 import { Properties } from "../components/Properties/properties";
 import { Search } from "../components/search/search";
+
 
 const axios = require("axios").default;
 
@@ -58,9 +60,7 @@ export default function Buy() {
       .catch((error) => console.log(error));
   };
 
-  setTimeout(()=>{
-    console.log(response)
-  },1000)
+
 
   return (
     <>
@@ -72,8 +72,9 @@ export default function Buy() {
         </div>
       </section>
       <section className="properties properties--buy">
-        <h1>Buy Properties</h1>
+        <h1>Properties for Sale</h1>
         <div className="properties__inner">
+          {!response && <OverlayLoader/>}
           <Properties
             type={"sale"}
             data={response}

@@ -296,7 +296,7 @@ export default function Home() {
                 <br />
               </h2>
               <h3>
-                The A — Z Agency was born out of simple, yet radical idea: real
+                The A — Z Agency was born of a simple, yet radical idea: real
                 estate should be exclusively focussed on the customer, providing
                 a more personal and tailored aproach for every client.
               </h3>
