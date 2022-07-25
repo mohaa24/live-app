@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+.property-options__heading h2 , .property-options__heading h3{
+    padding-left: 40px;
+}
 
 section.aboutSection:before {
     background: rgb(0 0 0 / 16%);
