@@ -6,7 +6,6 @@ import { Carousel } from "react-responsive-carousel";
 
 const axios = require("axios").default;
 
-
 const PropertImageBlock = styled.div`
   section {
   }
@@ -22,22 +21,28 @@ export default function Property() {
   const [filtered, setFiltered] = useState(false);
 
   const router = useRouter();
+ 
+  let apiURL = `http://localhost:3100/${router.query.type}`;
+  
+  apiURL = `https://fluffy-garbanzo.herokuapp.com/${router.query.type}`;
 
+
+
+  useEffect(() => {
+     if (router) {
+       setPropertyID(router.query.id);
+     }
+  });
+  
   useEffect(() => {
     requestPropertyData();
-  }, []);
+  }, [propertyID]);
 
-  useEffect(() => {
-    if (router) {
-      setPropertyID(router.query.id);
-    }
-  });
 
   // 16158146;
   const filterData = () => {
     let d = response.filter((i) => i.id == propertyID);
     setIDProperty(d);
-
     //console.log(idProperty[0].photos.length);
   };
 
@@ -47,7 +52,7 @@ export default function Property() {
     }
   });
 
-  const apiURL = `http://localhost:3100/${router.query.type}`;
+
 
   const requestPropertyData = async () => {
     axios({
@@ -65,42 +70,27 @@ export default function Property() {
   };
 
 
-
+  let imageSlides = idProperty && idProperty[0].photos.map((i)=>{
+    if(i.type == 'Photograph'){
+  return( <PropertySlide className="propertySlides">
+                  <img
+                    className="propertImage"
+                    src={
+                     i.url
+                    }
+                    alt="1403/14 George Avenue Broadbeach"
+                  /></PropertySlide>)
+  }
+}
   
-let imageSlides =
-    idProperty &&  
-    idProperty[0].photos.map((i) => {
-      return (
-        <PropertySlide className="propertySlides">
-          <img
-            className="propertImage"
-            src={i.url}
-            alt="1403/14 George Avenue Broadbeach"
-          />
-        </PropertySlide>
-      );
-    })
-  
-// let altSlides = (
-//   <PropertySlide className="propertySlides">
-//      <img
-//         className="propertImage"
-//         src={'fdfdf'}
-//         alt="1403/14 George Avenue Broadbeach"
-//       />
-//    </PropertySlide>
-// )
+  )
 
 
 
 
-  //  <PropertySlide className="propertySlides">
-  //    <img
-  //      className="propertImage"
-  //      src={idProperty[0].photos.length != 0 ? idProperty[0].photos[2].url : ""}
-  //      alt="1403/14 George Avenue Broadbeach"
-  //    />
-  //  </PropertySlide>;
+
+
+
   return (
     <>
       {idProperty && (
@@ -149,7 +139,7 @@ let imageSlides =
                 </div>
               </div>
             </div>
-            
+            {
               <Carousel
                 autoPlay={true}
                 showArrows={true}
@@ -158,67 +148,70 @@ let imageSlides =
                 transitionTime={500}
                 infiniteLoop={true}
               >
-                {/* <PropertySlide className="propertySlides">
-                  <img
-                    className="propertImage"
-                    src={
-                      idProperty[0].photos.length != 0
-                        ? idProperty[0].photos[2].url
-                        : ""
-                    }
-                    alt="1403/14 George Avenue Broadbeach"
-                  />
-                </PropertySlide> */}
                 {imageSlides && imageSlides}
-                
+
+                {imageSlides.length == 0 && (
+                  <PropertySlide className="propertySlides">
+                    <img
+                      className="propertImage"
+                      src={
+                        "https://agentboxcdn.com.au/clients-data/4244/public_html/media/lt/1/1P5512/165785828834854777-rsd.jpg"
+                      }
+                      alt="1403/14 George Avenue Broadbeach"
+                    />
+                  </PropertySlide>
+                )}
               </Carousel>
-            
+            }
           </section>
         </PropertImageBlock>
       )}
       <section className="propertyDetails">
+        <div className="propertyText">
+          <h1>A one-of-a-kind entertainer with pool-side pleasure</h1>
+          {idProperty && idProperty[0].description}
+        </div>
         <div className="teamDetails">
           <div className="single-property__title">
-            <h1>A one-of-a-kind entertainer with pool-side pleasure</h1>
             <ul className="single-property__team">
-              <li>
-                <figure>
-                  <a href="/about#team">
-                    <img
-                      src="/static/ANTON_0181_V2_web-scaled-43b866b621be6881c3c8debd4e70bb40.jpg"
-                      alt="Anton Zhouk"
-                    />
-                  </a>
-                </figure>
-                <p>
-                  <span>Anton Zhouk</span>
-                  <br />— <a href="tel:0430 224 438">0430 224 438</a>
-                  <br />—
-                  <a href="mailto:antonz@antonzhouk.com.au">Email Agent</a>
-                </p>
-              </li>
-
-              <li>
-                <figure>
-                  <a href="/about#team">
-                    <img
-                      src="/static/Low-Res-scaled-ab355d8fd3430a9d41e5880eed13c9f6.jpg"
-                      alt="Sam Christensen"
-                    />
-                  </a>
-                </figure>
-                <p>
-                  <span>Sam Christensen</span>
-                  <br />— <a href="tel:0434 338 695">0434 338 695</a>
-                  <br />—{" "}
-                  <a href="mailto:samc@antonzhouk.com.au">Email Agent</a>
-                </p>
-              </li>
+              {idProperty &&
+                idProperty[0].contactStaff.map((i) => {
+                  return (
+                    <li>
+                      <figure>
+                        <a href="">
+                          <img src={i.photo.thumb_360} alt="Anton Zhouk" />
+                        </a>
+                      </figure>
+                      <p>
+                        <span>{`${i.firstName} ${i.lastName}`}</span>
+                        <br />—{" "}
+                        <a href={`tel:${i.phoneNumbers[0].number}`}>
+                          {i.phoneNumbers[0].number}
+                        </a>
+                        <br />—<a href={`mailto:${i.email}`}>Email Agent</a>
+                      </p>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
-        </div>
-        <div className="propertyText">
-          {idProperty && idProperty[0].description}
+
+          <ul class="single-property__documents">
+
+            {idProperty && idProperty[0].photos.map((i)=>{
+              if (i.type == "Floorplan"){
+                return (
+                  <li>
+                    <a href={i.url} rel="noopener noreferrer" target="_blank">
+                      — Floor Plan
+                    </a>
+                  </li>
+                )}
+            })}
+           
+           
+          </ul>
         </div>
       </section>
     </>

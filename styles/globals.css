@@ -1,5 +1,59 @@
 @charset "UTF-8";
 
+
+section.aboutSection:before {
+    background: rgb(0 0 0 / 16%);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.aboutIntro {
+    z-index: 1;
+    position: absolute;
+    padding: 0 60px;
+    width: 45vw;
+}
+
+section.aboutSection {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.aboutIntro h1 {
+    font-size: 50px;
+    color: white;
+    font-weight: 300;
+}
+
+.aboutIntro h3 {
+    color: white;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.property-options__heading {
+    margin-left: 50px;
+}
+
+.property-options__heading h3 {
+    width: 59%;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.3;
+}
+.property-options__heading {
+    margin-left: 50px;
+}
+
+.propertyText h1 {
+    font-size: 24px;
+}
+
 .propertyDetails {
     display: flex;
     flex-wrap: wrap;
@@ -184,17 +238,35 @@ section.propertySection {
 .TestimonielSection {
     display: flex;
     flex-direction: row;
+    padding: 0 8vw;
 }
 
-.rightBlock, .leftBlock {
-    width: 40vw;
+.rightBlock{
+  width: 60%;
 }
 
+ .leftBlock {
+    width: 40%;
+}
 
+p.carousel-status {
+    display: none;
+}
 
-.testimonialContent h1 ,.testimonialContent h3 {
+.testimonialContent h1 {
+
+      color: black;
+    /* font-family: Helvetica,sans-serif; */
+    line-height: 1.6;
+    text-align: left;
+        font-size: 25px;
+    font-weight: 300;
+
+}
+
+.testimonialContent h3 {
     color: black;
-    font-family: Helvetica,sans-serif;
+    /* font-family: Helvetica,sans-serif; */
     line-height: 1.6;
     text-align: left;
 }
@@ -202,10 +274,6 @@ section.propertySection {
 .TestimonielSection {
     display: flex;
     flex-direction: row;
-}
-
-.rightBlock, .leftBlock {
-    width: 40vw;
 }
 
 
@@ -375,7 +443,7 @@ section.blog-section {
 .blog-container {
   display: grid;
   grid-auto-flow: column;
-  padding: 80px 5vw;
+  padding: 80px 80px;
 }
 .number-block {
   font-size: 1.6rem;
@@ -1736,10 +1804,10 @@ form .error {
 .form__input {
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #5fc2c9;
+  border-bottom: 1px solid black;
   border-radius: 0;
   box-shadow: none;
-  color: #5fc2c9;
+  color: black;
   font-size: 14px;
   font-weight: 500;
   height: 33px;
@@ -1795,8 +1863,8 @@ form .error {
 }
 
 .form__textarea {
-  border: 1px solid #5fc2c9;
-  color: #5fc2c9;
+  border: 1px solid black;
+  color: black;
   font-size: 16px;
   height: 121px;
   line-height: 1.3;
@@ -1829,7 +1897,7 @@ form .error {
 }
 
 .form label {
-  color: #5fc2c9;
+  color: black;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -1850,8 +1918,8 @@ form .error {
 .form__row--submit .btn {
   align-items: center;
   align-self: flex-start;
-  background: #5fc2c9;
-  border: 1px solid #5fc2c9;
+  background: black;
+  border: 1px solid black;
   cursor: pointer;
   display: flex;
   font-weight: 600;
@@ -4139,10 +4207,10 @@ a {
 @media (min-width: 900px) {
   .property-options__slides {
     padding-bottom: 0;
-    width: calc(100% - 400px);
+    width: calc(100% - 160px);
   }
   section.testimonials-section {
-    padding: 100px 0 0;
+    padding: 50px 0 0;
   }
 }
 
@@ -4243,7 +4311,7 @@ a {
 @media (min-width: 900px) {
   .property-option {
     flex: 1 0 325px;
-    height: 625px;
+    height: 325px;
     margin-right: 29px;
     width: 325px;
   }
@@ -4371,6 +4439,7 @@ a {
   transition: all 0.3s ease;
   width: 100%;
   z-index: 2;
+  text-align: center;
 }
 
 @media (min-width: 900px) {
@@ -4394,7 +4463,7 @@ a {
   .property-option__details .title {
     font-size: 18px;
     height: 44px;
-    line-height: 24px;
+    line-height: 45px;
     max-width: 100%;
   }
 }
@@ -4835,7 +4904,7 @@ a {
 
 .featured-news__heading h4:before,
 .testimonials-heading h4:before {
-  background: hsl(184deg 49% 58%) !important;
+  background: black !important;
 }
 
 .featured-news__heading h4,
@@ -7336,7 +7405,7 @@ body.thank-you .footer {
 }
 
 .contact__form h2 {
-  color: #5fc2c9;
+  color: black;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 2.25px;
@@ -13364,7 +13433,7 @@ section.properties.properties--buy {
 .single-property__title {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding-bottom: 60px;
   padding-right: 20px;
 }

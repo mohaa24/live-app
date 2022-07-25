@@ -22,7 +22,7 @@ const Button = styled.div`
 const Container = styled.div`
    {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     // padding: 80px;
   }
 `;
@@ -85,7 +85,7 @@ export const BlogCard = () => {
             src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
             className="mask"
           />
-          <div className="h1">August 2022</div>
+          <div className="h1">July 2022</div>
 
           {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
         </Square>
@@ -105,7 +105,7 @@ export const BlogCard = () => {
             src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
             className="mask"
           />
-          <div className="h1">August 2022</div>
+          <div className="h1">September 2022</div>
 
           {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
         </Square>

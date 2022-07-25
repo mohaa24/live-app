@@ -31,9 +31,10 @@ export default function Buy() {
   const  [filterValue , setFilter] = useState(null);
 
 
-  const apiURL =
+  let apiURL =
  "http://localhost:3100/sale";
 
+ apiURL = "https://fluffy-garbanzo.herokuapp.com/sale";
 
   useEffect(() => {
     requestPropertyData();
@@ -74,7 +75,7 @@ export default function Buy() {
         <h1>Buy Properties</h1>
         <div className="properties__inner">
           <Properties
-            type={"buy"}
+            type={"sale"}
             data={response}
             filterValue={filterValue}
           ></Properties>

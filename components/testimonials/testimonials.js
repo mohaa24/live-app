@@ -93,9 +93,9 @@ export const TestimonialCard = () => {
         </div>
         <div className="rightBlock">
           <Carousel
-            autoPlay={true}
-            showArrows={false}
-            showIndicators={false}
+            autoPlay={false}
+            showArrows={true}
+            showIndicators={true}
             showThumbs={false}
             transitionTime={500}
             infiniteLoop={true}
@@ -112,29 +112,41 @@ export const TestimonialCard = () => {
             </div>
             <div className="testimonialContent">
               <h1>
-                "van has guided me through opening my own agency. He provides
-                outstanding advice and is always there to answer any questions I
-                may have. I will continue to use Bresic Coaching for many years
-                to come."
+                I was introduced to Anton Zhouk through my buyer agent to rent
+                my property, and they did not disappoint me at all! They where
+                very open,realistic, prompt and trust worthy- and wasted no time
+                to get my property up to scratch and find a decent tenant.I was
+                especially impressed with Nicole, the head of property
+                management for her professionalism and sincere advice around
+                this time. I have no hesitancy in recommending them to any of my
+                friends and family for a reliable and honest real estate agent!
               </h1>
-              <h3 className="">Alison Birdsall</h3>
+              <h3 className="">Rupesh</h3>
             </div>
             <div className="testimonialContent">
               <h1>
-                "van has guided me through opening my own agency. He provides
-                outstanding advice and is always there to answer any questions I
-                may have. I will continue to use Bresic Coaching for many years
-                to come."
+                I was introduced to Anton Zhouk through my buyer agent to rent
+                my property, and they did not disappoint me at all! They where
+                very open,realistic, prompt and trust worthy- and wasted no time
+                to get my property up to scratch and find a decent tenant.I was
+                especially impressed with Nicole, the head of property
+                management for her professionalism and sincere advice around
+                this time. I have no hesitancy in recommending them to any of my
+                friends and family for a reliable and honest real estate agent!
               </h1>
               <h3 className="">Alison Birdsall</h3>
             </div>
             <div className="testimonialContent">
               {/* <p className="legend">Legend 14</p> */}
               <h1>
-                " van has guided me through opening my own agency. He provides
-                outstanding advice and is always there to answer any questions I
-                may have. I will continue to use Bresic Coaching for many years
-                to come."
+                I was introduced to Anton Zhouk through my buyer agent to rent
+                my property, and they did not disappoint me at all! They where
+                very open,realistic, prompt and trust worthy- and wasted no time
+                to get my property up to scratch and find a decent tenant.I was
+                especially impressed with Nicole, the head of property
+                management for her professionalism and sincere advice around
+                this time. I have no hesitancy in recommending them to any of my
+                friends and family for a reliable and honest real estate agent!
               </h1>
               <h3>Alison Birdsall</h3>
             </div>

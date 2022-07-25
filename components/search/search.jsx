@@ -28,6 +28,7 @@ export const Search = (props) => {
       ...styles,
       color: "#ffffff",
       fontWeight: "bold",
+      fontSize:13
     }),
     indicatorSeparator: (styles) => ({ ...styles, display: "none" }),
     IndicatorContainer: (styles) => ({ ...styles, display: "none" }),

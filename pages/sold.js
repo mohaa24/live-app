@@ -29,7 +29,9 @@ export default function Sold() {
   const [response, setResponse] = useState(null);
   const [filterValue, setFilter] = useState(null);
 
-  const apiURL = "http://localhost:3100/sold";
+  let apiURL = "http://localhost:3100/sold";
+   apiURL = "https://fluffy-garbanzo.herokuapp.com/sold";
+
   useEffect(() => {
     requestPropertyData();
   }, []);

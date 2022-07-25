@@ -1,12 +1,18 @@
-import Fade from "react-reveal/Fade";
-import Select from "react-select";
-import { TestimonialCard } from "../components/testimonials/testimonials";
-import { BlogCard } from "../components/blog_card/blogCard";
-import { Header } from "../components/header/header";
-import { StatisticBar } from "../components/statisticBlock/statisticBar";
-import { Weather } from "../components/weather/weather";
+
 import Countup from "react-countup";
 import { Values } from "../components/values/values";
+import styled from "styled-components";
+import { Carousel } from "react-responsive-carousel";
+
+
+
+
+
+const AboutSlide = styled.div`
+height:100vh;
+`
+
+
 const blueDropdown = {
   control: (styles) => ({
     ...styles,
@@ -26,31 +32,61 @@ const blueDropdown = {
 };
 
 export default function About() {
+  const pics = [
+    {
+      url: "https://www.antonzhouk.com.au/static/Office-Web-4-30793118ba1684757205e1ec23f2aaf6.jpg",
+    },
+    {
+      url: "https://www.antonzhouk.com.au/static/Office-Web-1-705a0a8cb6df6ea5c32c760093ebb7db.jpg",
+    },
+    {
+      url: "https://www.antonzhouk.com.au/static/Office-Web-5-d03a590d144cb9e408c6ddf4f355c45f.jpg",
+    },
+    {
+      url: "https://www.antonzhouk.com.au/static/Office-Web-2-a28a0e00da19f7ad59031500e2735e44.jpg",
+    },
+    {
+      url: "https://www.antonzhouk.com.au/static/Office-Web-3-722d0427ab9f58a9607e51cd3927731a.jpg",
+    },
+    {
+      url: "https://www.antonzhouk.com.au/static/Office-Web-6-672fb3c62bce0a7755ce3242ee58bde7.jpg",
+    },
+  ];
+
+  const imageSlides = pics.map((i) => {
+    return(
+    <AboutSlide className="propertySlides">
+      <img
+        className="propertImage"
+        src={i.url}
+        alt="1403/14 George Avenue Broadbeach"
+      />
+    </AboutSlide>)
+  });
   return (
     <>
-      <section className="hero-banner-about  ">
-        <div className="hero-banner-about__inner">
-          <div className="hero-banner-about__content">
-            <div className="hero-banner-about__details">
-              <div className=" hero-banner-about__heading">
-                <h2 className="heading">About Us</h2>
-                <div className="copy">
-                  <p>
-                    A core business model based on Relationships, Excellence and
-                    Authenticity prevail to ensure a customer experience of the
-                    highest standard.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="hero-banner-about__image">
-              <img
-                src="https://www.antonzhouk.com.au/static/Office-Web-4-30793118ba1684757205e1ec23f2aaf6.jpg"
-                alt="The leaders in prestige"
-              />
-            </div>
-          </div>
+      <section className="aboutSection">
+        <div className="aboutIntro">
+          <h1>ABOUT US</h1>
+
+          <h3>
+            A CORE BUSINESS MODEL BASED ON RELATIONSHIPS, EXCELLENCE AND
+            AUTHENTICITY PREVAIL TO ENSURE A CUSTOMER EXPERIENCE OF THE HIGHEST
+            STANDARD.
+          </h3>
         </div>
+        {
+          <Carousel
+            autoPlay={true}
+            showArrows={true}
+            showIndicators={true}
+            showThumbs={false}
+            transitionTime={500}
+            infiniteLoop={true}
+          >
+            {imageSlides && imageSlides}
+          </Carousel>
+        }
       </section>
       <section className="aboutSection light-theme">
         <div className="testimonials-heading">
