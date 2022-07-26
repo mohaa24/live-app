@@ -52,7 +52,6 @@ export const Layout = ({ children }) => {
               <li>
                 <Link href="/buy/">Buy</Link>
               </li>
-              
 
               <li>
                 <Link href="/sold/">Sell</Link>
@@ -71,8 +70,9 @@ export const Layout = ({ children }) => {
                 <Link href="/contact/">Contact</Link>
               </li>
               <li>
-                <Link className="header__search-icon" href="/buy/">
+                <Link className="-icon" href="/buy/">
                   <svg
+                    className="header__search"
                     width="19px"
                     height="18px"
                     viewBox="0 0 19 18"

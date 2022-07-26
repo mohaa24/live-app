@@ -686,6 +686,7 @@ section.blog-section {
 
 .logo-img {
   width: 170px;
+  cursor: pointer;
 }
 
 .body {
@@ -2301,6 +2302,10 @@ a {
 
 .header__nav ul li a.active:before {
   width: calc(100% - 2px);
+}
+
+.header__search{
+  cursor: pointer;
 }
 
 .header__nav ul li a.header__search-icon {

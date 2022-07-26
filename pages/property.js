@@ -124,8 +124,8 @@ export default function Property() {
                 </div>
                 <div className="single-property__info-right">
                   <p className="status">
-                    {idProperty && idProperty[0].floorArea.value}{" "}
-                    {idProperty && idProperty[0].floorArea.units}
+                    {/* {idProperty && idProperty[0].floorArea.value}{" "}
+                    {idProperty && idProperty[0].floorArea.units} */}
                   </p>
                   <p className="bbc">
                     <span className="infoSpan">

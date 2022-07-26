@@ -187,7 +187,7 @@ export const Properties = (props) => {
                             fill="#FFFFFF"
                           ></path>
                         </svg>
-                        {item.garages}
+                        {item.openSpaces}
                       </li>
                     </ul>
                   </div>
