@@ -36,7 +36,7 @@ export default function Buy() {
   let apiURL =
  "http://localhost:3100/sale";
 
- //apiURL = "https://fluffy-garbanzo.herokuapp.com/sale";
+ apiURL = "https://fluffy-garbanzo.herokuapp.com/sale";
 
   useEffect(() => {
     requestPropertyData();

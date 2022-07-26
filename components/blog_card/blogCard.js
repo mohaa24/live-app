@@ -5,7 +5,7 @@ const Button = styled.div`
     background-color: #3edd84;
     color: white;
     width: 90px;
-    padding: 10px 18px;   
+    padding: 10px 18px;
     border-radius: 3px;
     text-align: center;
     text-decoration: none;
@@ -52,7 +52,7 @@ const Square = styled.div`
       padding-left: 15px;
       font-size: 24px;
       background: #a9c5dbcc;
-      color:white;
+      color: white;
     }
 
     p {
@@ -80,35 +80,56 @@ export const BlogCard = () => {
   return (
     <>
       <Container className="container">
-        <Square className="square">
+        <div class="property-option">
           <img
-            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
-            className="mask"
+            class="property-option__image"
+            loading="lazy"
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/MicrosoftTeams-image-4.jpg"
+            alt=""
           />
-          <div className="h1">July 2022</div>
+          <span class="property-option__view">View</span>
+          <div class="property-option__details">
+            <p class="title">June 2022</p>
+            <div class="copy">
+    
+            </div>
+          </div>
+          <a class="property-option__link" href="/buy/"></a>
+        </div>
 
-          {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
-        </Square>
-
-        <Square className="square">
+        <div class="property-option">
           <img
-            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
-            className="mask"
+            class="property-option__image"
+            loading="lazy"
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/MicrosoftTeams-image-4.jpg"
+            alt=""
           />
-          <div className="h1">August 2022</div>
+          <span class="property-option__view">View</span>
+          <div class="property-option__details">
+            <p class="title">July 2022</p>
+            <div class="copy">
+        
+            </div>
+          </div>
+          <a class="property-option__link" href="/buy/"></a>
+        </div>
 
-          {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
-        </Square>
-
-        <Square className="square">
+        <div class="property-option">
           <img
-            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Broadbeach-Aerials-1-2.jpg"
-            className="mask"
+            class="property-option__image"
+            loading="lazy"
+            src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/MicrosoftTeams-image-4.jpg"
+            alt=""
           />
-          <div className="h1">September 2022</div>
-
-          {/* <Button><a href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261" target="_" className="button">Read More</a></Button> */}
-        </Square>
+          <span class="property-option__view">View</span>
+          <div class="property-option__details">
+            <p class="title">August 2022</p>
+            <div class="copy">
+            
+            </div>
+          </div>
+          <a class="property-option__link" href="/buy/"></a>
+        </div>
       </Container>
     </>
   );
