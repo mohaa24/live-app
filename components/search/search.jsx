@@ -77,6 +77,9 @@ export const Search = (props) => {
     console.log(filterValueLocal)
   };
 
+  const changeCatogary = (e) =>{
+    router.push(e.value);
+  }
   return (
     <>
       <div className="searchBar">
@@ -86,12 +89,12 @@ export const Search = (props) => {
             className="dropDown"
             options={[
               { value: "buy", label: "BUY" },
-              { value: "sale", label: "SELL" },
+              { value: "sold", label: "SELL" },
               { value: "rent", label: "RENT" },
             ]}
             styles={blueDropdown}
             placeholder="BUY"
-            onChange={(e) => handleChange(e, "main")}
+            onChange={(e) => {handleChange(e, "main"); changeCatogary(e)}}
           ></Select>{" "}
         </div>
         <div className="searchArea">

@@ -1,6 +1,7 @@
 import { Map, MapComp } from "../components/map/map";
 import { Carousel } from "react-responsive-carousel";
 import styled from "styled-components";
+import Image from 'next/image'
 
 const AboutSlide = styled.div`
   height: 100vh;
