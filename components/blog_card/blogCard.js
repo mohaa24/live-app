@@ -23,6 +23,7 @@ const Container = styled.div`
    {
     display: flex;
     justify-content: space-between;
+    
     // padding: 80px;
   }
 `;
@@ -80,7 +81,7 @@ export const BlogCard = () => {
   return (
     <>
       <Container className="container">
-        <div class="property-option">
+        <div class="property-option blogCard">
           <img
             class="property-option__image"
             loading="lazy"
@@ -90,14 +91,12 @@ export const BlogCard = () => {
           <span class="property-option__view">View</span>
           <div class="property-option__details">
             <p class="title">June 2022</p>
-            <div class="copy">
-    
-            </div>
+            <div class="copy"></div>
           </div>
           <a class="property-option__link" href="/buy/"></a>
         </div>
 
-        <div class="property-option">
+        <div class="property-option blogCard">
           <img
             class="property-option__image"
             loading="lazy"
@@ -107,14 +106,12 @@ export const BlogCard = () => {
           <span class="property-option__view">View</span>
           <div class="property-option__details">
             <p class="title">July 2022</p>
-            <div class="copy">
-        
-            </div>
+            <div class="copy"></div>
           </div>
           <a class="property-option__link" href="/buy/"></a>
         </div>
 
-        <div class="property-option">
+        <div class="property-option blogCard">
           <img
             class="property-option__image"
             loading="lazy"
@@ -124,9 +121,7 @@ export const BlogCard = () => {
           <span class="property-option__view">View</span>
           <div class="property-option__details">
             <p class="title">August 2022</p>
-            <div class="copy">
-            
-            </div>
+            <div class="copy"></div>
           </div>
           <a class="property-option__link" href="/buy/"></a>
         </div>
