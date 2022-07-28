@@ -9,7 +9,6 @@ import { StatisticBar } from "../components/statisticBlock/statisticBar";
 import { Weather } from "../components/weather/weather";
 import Countup from "react-countup";
 
-import "swiper/css/bundle";
 import { Search } from "../components/search/search";
 import Modal from "react-modal";
 import { useState } from "react";
