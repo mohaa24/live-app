@@ -7,8 +7,6 @@ import Flickity from "react-flickity-component";
 
 export const TestimonialCard  = () => {
 
-  const [num, setNum] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   let flkty;
@@ -24,6 +22,198 @@ export const TestimonialCard  = () => {
 
 
   let reviwer = [
+    {
+      name: "Rupesh",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They where
+                  very open,realistic, prompt and trust worthy- and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant.I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "R.Lewis",
+      content: `Anton, thanks for a great job selling our Kew property. We
+                  never felt pressured but could see the work you and your team
+                  were putting in. The results you achieved were at the top end
+                  of our expectations and the experience was great.`,
+    },
+    {
+      name: "Emma and Jess",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They were
+                  very open, realistic, prompt and trustworthy and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant. I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "N. Wilson",
+      content: `Anton Zhouk have been amazing to work with from the start. The
+                  application process was quick Nicole was easy to talk to
+                  through every step. Since living in our new house, Nicole has
+                  been easy to contact and we always know she will help us, no
+                  matter how big or small the question is. Renting can be a
+                  difficult process, but Anton Zhouk have made it pretty
+                  pain-free.`,
+    },
+    {
+      name: "Rupesh",
+      content: `  Anton communicated with both ourselves and buyers with clarity
+                  and diligence, leaving no stone unturned. His dedication,
+                  knowledge and willingness to do things a little differently
+                  were much appreciated.`,
+    },
+    {
+      name: "Rupesh",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They where
+                  very open,realistic, prompt and trust worthy- and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant.I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "R.Lewis",
+      content: `Anton, thanks for a great job selling our Kew property. We
+                  never felt pressured but could see the work you and your team
+                  were putting in. The results you achieved were at the top end
+                  of our expectations and the experience was great.`,
+    },
+    {
+      name: "Emma and Jess",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They were
+                  very open, realistic, prompt and trustworthy and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant. I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "N. Wilson",
+      content: `Anton Zhouk have been amazing to work with from the start. The
+                  application process was quick Nicole was easy to talk to
+                  through every step. Since living in our new house, Nicole has
+                  been easy to contact and we always know she will help us, no
+                  matter how big or small the question is. Renting can be a
+                  difficult process, but Anton Zhouk have made it pretty
+                  pain-free.`,
+    },
+    {
+      name: "Rupesh",
+      content: `  Anton communicated with both ourselves and buyers with clarity
+                  and diligence, leaving no stone unturned. His dedication,
+                  knowledge and willingness to do things a little differently
+                  were much appreciated.`,
+    },
+    {
+      name: "Rupesh",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They where
+                  very open,realistic, prompt and trust worthy- and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant.I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "R.Lewis",
+      content: `Anton, thanks for a great job selling our Kew property. We
+                  never felt pressured but could see the work you and your team
+                  were putting in. The results you achieved were at the top end
+                  of our expectations and the experience was great.`,
+    },
+    {
+      name: "Emma and Jess",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They were
+                  very open, realistic, prompt and trustworthy and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant. I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "N. Wilson",
+      content: `Anton Zhouk have been amazing to work with from the start. The
+                  application process was quick Nicole was easy to talk to
+                  through every step. Since living in our new house, Nicole has
+                  been easy to contact and we always know she will help us, no
+                  matter how big or small the question is. Renting can be a
+                  difficult process, but Anton Zhouk have made it pretty
+                  pain-free.`,
+    },
+    {
+      name: "Rupesh",
+      content: `  Anton communicated with both ourselves and buyers with clarity
+                  and diligence, leaving no stone unturned. His dedication,
+                  knowledge and willingness to do things a little differently
+                  were much appreciated.`,
+    },
+    {
+      name: "Rupesh",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They where
+                  very open,realistic, prompt and trust worthy- and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant.I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "R.Lewis",
+      content: `Anton, thanks for a great job selling our Kew property. We
+                  never felt pressured but could see the work you and your team
+                  were putting in. The results you achieved were at the top end
+                  of our expectations and the experience was great.`,
+    },
+    {
+      name: "Emma and Jess",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They were
+                  very open, realistic, prompt and trustworthy and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant. I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "N. Wilson",
+      content: `Anton Zhouk have been amazing to work with from the start. The
+                  application process was quick Nicole was easy to talk to
+                  through every step. Since living in our new house, Nicole has
+                  been easy to contact and we always know she will help us, no
+                  matter how big or small the question is. Renting can be a
+                  difficult process, but Anton Zhouk have made it pretty
+                  pain-free.`,
+    },
+    {
+      name: "Rupesh",
+      content: `  Anton communicated with both ourselves and buyers with clarity
+                  and diligence, leaving no stone unturned. His dedication,
+                  knowledge and willingness to do things a little differently
+                  were much appreciated.`,
+    },
     {
       name: "Rupesh",
       content: `I was introduced to Anton Zhouk through my buyer agent to rent
