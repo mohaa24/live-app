@@ -1,31 +1,76 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
+import Flickity from "react-flickity-component";
 
-export const TestimonialCard = () => {
-  const [activeReview, setActiveReview] = useState({
-    name: "N. WILSON",
-    review: `Anton communicated with both ourselves and potential buyers with
-    clarity and diligence, leaving no stone unturned. His dedication,
-    knowledge and willingness to do things a little differently were
-    much appreciated.`,
-  });
+
+
+export const TestimonialCard  = () => {
+
   const [num, setNum] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const reviews = [
-    {
-      name: "R. Lewis",
-      review: `Anton, thanks for a great job selling our Kew property. We never felt pressured but could see the work you and your team were putting in. The results you achieved were at the top of end of our expectations and the experience was great.`,
-    },
+  let flkty;
 
+  useEffect(()=>{
+    if(flkty){
+      flkty.on("change", (index) => {
+       setCurrentSlide(index);
+       console.log(index)
+      });
+    }
+  })
+
+
+  let reviwer = [
     {
-      name: "N. WILSON",
-      review: `Anton communicated with both ourselves and potential buyers with
-      clarity and diligence, leaving no stone unturned. His dedication,
-      knowledge and willingness to do things a little differently were
-      much appreciated.`,
+      name: "Rupesh",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They where
+                  very open,realistic, prompt and trust worthy- and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant.I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "R.Lewis",
+      content: `Anton, thanks for a great job selling our Kew property. We
+                  never felt pressured but could see the work you and your team
+                  were putting in. The results you achieved were at the top end
+                  of our expectations and the experience was great.`,
+    },
+    {
+      name: "Emma and Jess",
+      content: `I was introduced to Anton Zhouk through my buyer agent to rent
+                  my property, and they did not disappoint me at all! They were
+                  very open, realistic, prompt and trustworthy and wasted no
+                  time to get my property up to scratch and find a decent
+                  tenant. I was especially impressed with Nicole, the head of
+                  property management for her professionalism and sincere advice
+                  around this time. I have no hesitancy in recommending them to
+                  any of my friends and family for a reliable and honest real
+                  estate agent!`,
+    },
+    {
+      name: "N. Wilson",
+      content: `Anton Zhouk have been amazing to work with from the start. The
+                  application process was quick Nicole was easy to talk to
+                  through every step. Since living in our new house, Nicole has
+                  been easy to contact and we always know she will help us, no
+                  matter how big or small the question is. Renting can be a
+                  difficult process, but Anton Zhouk have made it pretty
+                  pain-free.`,
+    },
+    {
+      name: "Rupesh",
+      content: `  Anton communicated with both ourselves and buyers with clarity
+                  and diligence, leaving no stone unturned. His dedication,
+                  knowledge and willingness to do things a little differently
+                  were much appreciated.`,
     },
   ];
 
@@ -36,28 +81,42 @@ export const TestimonialCard = () => {
     border: "none",
   };
 
+  
+
+
   const next = () => {
-    setCurrentSlide((prev)=>{return prev+1})
+    // var flkty = new Flickity(".carousel");
+    // setCurrentSlide((prev)=>{return prev+1});
+    // console.log(flkty);
+    // flkty.next();
   };
 
   const prev = () => {
-    setCurrentSlide((prev) => {
-      return prev -1;
-    });
+    // setCurrentSlide((prev) => {
+    //   return prev -1;
+    // });
 
   };
 
-  let carousal = reviews.map((i) => {
-    <>
-      {reviews && (
-        <div>
-          {/* <p className="legend">Legend 14</p> */}
-          <h1>{i.review}</h1>
-          <h3>{i.name}</h3>
-        </div>
-      )}
-    </>;
+  const names = reviwer.map((i) => {
+    return (
+      <>
+        <h3 className="reviewerName">{reviwer[currentSlide].name}</h3>
+      </>
+    );
   });
+
+    const slides = reviwer.map((i) => {
+      return (
+        <>
+          <div className="testimonialContent">
+            <h1>{i.content}</h1>
+          </div>
+        </>
+      );
+    });
+
+
 
   return (
     <>
@@ -91,87 +150,19 @@ export const TestimonialCard = () => {
           </div>
         </div>
         <div className="rightBlock">
-          <Carousel
-            selectedItem={currentSlide}
-            autoPlay={true}
-            showArrows={false}
-            showIndicators={false}
-            showThumbs={false}
-            transitionTime={500}
-            infiniteLoop={true}
+          <Flickity
+            flickityRef={(c) => (flkty = c)}
+            options={{
+              pageDots: false,
+              autoPlay: true,
+              prevNextButtons: false,
+            }}
           >
-            <div className="testimonialContent">
-              {/* <p className="legend">Legend 14</p> */}
-              <h1>
-                van has guided me through opening my own agency. He provides
-                outstanding advice and is always there to answer any questions I
-                may have. I will continue to use Bresic Coaching for many years
-                to come.
-              </h1>
-              <h3>Alison Birdsall</h3>
-            </div>
-            <div className="testimonialContent">
-              <h1>
-                I was introduced to Anton Zhouk through my buyer agent to rent
-                my property, and they did not disappoint me at all! They where
-                very open,realistic, prompt and trust worthy- and wasted no time
-                to get my property up to scratch and find a decent tenant.I was
-                especially impressed with Nicole, the head of property
-                management for her professionalism and sincere advice around
-                this time. I have no hesitancy in recommending them to any of my
-                friends and family for a reliable and honest real estate agent!
-              </h1>
-              <h3 className="">Rupesh</h3>
-            </div>
-            <div className="testimonialContent">
-              <h1>
-                Anton, thanks for a great job selling our Kew property. We never
-                felt pressured but could see the work you and your team were
-                putting in. The results you achieved were at the top end of our
-                expectations and the experience was great.
-              </h1>
-              <h3 className="">R.Lewis</h3>
-            </div>
-            <div className="testimonialContent">
-              {/* <p className="legend">Legend 14</p> */}
-              <h1>
-                I was introduced to Anton Zhouk through my buyer agent to rent
-                my property, and they did not disappoint me at all! They were
-                very open, realistic, prompt and trustworthy and wasted no time
-                to get my property up to scratch and find a decent tenant. I was
-                especially impressed with Nicole, the head of property
-                management for her professionalism and sincere advice around
-                this time. I have no hesitancy in recommending them to any of my
-                friends and family for a reliable and honest real estate agent!
-              </h1>
-              <h3>Rupesh</h3>
-            </div>
-            <div className="testimonialContent">
-              {/* <p className="legend">Legend 14</p> */}
-              <h1>
-                Anton Zhouk have been amazing to work with from the start. The
-                application process was quick Nicole was easy to talk to through
-                every step. Since living in our new house, Nicole has been easy
-                to contact and we always know she will help us, no matter how
-                big or small the question is. Renting can be a difficult
-                process, but Anton Zhouk have made it pretty pain-free.
-              </h1>
-              <h3>Emma and Jess</h3>
-            </div>
-            <div className="testimonialContent">
-              {/* <p className="legend">Legend 14</p> */}
-              <h1>
-                Anton communicated with both ourselves and buyers with clarity
-                and diligence, leaving no stone unturned. His dedication,
-                knowledge and willingness to do things a little differently were
-                much appreciated.
-              </h1>
-              <h3>N. Wilson</h3>
-            </div>
-          </Carousel>
+            {slides && slides}
+          </Flickity>
+          <h3 className="reviewerName">{reviwer[currentSlide].name}</h3>
         </div>
       </div>
-
-          </>
+    </>
   );
 };

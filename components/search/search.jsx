@@ -99,7 +99,8 @@ export const Search = (props) => {
         </div>
         <div className="searchArea">
           <input
-            placeholder="Search property address, postcodes or suburbs"
+            // placeholder="Search property address, postcodes or suburbs"
+            placeholder='Search by suburb'
             className="search_input"
             onChange={(e) => handleChange(e, "query")}
             value={filterValueLocal.query}
