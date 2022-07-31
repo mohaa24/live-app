@@ -381,38 +381,43 @@ export default function Property() {
                     </li>
                   );
                 })}
+
+              <ul class="single-property__documents">
+                {idProperty &&
+                  idProperty[0].photos.map((j) => {
+                    if (j.type == "Floorplan") {
+                      return (
+                        <li>
+                          <a
+                            href={j.url}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            — Floor Plan
+                          </a>
+                        </li>
+                      );
+                    }
+                  })}
+
+                {idProperty && idProperty[0].soiUrl != [] && (
+                  <li>
+                    <a
+                      href={idProperty[0].soiUrl}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      — STATEMENT OF INFORMATION
+                    </a>
+                  </li>
+                )}
+              </ul>
             </ul>
-          </div>
-          {/* <div className="mapContainer">
+
+            {/* <div className="mapContainer">
             <MapComp lat={10.99835602} long={77.01502627} />
           </div> */}
-
-          <ul class="single-property__documents">
-            {idProperty &&
-              idProperty[0].photos.map((j) => {
-                if (j.type == "Floorplan") {
-                  return (
-                    <li>
-                      <a href={j.url} rel="noopener noreferrer" target="_blank">
-                        — Floor Plan
-                      </a>
-                    </li>
-                  );
-                }
-              })}
-
-            {idProperty && idProperty[0].soiUrl != [] && (
-              <li>
-                <a
-                  href={idProperty[0].soiUrl}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  — STATEMENT OF INFORMATION
-                </a>
-              </li>
-            )}
-          </ul>
+          </div>
         </div>
       </section>
     </>

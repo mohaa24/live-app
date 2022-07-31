@@ -87,12 +87,18 @@ export default function About() {
 
   const imageSlides = pics.map((i) => {
     return (
-      <AboutSlide className="propertySlides">
-        <img
+      <AboutSlide className="propertySlides"
+      style={{
+        background:`url(${i.url})`,
+        backgroundSize:'cover',
+        backgroundPosition:'center'
+      }}
+      >
+        {/* <img
           className="propertImage"
           src={i.url}
           alt="1403/14 George Avenue Broadbeach"
-        />
+        /> */}
       </AboutSlide>
     );
   });
@@ -473,9 +479,9 @@ export default function About() {
         </div>
         {
           <Carousel
-            autoPlay={true}
-            showArrows={true}
-            showIndicators={true}
+            autoPlay={false}
+            showArrows={false}
+            showIndicators={false}
             showThumbs={false}
             transitionTime={500}
             infiniteLoop={true}

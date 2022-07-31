@@ -106,7 +106,6 @@ export default function Home() {
                       required=""
                     />
                   </div>
-          
                 </div>
                 <div className="form__row">
                   <label for="email-field">Email</label>
@@ -120,6 +119,17 @@ export default function Home() {
                 </div>
                 <div className="form__row">
                   <label for="contact-field">Phone</label>
+                  <input
+                    type="text"
+                    name="mobile"
+                    id="contact-field"
+                    className="form__input"
+                    required=""
+                  />
+                </div>
+
+                <div className="form__row">
+                  <label for="contact-field">Address</label>
                   <input
                     type="text"
                     name="mobile"

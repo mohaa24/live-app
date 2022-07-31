@@ -469,7 +469,7 @@ section.aboutSection {
 
 .property-options__heading h3 {
     width: 59%;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 1.3;
         padding-top: 30px;
@@ -687,7 +687,7 @@ section.propertySection {
 .TestimonielSection {
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    width: 80vw;
     /* padding: 0 8vw; */
 }
 
@@ -713,7 +713,7 @@ p.carousel-status {
     /* font-family: Helvetica,sans-serif; */
     line-height: 1.6;
     text-align: left;
-        font-size: 17px;
+        font-size: 16px;
     font-weight: 300;
 
 }
@@ -1482,8 +1482,8 @@ https://flickity.metafizzy.co
 }
 
 h3.reviewerName {
-    font-size: 19px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
     text-align: right;
 }
 
@@ -4621,7 +4621,7 @@ a {
   }
   .property-options__heading h2,
   .testimonials-heading h2 {
-    font-size: 30px;
+    font-size: 25px;
     line-height: 48px;
     padding-top: 50px;
   }
@@ -5506,7 +5506,7 @@ a {
 .featured-news__heading h4,
 .testimonials-heading h4 {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 2px;
   line-height: 24px;
@@ -5545,7 +5545,7 @@ a {
 
   .featured-news__heading h4,
   .testimonials-heading h4 {
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 3.75px;
     line-height: 42px;
   }
@@ -14046,13 +14046,22 @@ section.properties.properties--buy {
   top: 0;
   width: 100%;
 }
-
+ul.single-property__documents {
+    margin-left: 0;
+}
+ul.single-property__documents li {
+    margin-bottom: 3px;
+    font-size: 9px;
+    font-weight: 300;
+}
 .single-property__title {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 60px;
   padding-right: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 900px) {
