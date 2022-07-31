@@ -3,7 +3,9 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
-
+import { MapComp } from "../components/map/map";
+import Modal from "react-modal";
+import Flickity from "react-flickity-component";
 
 const axios = require("axios").default;
 
@@ -12,7 +14,17 @@ const PropertImageBlock = styled.div`
   }
 `;
 const PropertySlide = styled.div`
+::before{
+  background:black;
+}
   height: 100vh;
+`;
+
+const PropertySlideModal = styled.div`
+  height: 75vh;
+  width: 90vw;
+  margin: auto;
+  background-position: center;
 `;
 
 export default function Property() {
@@ -20,6 +32,9 @@ export default function Property() {
   const [response, setResponse] = useState(null);
   const [idProperty, setIDProperty] = useState(null);
   const [filtered, setFiltered] = useState(false);
+  const [modal, setModal] = useState(false);
+    const [modalPosition, setModalPosition] = useState(0);
+    const [autoPlay , setAutoPlay] = useState(true);
 
   const router = useRouter();
 
@@ -50,6 +65,23 @@ export default function Property() {
     }
   });
 
+  let flicketyOptions ={
+    initialIndex:modalPosition
+  };
+
+  const clickHandler = (i)=>{
+
+    setModalPosition(i);
+    setAutoPlay(false);
+        setModal(true);
+    
+  }
+
+  const closeModal = () => {
+    setModal(false);
+    setAutoPlay(true)
+  };
+
   const requestPropertyData = async () => {
     axios({
       method: "get",
@@ -65,6 +97,32 @@ export default function Property() {
       .catch((error) => console.log(error));
   };
 
+
+  let imageSlidesModal =
+    idProperty &&
+    idProperty[0].photos
+      .filter((i, index) => i.type == "Photograph")
+      .map((i, index) => {
+        return (
+          // <p>{index}</p>
+          <PropertySlideModal
+            style={{
+              background: `url(${i.url})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+            className="propertySlides"
+          >
+            {/* <img
+                className="propertImage"
+                src={i.url}
+                alt="1403/14 George Avenue Broadbeach"
+              /> */}
+          </PropertySlideModal>
+        );
+      });
+
   let imageSlides =
     idProperty &&
     idProperty[0].photos
@@ -72,7 +130,7 @@ export default function Property() {
       .map((i, index) => {
         return (
           // <p>{index}</p>
-          <PropertySlide className="propertySlides">
+          <PropertySlide className="propertySlides" onClick={()=>{clickHandler(index)}}>
             <img
               className="propertImage"
               src={i.url}
@@ -97,8 +155,10 @@ export default function Property() {
       if (index == 7) {
         return (
           <ul>
-            {item.split("&#x2022;").map((i,c) => {
-             if(c!=0){ return <li>{i}</li>}
+            {item.split("&#x2022;").map((i, c) => {
+              if (c != 0) {
+                return <li>{i}</li>;
+              }
             })}
           </ul>
         );
@@ -109,6 +169,47 @@ export default function Property() {
     <>
       {idProperty && (
         <PropertImageBlock>
+          <div>
+            <Modal
+              style={{
+                content: {
+                  background: "lightsteelblue !important",
+                  border: "none !important",
+                  // height:'100%',
+                  // width:'100%',
+                  // margin: 0,
+                  // padding: 0,
+                  // inset: 0,
+                },
+                overlay: {
+                  background: "#808080f9",
+                },
+              }}
+              isOpen={modal}
+              onRequestClose={closeModal}
+            >
+              <svg
+                className="closeBtn"
+                onClick={closeModal}
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                fillRule="evenodd"
+                clip-rule="evenodd"
+              >
+                <path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z" />
+              </svg>
+              <Flickity
+                className={"carousel"} // default ''
+                elementType={"div"} // default 'div'
+                options={flicketyOptions} // takes flickity options {}
+                autoPlay={false}
+                index={modalPosition}
+              >
+                {imageSlidesModal && imageSlidesModal}
+              </Flickity>
+            </Modal>
+          </div>
           <section className="propertySection">
             <div className="single-property__inner container">
               <div className="single-property__details">
@@ -239,7 +340,7 @@ export default function Property() {
             </div>
             {
               <Carousel
-                autoPlay={true}
+                autoPlay={autoPlay}
                 showArrows={true}
                 showIndicators={true}
                 showThumbs={false}
@@ -247,18 +348,6 @@ export default function Property() {
                 infiniteLoop={true}
               >
                 {imageSlides && imageSlides}
-
-                {/* {imageSlides.length == 0 && (
-                  <PropertySlide className="propertySlides">
-                    <img
-                      className="propertImage"
-                      src={
-                        "https://agentboxcdn.com.au/clients-data/4244/public_html/media/lt/1/1P5512/165785828834854777-rsd.jpg"
-                      }
-                      alt="1403/14 George Avenue Broadbeach"
-                    />
-                  </PropertySlide>
-                )} */}
               </Carousel>
             }
           </section>
@@ -294,24 +383,38 @@ export default function Property() {
                 })}
             </ul>
           </div>
+          {/* <div className="mapContainer">
+            <MapComp lat={10.99835602} long={77.01502627} />
+          </div> */}
 
           <ul class="single-property__documents">
             {idProperty &&
-              idProperty[0].photos.map((i) => {
-                if (i.type == "Floorplan") {
+              idProperty[0].photos.map((j) => {
+                if (j.type == "Floorplan") {
                   return (
                     <li>
-                      <a href={i.url} rel="noopener noreferrer" target="_blank">
+                      <a href={j.url} rel="noopener noreferrer" target="_blank">
                         — Floor Plan
                       </a>
                     </li>
                   );
                 }
               })}
+
+            {idProperty && idProperty[0].soiUrl != [] && (
+              <li>
+                <a
+                  href={idProperty[0].soiUrl}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  — STATEMENT OF INFORMATION
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </section>
     </>
   );
-  
 }

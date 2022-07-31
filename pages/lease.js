@@ -9,7 +9,7 @@ export default function Home() {
 
       <section className="title-content-columns">
         <div className="title-content-columns__inner">
-          <h2 className="react-reveal">
+          <h2 className="">
             Relationships, Excellence &amp; Authenticity is at the very core of
             everything we do.
           </h2>
@@ -26,7 +26,7 @@ export default function Home() {
               more premium and personalised property management service.
             </p>
           </div>
-          <div className="react-reveal title-content-columns__cols">
+          <div className=" title-content-columns__cols">
             <p>1. 25+ Years Experience in Property Management</p>
             <p>2. Honest &amp; Reliable in Our Approach</p>
             <p>3. Prompt Communication &amp; Available 7 days</p>
@@ -37,19 +37,19 @@ export default function Home() {
       <section className="title-columns" id="change">
         <div className="title-columns__inner">
           <h2
-            className="react-reveal"
+            className=""
           >
             Changing Property Managers has never been easier.
           </h2>
           <p
-            className="react-reveal subtitle"
+            className=" subtitle"
           >
             Making the switch won’t cost you anything and you won’t need to
             contact your previous Property Manager. Get in contact with our team
             today and let us do the rest for you.
           </p>
           <div
-            className="react-reveal title-columns__cols"
+            className=" title-columns__cols"
           >
             <div className="title-columns__col">
               <h4>1. Making the switch.</h4>

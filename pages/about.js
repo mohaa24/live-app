@@ -677,7 +677,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="testimonials-section vallues">
+      {/* <section className="testimonials-section vallues">
         <div className="testimonials-heading">
           <h4>OUR VALUES</h4>
         </div>
@@ -685,7 +685,7 @@ export default function About() {
         <div className="testimonials">
           <Values />
         </div>
-      </section>
+      </section> */}
 
       <section className="testimonials-section ourTeam">
         <div className="testimonials-heading">
@@ -696,7 +696,7 @@ export default function About() {
       <section class="team" id="team">
         <div class="team__inner container firstRowContainer">
           <div class="team-card" id="anton-zhouk">
-            <figure class="react-reveal team-card__image">
+            <figure class="div team-card__image">
               <img
                 onClick={() => {
                   setAnton(true);
@@ -705,7 +705,7 @@ export default function About() {
                 alt="Anton Zhouk"
               />
             </figure>
-            <div class="react-reveal team-card__details">
+            <div class="div team-card__details">
               <div class="team-card__info">
                 <p class="address">Anton Zhouk</p>
                 <p class="suburb">
@@ -718,7 +718,7 @@ export default function About() {
             </div>
           </div>
           <div class="team-card" id="julia-verdiants">
-            <figure class="react-reveal team-card__image">
+            <figure class="div team-card__image">
               <img
                 onClick={() => {
                   setJulia(true);
@@ -727,7 +727,7 @@ export default function About() {
                 alt="Julia Verdiants"
               />
             </figure>
-            <div class="react-reveal team-card__details">
+            <div class="div team-card__details">
               <div class="team-card__info">
                 <p class="address">Julia Verdiants</p>
                 <p class="suburb">
@@ -740,7 +740,7 @@ export default function About() {
             </div>
           </div>
           <div class="team-card" id="nicole-wiseman">
-            <figure class="react-reveal team-card__image">
+            <figure class="div team-card__image">
               <img
                 onClick={() => {
                   setNicole(true);
@@ -749,7 +749,7 @@ export default function About() {
                 alt="Nicole Wiseman"
               />
             </figure>
-            <div class="react-reveal team-card__details">
+            <div class="div team-card__details">
               <div class="team-card__info">
                 <p class="address">Nicole Wiseman</p>
                 <p class="suburb">
@@ -764,7 +764,7 @@ export default function About() {
         </div>
         <div class="team__inner container secondRowContainer">
           <div class="team-card" id="sam-christensen">
-            <figure class="react-reveal team-card__image">
+            <figure class="div team-card__image">
               <img
                 onClick={() => {
                   setSam(true);
@@ -773,7 +773,7 @@ export default function About() {
                 alt="Sam Christensen"
               />
             </figure>
-            <div class="react-reveal team-card__details">
+            <div class="div team-card__details">
               <div class="team-card__info">
                 <p class="address">Sam Christensen</p>
                 <p class="suburb">
@@ -786,7 +786,7 @@ export default function About() {
             </div>
           </div>
           <div class="team-card" id="dee-pajevikj">
-            <figure class="react-reveal team-card__image">
+            <figure class="div team-card__image">
               <img
                 onClick={() => {
                   setDee(true);
@@ -795,7 +795,7 @@ export default function About() {
                 alt="Dee Pajevikj"
               />
             </figure>
-            <div class="react-reveal team-card__details">
+            <div class="div team-card__details">
               <div class="team-card__info">
                 <p class="address">Dee Pajevikj</p>
                 <p class="suburb">

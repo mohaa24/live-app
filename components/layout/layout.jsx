@@ -9,7 +9,8 @@ export const Layout = ({ children }) => {
   const router = useRouter();
   const [nav, setNav] = useState(
     router.pathname.toLocaleLowerCase().includes("buy") ||
-      router.pathname.toLocaleLowerCase().includes("sold")
+      router.pathname.toLocaleLowerCase().includes("sold") 
+     
   );
   const[mobileNav, setMobileNav] =useState(false)
 
@@ -27,7 +28,6 @@ export const Layout = ({ children }) => {
   };
 
   useEffect(()=>{
-    console.log('rerenered');
     if(router.pathname.toLocaleLowerCase().includes("buy") ||
       router.pathname.toLocaleLowerCase().includes("sold")){
         setNav(true)

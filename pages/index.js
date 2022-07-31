@@ -106,16 +106,7 @@ export default function Home() {
                       required=""
                     />
                   </div>
-                  {/* <div>
-                        <label for="last-name-field">Last Name</label>
-                        <input
-                          type="text"
-                          name="lastname"
-                          id="last-name-field"
-                          className="form__input"
-                          required=""
-                        />
-                      </div> */}
+          
                 </div>
                 <div className="form__row">
                   <label for="email-field">Email</label>

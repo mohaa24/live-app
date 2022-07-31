@@ -5,10 +5,6 @@ import Router from "next/router";
 import { useRouter } from "next/router";
 
 
-
-
-
-
 export const Properties = (props) => {
   const [propertyList, setPropertyList] = useState(null);
   const [query, setQuery] = useState("");
@@ -41,10 +37,7 @@ export const Properties = (props) => {
 
     const onClick = (id)=>{
           router.push(`/property?id=${id}&type=${props.type}`);
-
     }
-
-
 
   return (
     <>
@@ -70,7 +63,7 @@ export const Properties = (props) => {
         filteredItems.map((item) => {
           return (
             
-            <div className="property " onClick={()=>{onClick(item.id);}}>
+            <div className="property" onClick={()=>{onClick(item.id);}}>
               <div className="property__image">
                 <img
                   src={

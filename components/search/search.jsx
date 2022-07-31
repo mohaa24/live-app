@@ -53,9 +53,12 @@ export const Search = (props) => {
     }),
   };
   const router = useRouter();
+  let placeholder;
 
   useEffect(() => {
     SetFilterLocal((prev) => ({ ...prev, query: router.query.query }));
+    console.log(router.asPath);
+
   }, []);
 
   const handleChange = (e, type) => {
@@ -89,11 +92,11 @@ export const Search = (props) => {
             className="dropDown"
             options={[
               { value: "buy", label: "BUY" },
-              { value: "sold", label: "SELL" },
-              { value: "rent", label: "RENT" },
+              { value: "sold", label: "SOLD" },
+              // { value: "rent", label: "RENT" },
             ]}
             styles={blueDropdown}
-            placeholder="BUY"
+            placeholder={router.asPath == '/buy'?'BUY' :'SOLD'}
             onChange={(e) => {handleChange(e, "main"); changeCatogary(e)}}
           ></Select>{" "}
         </div>

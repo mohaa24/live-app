@@ -1,31 +1,32 @@
-import { Map, MapComp } from "../components/map/map";
+import {  MapComp } from "../components/map/map";
 import { Carousel } from "react-responsive-carousel";
 import styled from "styled-components";
-import Image from 'next/image'
-
+// import andersonPark from "../public/andersonPark";
 const AboutSlide = styled.div`
   height: 100vh;
 `;
 
 export default function Contact() {
-   const pics = [
-     {
-       url: "https://www.antonzhouk.com.au/static/Office-Web-4-30793118ba1684757205e1ec23f2aaf6.jpg",
-     }
-   
-   ];
 
-   const imageSlides = pics.map((i) => {
-     return (
-       <AboutSlide className="propertySlides">
-         <img
-           className="propertImage"
-           src={i.url}
-           alt="1403/14 George Avenue Broadbeach"
-         />
-       </AboutSlide>
-     );
-   });
+
+  const imageSlides = [1].map((i) => {
+    return (
+      <AboutSlide
+        className="propertySlides"
+        style={{
+          background: `url(/andersonPark.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* <img
+          className="propertImage"
+          src={i.url}
+          alt="1403/14 George Avenue Broadbeach"
+        /> */}
+      </AboutSlide>
+    );
+  });
   return (
     <>
       <section className="aboutSection">
@@ -38,30 +39,19 @@ export default function Contact() {
             STANDARD.
           </h3>
         </div>
-        {
-          <Carousel
-            autoPlay={true}
-            showArrows={true}
-            showIndicators={false}
-            showThumbs={false}
-            transitionTime={500}
-            infiniteLoop={true}
-          >
-            {imageSlides && imageSlides}
-          </Carousel>
-        }
+     {imageSlides && imageSlides}
       </section>
       <section className="contact contact--contact">
         <div className="contact__inner">
           <div className="contact__content">
             <div className="contact__menu">
               {/* <div className="testimonials-heading"><h4>Property</h4></div> */}
-            </div>
-            <div className="contact__form">
-              <h2> How can we help?</h2>
-              <div></div>
+
+              <div className="contact__form"></div>
+
               <form name="contact" className="form">
                 <div className="column_left">
+                  <h2> How can we help?</h2>
                   <div className="form__row form__row--double">
                     <div>
                       <label for="first-name-field">Name</label>
@@ -207,13 +197,12 @@ export default function Contact() {
                     </button>
                   </div>
                 </div>
-
-                <div className="column_right">
-                  <MapComp />
-                </div>
               </form>
             </div>
           </div>
+        </div>
+        <div className="mapContainer">
+          <MapComp lat={10.99835602} long={77.01502627} width={'100%'} />
         </div>
       </section>
     </>
