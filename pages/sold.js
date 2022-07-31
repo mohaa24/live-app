@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Select from "react-select";
+import OverlayLoader from "../components/loading/loading";
 import { Properties } from "../components/Properties/properties";
 import { Search } from "../components/search/search";
 const axios = require("axios").default;
@@ -54,6 +55,8 @@ export default function Sold() {
 
   return (
     <>
+      {!response && <OverlayLoader />}
+      {response &&<>
       <section className="hero-banner sub">
         <div className="hero-banner__inner">
           <div className="hero-banner__content">
@@ -71,6 +74,9 @@ export default function Sold() {
           ></Properties>
         </div>
       </section>
+      </>
+}
+
     </>
   );
 }

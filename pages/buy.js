@@ -64,6 +64,9 @@ export default function Buy() {
 
   return (
     <>
+      {!response && <OverlayLoader />}
+      {response && 
+      <>
       <section className="hero-banner sub">
         <div className="hero-banner__inner">
           <div className="hero-banner__content">
@@ -74,7 +77,6 @@ export default function Buy() {
       <section className="properties properties--buy">
         <h1>Properties for Sale</h1>
         <div className="properties__inner">
-          {!response && <OverlayLoader/>}
           <Properties
             type={"sale"}
             data={response}
@@ -82,6 +84,8 @@ export default function Buy() {
           ></Properties>
         </div>
       </section>
+      </>
+      }
     </>
   );
 }

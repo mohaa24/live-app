@@ -1,3 +1,6 @@
+import { Appraisal } from "../components/appraisal/appraisal";
+import { ContentSlider } from "../components/contentSlider/contentSlider";
+import { TestimonialCard } from "../components/testimonials/testimonials";
 
 
 
@@ -33,24 +36,30 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="testimonials-section">
+        <div className="testimonials-heading">
+          <h4>THE PROOF</h4>
+        </div>
 
+        <div className="testimonials">
+
+          <TestimonialCard></TestimonialCard>
+        </div>
+      </section>
+      <section className="constenSlider">
+      <ContentSlider/>
+      </section>
       <section className="title-columns" id="change">
         <div className="title-columns__inner">
-          <h2
-            className=""
-          >
+          <h2 className="">
             Changing Property Managers has never been easier.
           </h2>
-          <p
-            className=" subtitle"
-          >
+          <p className=" subtitle">
             Making the switch won’t cost you anything and you won’t need to
             contact your previous Property Manager. Get in contact with our team
             today and let us do the rest for you.
           </p>
-          <div
-            className=" title-columns__cols"
-          >
+          <div className=" title-columns__cols">
             <div className="title-columns__col">
               <h4>1. Making the switch.</h4>
               <p>
@@ -81,6 +90,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="leaseForm">
+        <Appraisal />
       </section>
     </>
   );

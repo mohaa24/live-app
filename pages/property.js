@@ -6,6 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import { MapComp } from "../components/map/map";
 import Modal from "react-modal";
 import Flickity from "react-flickity-component";
+import OverlayLoader from "../components/loading/loading";
 
 const axios = require("axios").default;
 
@@ -92,7 +93,7 @@ export default function Property() {
       },
     })
       .then((response) => {
-        setResponse(response.data.data.items);
+       // setResponse(response.data.data.items);
       })
       .catch((error) => console.log(error));
   };
@@ -167,6 +168,8 @@ export default function Property() {
 
   return (
     <>
+
+    {!response && <OverlayLoader/>}
       {idProperty && (
         <PropertImageBlock>
           <div>
@@ -353,6 +356,7 @@ export default function Property() {
           </section>
         </PropertImageBlock>
       )}
+      {idProperty &&
       <section className="propertyDetails">
         <div className="propertyText">
           <h1>{idProperty && idProperty[0].heading}</h1>
@@ -419,7 +423,7 @@ export default function Property() {
           </div> */}
           </div>
         </div>
-      </section>
+      </section>}
     </>
   );
 }
