@@ -47,7 +47,6 @@ export default function Sold() {
       },
     })
       .then((response) => {
-        console.log(response.data.data.items);
         setResponse(response.data);
       })
       .catch((error) => console.log(error));
