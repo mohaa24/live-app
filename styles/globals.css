@@ -19433,9 +19433,10 @@ ul.single-property__documents li {
 }
 
 .title-columns__inner .subtitle {
-    letter-spacing: 1.6px;
+/* letter-spacing: 1.6px;  */
     line-height: 2;
     font-size: 14px;
+    font-weight: 100;
     margin-bottom: 20px;
 }
 .title-columns {
@@ -19444,13 +19445,14 @@ ul.single-property__documents li {
 }
 
 .title-columns__inner h2 {
-    font-family: BigCaslon,serif;
-    line-height: 1.4;
-    font-size: 27px;
+    /* font-family: BigCaslon,serif; */
+       line-height: 1.4;
+    font-size: 25px;
     margin-bottom: 20px;
     border-bottom: 1px solid #b3b3b3;
     display: inline-block;
     padding-bottom: 20px;
+    font-weight: 500;
 }
 
 .title-content-columns__cols p {
@@ -19472,16 +19474,11 @@ ul.single-property__documents li {
 }
 
 .title-columns__col h4 {
-    font-size: 20px;
-    line-height: 1.4;
-    font-family: BigCaslon,serif;
-    letter-spacing: .6px;
+  font-weight: 500;
 }
 .title-columns__col p {
-    margin: 0;
-    letter-spacing: 1.6px;
-    line-height: 2;
-    font-size: 14px;
+  font-weight: 200;
+  font-size: 14px;
     
 }
 @media (min-width:900px){
