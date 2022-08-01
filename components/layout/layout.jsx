@@ -126,7 +126,14 @@ export const Layout = ({ children }) => {
               </li>
 
               <li>
-                <button className="header__hamburger" id='burger' type="button" onClick={()=>{flipBurger()}}>
+                <button
+                  className="header__hamburger"
+                  id="burger"
+                  type="button"
+                  onClick={() => {
+                    flipBurger();
+                  }}
+                >
                   <span className="lines"></span>
                 </button>
               </li>
@@ -135,54 +142,63 @@ export const Layout = ({ children }) => {
         </div>
       </header>
 
-      <div className="off-canvas" id='mobileMenu'>
+      <div className="off-canvas" id="mobileMenu">
         <div className="off-canvas__inner">
           <nav className="off-canvas__nav">
             <ul>
               <li>
-                <button type="button" className="">
-                  Buy
-                </button>
+                <Link href={"/about"}>
+                  <button type="button" onClick={()=>{flipBurger()}} className="">
+                    Buy
+                  </button>
+                </Link>
               </li>
               <li>
-                <button type="button" className="">
-                  Lease
-                </button>
+                <Link href={"/about"}>
+                  <button type="button" className="">
+                    Lease
+                  </button>
+                </Link>
               </li>
               <li>
-                <button type="button" className="">
-                  Sold
-                </button>
+                <Link href={"/about"}>
+                  <button type="button" className="">
+                    Sold
+                  </button>
+                </Link>
               </li>
               <li>
-                <a href="/our-team/">Team</a>
+                <Link href={"/about"}>
+                  <button type="button" className="">
+                    About
+                  </button>
+                </Link>
               </li>
               <li>
-                <button type="button" className="">
-                  About
-                </button>
-              </li>
-              <li>
-                <a href="/contact-us/">Contact</a>
+                <Link href={"/about"}>
+                  <button type="button" className="">
+                    Contact
+                  </button>
+                </Link>
               </li>
             </ul>
             <div className="off-canvas__social">
               <p>
                 <a
                   className="phone"
-                  to="tel:1300576000"
-                  href="tel:1300576000"
+                  to="tel:03 9815 1124"
+                  href="tel:"
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                 >
-                  1300 576 000
+                  03 9815 1124
                 </a>
               </p>
               <ul>
                 <li>
                   <a
-                    to="https://www.linkedin.com/company/kollosche/"
-                    href="https://www.linkedin.com/company/kollosche/"
+                    to="https://www.linkedin.com/company/"
+                    href="https://www.linkedin.com/company/"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                   >
@@ -215,8 +231,8 @@ export const Layout = ({ children }) => {
                 </li>
                 <li>
                   <a
-                    to="https://www.facebook.com/KolloscheGC/"
-                    href="https://www.facebook.com/KolloscheGC/"
+                    to="https://www.facebook.com/"
+                    href="https://www.facebook.com/"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                   >
@@ -250,8 +266,8 @@ export const Layout = ({ children }) => {
                 </li>
                 <li>
                   <a
-                    to="https://www.instagram.com/kollosche_/"
-                    href="https://www.instagram.com/kollosche_/"
+                    to="https://www.instagram.com/"
+                    href="https://www.instagram.com/"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                   >
@@ -282,47 +298,11 @@ export const Layout = ({ children }) => {
                     </svg>
                   </a>
                 </li>
+         
                 <li>
                   <a
-                    to="https://weixin.qq.com/r/mzsCGrXEGehmrfF5926J"
-                    href="https://weixin.qq.com/r/mzsCGrXEGehmrfF5926J"
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                  >
-                    <svg
-                      width="20px"
-                      height="16px"
-                      viewBox="0 0 20 16"
-                      version="1.1"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g
-                        stroke="none"
-                        stroke-width="1"
-                        fill="none"
-                        fill-rule="evenodd"
-                      >
-                        <g transform="translate(-152.000000, -650.000000)">
-                          <g transform="translate(82.000000, 650.000000)">
-                            <g transform="translate(70.464646, 0.000000)">
-                              <g>
-                                <path
-                                  d="M6.96250379,0 C3.17248287,0 0,2.60453956 0,5.93860618 C0,7.7384261 0.939106198,9.2886714 2.3901612,10.371763 L1.30226999,13.6402363 L4.69873005,11.5364465 C5.40105993,11.7572243 6.17698224,11.8772124 6.96250379,11.8772124 C7.26807334,11.8772124 7.56564338,11.8548148 7.86161409,11.8212179 C8.75592436,13.5586443 10.7829218,14.7441257 13.1058895,14.7441257 C13.8114188,14.7441257 14.4641536,14.6113389 15.070493,14.430557 L17.8750125,16 L17.0926908,13.3170684 C18.1485853,12.440356 18.8397161,11.219678 18.8397161,9.82941712 C18.8397161,7.28567168 16.6271373,5.25707453 13.8226178,4.95790434 C13.2690734,2.09899011 10.371763,0 6.96250379,0 Z M6.96250379,0.819118093 C9.95580459,0.819118093 12.421158,2.60134009 12.9843017,4.91950818 C9.9046097,4.97550269 7.37206284,7.10808934 7.37206284,9.82941712 C7.37206284,10.2469753 7.43765618,10.650135 7.55124492,11.0340966 C7.35766438,11.0500952 7.16088396,11.0580943 6.96250379,11.0580943 C6.18498175,11.0580943 5.40585955,10.9397063 4.7643238,10.7125288 L4.5803421,10.6485352 L2.79332089,11.7540248 L3.35326469,10.0725928 L3.09729029,9.89981008 C1.67183273,8.93670659 0.819118093,7.55444481 0.819118093,5.93860618 C0.819118093,3.12928709 3.5452455,0.819118093 6.96250379,0.819118093 Z M4.50514951,3.27647237 C4.05399483,3.27647237 3.68603142,3.64443578 3.68603142,4.09559047 C3.68603142,4.54674556 4.05399483,4.91470856 4.50514951,4.91470856 C4.95630461,4.91470856 5.32426761,4.54674556 5.32426761,4.09559047 C5.32426761,3.64443578 4.95630461,3.27647237 4.50514951,3.27647237 Z M9.41985807,3.27647237 C8.96870339,3.27647237 8.60073998,3.64443578 8.60073998,4.09559047 C8.60073998,4.54674556 8.96870339,4.91470856 9.41985807,4.91470856 C9.87101317,4.91470856 10.2389762,4.54674556 10.2389762,4.09559047 C10.2389762,3.64443578 9.87101317,3.27647237 9.41985807,3.27647237 Z M13.1058895,5.73382665 C15.8688133,5.73382665 18.0205981,7.59124082 18.0205981,9.82941712 C18.0205981,11.0404959 17.40306,12.1027897 16.3839616,12.8579142 L16.1551848,13.0290972 L16.5279474,14.3073695 L15.1968805,13.5602441 L15.0240978,13.6178383 C14.4513549,13.8098191 13.7970204,13.9250076 13.1058895,13.9250076 C10.3429657,13.9250076 8.19118093,12.0675934 8.19118093,9.82941712 C8.19118093,7.59124082 10.3429657,5.73382665 13.1058895,5.73382665 Z M11.2628738,8.19118093 C10.9349067,8.19118093 10.6485352,8.4775524 10.6485352,8.8055195 C10.6485352,9.13348661 10.9349067,9.41985807 11.2628738,9.41985807 C11.5908409,9.41985807 11.8772124,9.13348661 11.8772124,8.8055195 C11.8772124,8.4775524 11.5908409,8.19118093 11.2628738,8.19118093 Z M14.9489052,8.19118093 C14.6209381,8.19118093 14.3345666,8.4775524 14.3345666,8.8055195 C14.3345666,9.13348661 14.6209381,9.41985807 14.9489052,9.41985807 C15.2768723,9.41985807 15.5632438,9.13348661 15.5632438,8.8055195 C15.5632438,8.4775524 15.2768723,8.19118093 14.9489052,8.19118093 Z"
-                                  fill="#FFFFFF"
-                                  fill-rule="nonzero"
-                                ></path>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    to="https://www.youtube.com/channel/UCyVdEOWfroQCK9ScWZuCODA"
-                    href="https://www.youtube.com/channel/UCyVdEOWfroQCK9ScWZuCODA"
+                    to="https://www.youtube.com/"
+                    href="https://www.youtube.com/"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                   >

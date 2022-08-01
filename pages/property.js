@@ -93,7 +93,7 @@ export default function Property() {
       },
     })
       .then((response) => {
-       // setResponse(response.data.data.items);
+        setResponse(response.data.data.items);
       })
       .catch((error) => console.log(error));
   };
