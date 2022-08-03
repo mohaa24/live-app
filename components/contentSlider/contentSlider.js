@@ -101,7 +101,7 @@ export const ContentSlider = () => {
           
         >
           <div class="title-content-slider__content">
-            <h2>Why Anton Zhouk?</h2>
+            <h2>Why A__Z?</h2>
             <p class="title-content-slider__count">
               0{currentSlide+1}. — 06.
             </p>
@@ -129,7 +129,7 @@ export const ContentSlider = () => {
               console.log(`index ${i}`);
             }}
             selectedItem={currentSlide}
-            autoPlay={true}
+            autoPlay={false}
             showIndicators={false}
             showArrows={false}
             showThumbs={false}

@@ -56,6 +56,11 @@
     justify-content: space-between;
 }
 
+.team-card__bottom-wrapper p {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.5;
+}
 section.leaseForm {
     display: flex;
     justify-content: center;
@@ -90,7 +95,8 @@ section.leaseForm .form {
     font-weight: 100;
 }
 .team-card__bottom-wrapper h4 {
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 16px;
 }
 p.about-agentparagraph {
     font-family: "Montserrat", sans-serif;
@@ -118,7 +124,7 @@ display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    margin: 60px 0;
+    margin: 50px 0;
 }
 
 .team__inner {
@@ -127,12 +133,12 @@ display: flex;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 43vw;
+    width: 52vw;
     margin-right: 10vw;
 }
 
 .team-card__details {
-    width: 100%;
+    width: 125%;
     padding: 15px 0 0;
     display: flex;
     flex-wrap: wrap;
@@ -266,7 +272,7 @@ display: flex;
 }
 .team-card__content-wrap .team__content p.suburb {
        font-weight: 300;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 28px;
     /* letter-spacing: 1.3px; */
     margin-bottom: 15px;
@@ -295,7 +301,7 @@ display: flex;
     line-height: 1.4;
     letter-spacing: .6px;
     margin-bottom: 10px;
-    font-weight: 500;
+    font-weight: 600;
     text-align: left;
 }
 .title-content-slider__content p {
@@ -357,15 +363,15 @@ display: flex;
 } */
 
   .team__inner.container.secondRowContainer {
-    width: 29vw;
+    width: 36vw;
     justify-content: space-evenly;
     margin-right: 16.5vw;
 }
 
   .team-card figure {
     margin: 0;
-    width: 12vw;
-    height: 12vw;
+    width: 15vw;
+    height: 15vw;
 }
 
   .firstRow figure {
@@ -386,16 +392,16 @@ display: flex;
 }
 
 .team-card__content-wrap .team__image {
-    width: 30%;
+    width: 25%;
 }
 
 .team-card__content-wrap .team__image {
-    width: 30%;
+    width: 25%;
 }
 
 
   .team-card__content-wrap {
-    margin-bottom: 65px;
+    margin-bottom: 35px;
 }
 .team-card.firstRow {
     width: 40%;
@@ -440,11 +446,11 @@ display: flex;
 section.testimonials-section.ourTeam {
     min-height: 60px;
     padding: 0;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 section.testimonials-section.vallues {
-    padding: 60px 0;
+    padding: 50px 0;
 }
 
 .aboutSection .dot {
@@ -506,7 +512,7 @@ section.properties.properties--buy {
 section.aboutSection.light-theme h2 {
     font-size: 20px;
     /* width: 59%; */
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 1.3;
 }
@@ -564,6 +570,7 @@ section.aboutSection {
     font-weight: 300;
     line-height: 1.3;
         padding-top: 30px;
+        margin: 0;
 }
 .property-options__heading {
     margin-left: 50px;
@@ -997,7 +1004,7 @@ section.aboutSection.light-theme {
 
 section.blog-section {
   background: white;
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .blog-container {
@@ -4739,6 +4746,7 @@ a {
     /* padding-left: calc(50vw - 800px); */
     display: flex;
     justify-content: center;
+    padding-top: 50px;
     
   }
 }
@@ -4893,7 +4901,7 @@ a {
     width: 80vw;
   }
   section.testimonials-section {
-    padding: 60px 0 0;
+    padding: 50px 0 0;
   }
 }
 
@@ -6655,7 +6663,7 @@ body.thank-you .footer {
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: 100%;
+  width: 75%;
 }
 
 @media (min-width: 900px) {
@@ -9262,7 +9270,7 @@ body.thank-you .footer {
   padding: 0;
   position: relative;
   text-transform: uppercase;
-  z-index: 2;
+  z-index: 1;
 }
 
 .business-data__heading h5:before {
@@ -9286,7 +9294,7 @@ body.thank-you .footer {
   margin: 0;
   padding: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 
 @media (min-width: 900px) {
@@ -9367,17 +9375,17 @@ body.thank-you .footer {
 
 .business-data__item .label {
   color: #454343;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 2.8px;
-  line-height: 24px;
+  line-height: 15px;
   margin-top: 0;
   text-transform: uppercase;
 }
 
 @media (min-width: 900px) {
   .business-data__item .label {
-    margin-top: 17px;
+    margin-top: 0px;
   }
 
   .business-data__item {
@@ -19449,7 +19457,7 @@ ul.single-property__documents li {
        line-height: 1.4;
     font-size: 25px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #b3b3b3;
+    /* border-bottom: 1px solid #b3b3b3; */
     display: inline-block;
     padding-bottom: 20px;
     font-weight: 500;
