@@ -8,7 +8,9 @@ export default function Home() {
 
   return (
     <>
-      <section className="leaseHeroSection"></section>
+      <section className="leaseHeroSection">
+        
+      </section>
 
       <section className="title-content-columns">
         <div className="title-content-columns__inner">
