@@ -469,6 +469,9 @@ ul.single-property__team a {
 .rightBlock .dot {
     background: #a9c5db !important;
 }
+.carousel.carousel-slider .control-arrow{
+  z-index: 1;
+}
 
 .propertySection .dot {
     /* background: #a9c5db !important; */
