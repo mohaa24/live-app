@@ -131,12 +131,18 @@ export default function Property() {
       .map((i, index) => {
         return (
           // <p>{index}</p>
-          <PropertySlide className="propertySlides" onClick={()=>{clickHandler(index)}}>
-            <img
-              className="propertImage"
-              src={i.url}
-              alt="1403/14 George Avenue Broadbeach"
-            />
+          <PropertySlide
+            className="propertySlides"
+            onClick={() => {
+              clickHandler(index);
+            }}
+            style={{
+              background: `url(${i.url})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="propertImage"></div>
           </PropertySlide>
         );
       });
@@ -146,14 +152,14 @@ export default function Property() {
     idProperty[0] &&
     idProperty[0].description.split("\r\n\r\n").map((item, index) => {
       if (
-        item == "The big picture." ||
-        item == "The finer details." ||
-        item == "The extras."
+        item.includes("The big picture.") ||
+        item.includes("The finer details.") ||
+        item.includes("The extras.")
       ) {
         return <h3>{item}</h3>;
       }
 
-      if (index == 7) {
+      if (item.includes("&#x2022;")) {
         return (
           <ul>
             {item.split("&#x2022;").map((i, c) => {
@@ -348,7 +354,7 @@ export default function Property() {
             </div>
             {
               <Carousel
-                autoPlay={autoPlay}
+                autoPlay={false}
                 showArrows={true}
                 showIndicators={true}
                 showThumbs={false}

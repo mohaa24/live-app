@@ -760,7 +760,7 @@ p.bbc {
 
 section.propertySection {
     height: 100vh;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
 }
 
