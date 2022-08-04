@@ -1,17 +1,55 @@
 import { Appraisal } from "../components/appraisal/appraisal";
 import { ContentSlider } from "../components/contentSlider/contentSlider";
 import { TestimonialCard } from "../components/testimonials/testimonials";
+import { Properties } from "../components/Properties/properties";
+import { Search } from "../components/search/search";
+import { useState } from "react";
+import Modal from "react-modal";
+
 
 
 
 export default function Home() {
+  
+  const [filterValue, setFilter] = useState(null);
+    const [modalIsOpen, setIsOpen] = useState(false);
 
+    const customStyles = {
+      content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        marginRight: "-50%",
+        transform: "translate(-50%, -50%)",
+        minWidth: "20vw",
+      },
+    };
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
   return (
     <>
-      <section className="leaseHeroSection">
-        
+      <section className="hero-banner sub">
+        <div className="hero-banner__inner">
+          <div className="hero-banner__content">
+            <Search activePage={"buy"} setFilter={setFilter}></Search>
+          </div>
+        </div>
       </section>
-
+      <section className="properties properties--buy">
+        <h1>Properties for Rent</h1>
+        <div className="properties__inner"></div>
+      </section>
       <section className="title-content-columns">
         <div className="title-content-columns__inner">
           <h2 className="">
@@ -33,7 +71,18 @@ export default function Home() {
           </div>
           <div className=" title-content-columns__cols">
             <p>1. 25+ Years Experience in Property Management</p>
-            <p>2. Honest &amp; Reliable in Our Approach</p>
+            <p>
+              2. Honest &amp; Reliable in Our Approach
+              <button
+                type="button"
+                class="btn"
+                onClick={() => {
+                  openModal();
+                }}
+              >
+                Request Rental Appraisal
+              </button>
+            </p>
             <p>3. Prompt Communication &amp; Available 7 days</p>
           </div>
         </div>
@@ -44,13 +93,10 @@ export default function Home() {
         </div>
 
         <div className="testimonials">
-
           <TestimonialCard></TestimonialCard>
         </div>
       </section>
-      <section className="constenSlider">
-      <ContentSlider/>
-      </section>
+
       <section className="title-columns" id="change">
         <div className="title-columns__inner">
           <h2 className="">
@@ -79,6 +125,15 @@ export default function Home() {
                 property to us will seem effortless and with minimum disruption
                 to your tenant.{" "}
               </p>
+              <button
+                type="button"
+                class="btn"
+                onClick={() => {
+                  openModal();
+                }}
+              >
+                Request Rental Appraisal
+              </button>
             </div>
             <div className="title-columns__col">
               <h4>3. We look after you.</h4>
@@ -93,8 +148,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="constenSlider">
+        <ContentSlider />
+      </section>
       <section className="leaseForm">
-        <Appraisal />
+        {/* <Appraisal /> */}
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          contentLabel="Example Modal"
+          style={customStyles}
+        >
+          <div className="appraisalContainer">
+            <div className="appraisalHeader">
+              <h2>Appraisal Form</h2>
+              <svg
+                className="closeBtn"
+                onClick={closeModal}
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                fillRule="evenodd"
+                clip-rule="evenodd"
+              >
+                <path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z" />
+              </svg>
+            </div>
+            <div className="content">
+              <Appraisal />
+            </div>
+          </div>
+        </Modal>
       </section>
     </>
   );

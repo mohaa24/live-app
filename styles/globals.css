@@ -471,7 +471,20 @@ ul.single-property__team a {
 }
 
 .propertySection .dot {
-    background: #a9c5db !important;
+    /* background: #a9c5db !important; */
+}
+
+
+.title-content-columns__cols button {margin-top: 50px;background: #a9c5db;}
+
+.title-content-columns__cols button:hover {
+    background: #8bb5d5;
+}
+
+.title-columns button {margin-top: 50px;background: #a9c5db;}
+
+.title-columns button:hover {
+    background: #8bb5d5;
 }
 
 span.infoSpan {

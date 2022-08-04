@@ -9,8 +9,8 @@ export const Layout = ({ children }) => {
   const router = useRouter();
   const [nav, setNav] = useState(
     router.pathname.toLocaleLowerCase().includes("buy") ||
-      router.pathname.toLocaleLowerCase().includes("sold") 
-     
+      router.pathname.toLocaleLowerCase().includes("sold") ||
+      router.pathname.toLocaleLowerCase().includes("lease")
   );
   const[mobileNav, setMobileNav] =useState(false)
 
@@ -20,7 +20,8 @@ export const Layout = ({ children }) => {
     } else {
       if (
         !router.pathname.toLocaleLowerCase().includes("buy") &&
-        !router.pathname.toLocaleLowerCase().includes("sold")
+        !router.pathname.toLocaleLowerCase().includes("sold") &&
+        !router.pathname.toLocaleLowerCase().includes("lease")
       ) {
         setNav(false);
       }
@@ -28,10 +29,13 @@ export const Layout = ({ children }) => {
   };
 
   useEffect(()=>{
-    if(router.pathname.toLocaleLowerCase().includes("buy") ||
-      router.pathname.toLocaleLowerCase().includes("sold")){
-        setNav(true)
-      }
+    if (
+      router.pathname.toLocaleLowerCase().includes("buy") ||
+      router.pathname.toLocaleLowerCase().includes("sold") ||
+      router.pathname.toLocaleLowerCase().includes("lease")
+    ) {
+      setNav(true);
+    }
       
   })
 
@@ -63,12 +67,13 @@ export const Layout = ({ children }) => {
     <>
       <header className={nav ? "header active" : "header"} id="header">
         <div className="header__inner">
-          <Link aria-current="page" className="header__logo" href="/">
+          <a aria-current="page" className="header__logo" href="/">
             <img
               className="logo-img"
               src="http://shifaza21.sg-host.com/wp-content/uploads/2022/07/0263_ANTONZHOUK_DEVICE.png"
             ></img>
-          </Link>
+            
+          </a>
           <nav className="header__nav">
             <ul>
               <li>

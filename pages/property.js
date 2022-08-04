@@ -168,8 +168,7 @@ export default function Property() {
 
   return (
     <>
-
-    {!response && <OverlayLoader/>}
+      {!response && <OverlayLoader />}
       {idProperty && (
         <PropertImageBlock>
           <div>
@@ -335,7 +334,10 @@ export default function Property() {
                           fill="#FFFFFF"
                         ></path>
                       </svg>{" "}
-                      Car {idProperty[0].garages}{" "}
+                      Car{" "}
+                      {idProperty[0].garages +
+                        idProperty[0].carports +
+                        idProperty[0].openSpaces}{" "}
                     </span>
                   </p>
                 </div>
@@ -356,74 +358,75 @@ export default function Property() {
           </section>
         </PropertImageBlock>
       )}
-      {idProperty &&
-      <section className="propertyDetails">
-        <div className="propertyText">
-          <h1>{idProperty && idProperty[0].heading}</h1>
-          <p>{discrpText && discrpText}</p>
-        </div>
-        <div className="teamDetails">
-          <div className="single-property__title">
-            <ul className="single-property__team">
-              {idProperty &&
-                idProperty[0].contactStaff.map((i) => {
-                  return (
-                    <li>
-                      <figure>
-                        <a href="">
-                          <img src={i.photo.thumb_360} alt="Anton Zhouk" />
-                        </a>
-                      </figure>
-                      <p>
-                        <span>{`${i.firstName} ${i.lastName}`}</span>
-                        <br />—{" "}
-                        <a href={`tel:${i.phoneNumbers[0].number}`}>
-                          {i.phoneNumbers[0].number}
-                        </a>
-                        <br />—<a href={`mailto:${i.email}`}> Email Agent</a>
-                      </p>
-                    </li>
-                  );
-                })}
-
-              <ul class="single-property__documents">
+      {idProperty && (
+        <section className="propertyDetails">
+          <div className="propertyText">
+            <h1>{idProperty && idProperty[0].heading}</h1>
+            <p>{discrpText && discrpText}</p>
+          </div>
+          <div className="teamDetails">
+            <div className="single-property__title">
+              <ul className="single-property__team">
                 {idProperty &&
-                  idProperty[0].photos.map((j) => {
-                    if (j.type == "Floorplan") {
-                      return (
-                        <li>
-                          <a
-                            href={j.url}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                          >
-                            — Floor Plan
+                  idProperty[0].contactStaff.map((i) => {
+                    return (
+                      <li>
+                        <figure>
+                          <a href="">
+                            <img src={i.photo.thumb_360} alt="Anton Zhouk" />
                           </a>
-                        </li>
-                      );
-                    }
+                        </figure>
+                        <p>
+                          <span>{`${i.firstName} ${i.lastName}`}</span>
+                          <br />—{" "}
+                          <a href={`tel:${i.phoneNumbers[0].number}`}>
+                            {i.phoneNumbers[0].number}
+                          </a>
+                          <br />—<a href={`mailto:${i.email}`}> Email Agent</a>
+                        </p>
+                      </li>
+                    );
                   })}
 
-                {idProperty && idProperty[0].soiUrl != [] && (
-                  <li>
-                    <a
-                      href={idProperty[0].soiUrl}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      — STATEMENT OF INFORMATION
-                    </a>
-                  </li>
-                )}
-              </ul>
-            </ul>
+                <ul class="single-property__documents">
+                  {idProperty &&
+                    idProperty[0].photos.map((j) => {
+                      if (j.type == "Floorplan") {
+                        return (
+                          <li>
+                            <a
+                              href={j.url}
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              — Floor Plan
+                            </a>
+                          </li>
+                        );
+                      }
+                    })}
 
-            {/* <div className="mapContainer">
+                  {idProperty && idProperty[0].soiUrl != [] && (
+                    <li>
+                      <a
+                        href={idProperty[0].soiUrl}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        — STATEMENT OF INFORMATION
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              </ul>
+
+              {/* <div className="mapContainer">
             <MapComp lat={10.99835602} long={77.01502627} />
           </div> */}
+            </div>
           </div>
-        </div>
-      </section>}
+        </section>
+      )}
     </>
   );
 }
