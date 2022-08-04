@@ -145,12 +145,12 @@ export default function Property() {
     idProperty &&
     idProperty[0] &&
     idProperty[0].description.split("\r\n\r\n").map((item, index) => {
-      if (index == 3 || index == 5) {
+      if (
+        item == "The big picture." ||
+        item == "The finer details." ||
+        item == "The extras."
+      ) {
         return <h3>{item}</h3>;
-      }
-
-      if (index == 0 || index == 2 || index == 4 || index == 6) {
-        return <p>{item}</p>;
       }
 
       if (index == 7) {
@@ -164,6 +164,9 @@ export default function Property() {
           </ul>
         );
       }
+        if (true) {
+          return <p>{item}</p>;
+        }
     });
 
   return (
