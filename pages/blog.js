@@ -1,4 +1,4 @@
-import {  MapComp } from "../components/map/map";
+import { MapComp } from "../components/map/map";
 import { Carousel } from "react-responsive-carousel";
 import styled from "styled-components";
 import { Appraisal } from "../components/appraisal/appraisal";
@@ -8,8 +8,6 @@ const AboutSlide = styled.div`
 `;
 
 export default function Contact() {
-
-
   const imageSlides = [1].map((i) => {
     return (
       <AboutSlide
@@ -30,7 +28,7 @@ export default function Contact() {
   });
   return (
     <>
-      <section className="aboutSection">
+      {/* <section className="aboutSection">
         <div className="aboutIntro">
           <h1>ABOUT US</h1>
 
@@ -41,25 +39,33 @@ export default function Contact() {
           </h3>
         </div>
         {imageSlides && imageSlides}
-      </section>
-      <section className="contact contact--contact">
-        <div className="contact__inner">
-          <div className="contact__content">
-            <div className="contact__menu">
-              {/* <div className="testimonials-heading"><h4>Property</h4></div> */}
+      </section> */}
+      <section className="blogSection">
+        <h1>Blog</h1>
 
-              <div className="contact__form"></div>
-
-              <Appraisal />
+        <div className="news_wrapper">
+          <a class="card" href="/post">
+            <img
+              class="card__background"
+              src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/08/165777114369571257-rsd.jpeg"
+            />
+            <div class="card__text-container">
+              <p class="card__category">Post</p>
+              <p class="card__title">The Best Suburb for Investors.</p>
             </div>
-          </div>
-        </div>
-        <div className="mapContainer">
-          <MapComp
-            lat={-37.82269021253022}
-            lng={145.04469896332904}
-            height={"50vh"}
-          />
+          </a>
+          <a class="card" href="/post">
+            <img
+              class="card__background"
+              src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/07/Feature-Image-scaled.jpg"
+            />
+            <div class="card__text-container">
+              <p class="card__category">Article</p>
+              <p class="card__title">
+                The Gold Coast’s Newest Million Dollar Suburbs.
+              </p>
+            </div>
+          </a>
         </div>
       </section>
     </>

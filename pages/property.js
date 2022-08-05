@@ -426,19 +426,23 @@ export default function Property() {
                       </a>
                     </li>
                   )}
+                  <li>
+                    <div className="propertyMapContainer">
+                      {true && (
+                        <MapComp
+                          
+                            lat={ idProperty[0].geolocation.latitude}
+                            lng= {idProperty[0].geolocation.longitude}
+
+                          
+                          placeId={idProperty[0].displayAddress}
+                          height="60vh"
+                        />
+                      )}
+                    </div>
+                  </li>
                 </ul>
               </ul>
-
-              <div className="propertyMapContainer">
-                {idProperty[0].geolocation.latitude && (
-                  <MapComp
-                    coordinates={{
-                      lat: idProperty[0].geolocation.latitude,
-                      lng: idProperty[0].geolocation.longitude,
-                    }}
-                  />
-                )}
-              </div>
             </div>
           </div>
         </section>

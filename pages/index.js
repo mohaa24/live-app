@@ -169,7 +169,7 @@ export default function Home() {
                     <img
                       className="property-option__image"
                       loading="lazy"
-                      src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/MicrosoftTeams-image-4.jpg"
+                      src="/buy.jpg"
                       alt=""
                     />
                     <span className="property-option__view">View</span>
@@ -186,7 +186,7 @@ export default function Home() {
                     <img
                       className="property-option__image"
                       loading="lazy"
-                      src="https://kollosche-1bfb7.kxcdn.com/wp-content/uploads/2022/03/Untitled-design-2.png"
+                      src="/sale.jpg"
                       alt=""
                     />
                     <span className="property-option__view">View</span>

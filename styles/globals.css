@@ -49,6 +49,121 @@
     url(/static/MontserratBold-0f9d93783b1d59900089de414278a984.ttf)
       format("truetype");
 }
+section.postSection {
+    padding: 100px 0;
+    max-width: 80vw;
+    margin: auto;
+}
+
+.postContent p::first-letter {
+    font-size: 30px;
+    font-weight: 200;
+    margin-left: 20px;
+}
+.postMeta {
+    margin: 20px 0 60px;
+}
+
+section.postSection h1 {
+    font-weight: 200;
+    font-size: 30px;
+}
+
+.postMeta {}
+
+.postedTime {font-style: italic;margin: 10px 0;}
+
+.authorDetails {
+    font-weight: 300;
+}
+
+.postContent p {
+    font-weight: 100;
+}
+
+.postContent img {
+        max-width: 200px;
+    max-height: 400px;
+    display: inline;
+    float: left;
+    margin: 0px 20px 15px 0;
+}
+.news_wrapper{
+   
+    -webkit-column-gap: 39px;
+    column-gap: 39px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60vw;
+    padding-bottom: 65px;
+    row-gap: 40px;
+
+}
+section.blogSection h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+section.postSection {
+    padding: 120px 0;
+    max-width: 80vw;
+    margin: auto;
+}
+
+section.blogSection {
+    padding: 100px 0px 50px;
+}
+
+.card {
+    background-color: #ebebeb;
+    transition: all .3s ease;
+    width: 100%;
+    text-decoration: none;
+}
+
+.card__background {
+    display: block;
+    height: 326px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin: 0;
+}
+
+.card__text-container {
+    padding: 18px 27px 17px 19px;
+}
+
+.card__category {
+    color: black;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: .81px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.card__title {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .4px;
+    margin: 5px 0 0;
+    text-transform: uppercase;
+}
+.card:hover {
+    background-color: #a9c5db;
+}
+
+.card:hover .card__category {
+    color: white;
+}
+
+.card:hover .card__title {
+    color: white;
+}
 
 .title-content-slider__wrap {
     display: flex!important;
@@ -778,6 +893,8 @@ p.bbc {
 
 .propertyMapContainer {
     width: 100%;
+    height: 60vh;
+    margin-top: 50px;
 }
 
 section.propertySection {
