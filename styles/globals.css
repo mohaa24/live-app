@@ -776,6 +776,10 @@ p.bbc {
   
 }
 
+.propertyMapContainer {
+    width: 100%;
+}
+
 section.propertySection {
     height: 100vh;
     /* display: flex; */
