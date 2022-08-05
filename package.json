@@ -21,6 +21,7 @@
     "react-countup": "^6.3.0",
     "react-dom": "18.0.0",
     "react-flickity-component": "^3.6.2",
+    "react-google-maps": "^9.4.5",
     "react-modal": "^3.15.1",
     "react-responsive-carousel": "^3.2.23",
     "react-reveal": "^1.2.2",

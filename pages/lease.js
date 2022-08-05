@@ -149,6 +149,9 @@ export default function Home() {
         </div>
       </section>
       <section className="constenSlider">
+        <div class="testimonials-heading">
+          <h4>Why A—Z?</h4>
+        </div>
         <ContentSlider />
       </section>
       <section className="leaseForm">
