@@ -82,11 +82,11 @@ section.postSection h1 {
 }
 
 .postContent img {
-        max-width: 200px;
-    max-height: 400px;
+        max-width: 40vw;
+    /* max-height: 400px; */
     display: inline;
     float: left;
-    margin: 0px 20px 15px 0;
+    margin: 0px 20px 5px 0;
 }
 .news_wrapper{
    
@@ -547,7 +547,7 @@ display: flex;
 }
 
 .team-card__details p.address {
-    font-size: 14px;
+    font-size: 17px;
     font-weight:400;
     margin-bottom: 0px;
 }
@@ -9550,6 +9550,13 @@ body.thank-you .footer {
     width: 20%;
   }
 }
+
+/* @media (min-width: 1300px) {
+    .business-data__item {
+    width: 20%;
+    }
+} */
+
 
 .single-suburb .business-data {
   padding: 0 0 60px;
