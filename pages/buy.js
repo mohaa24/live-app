@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Select from "react-select";
 import OverlayLoader from "../components/loading/loading";
 import { Properties } from "../components/Properties/properties";
 import { Search } from "../components/search/search";
